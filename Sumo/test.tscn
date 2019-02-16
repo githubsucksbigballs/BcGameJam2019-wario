@@ -6,12 +6,12 @@
 [ext_resource path="res://Sumo/assets/blue3.png" type="Texture" id=4]
 [ext_resource path="res://Sumo/Player3.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45.4438, 43.4301 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -38,7 +38,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" index="0"]
 
 position = Vector2( -2.20891, 2.84003 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player2" index="1"]
 
@@ -48,7 +48,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2" index="2"]
 
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
 
 [node name="Player3" type="KinematicBody2D" parent="." index="1"]
@@ -67,7 +67,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player3" index="0"]
 
 position = Vector2( -2.20891, 2.84003 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player3" index="1"]
 

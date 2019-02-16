@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/s.png-dd935d9309c6853366b517e626dbbe27.stex"
+path="res://.import/w2.png-01788c936ed96ac9a444f7414b3b7799.stex"
 
 [deps]
 
-source_file="res://Cameron Stuff/Pumping Game/s.png"
-dest_files=[ "res://.import/s.png-dd935d9309c6853366b517e626dbbe27.stex" ]
+source_file="res://Cameron Stuff/Pumping Game/keys/w2.png"
+dest_files=[ "res://.import/w2.png-01788c936ed96ac9a444f7414b3b7799.stex" ]
 
 [params]
 

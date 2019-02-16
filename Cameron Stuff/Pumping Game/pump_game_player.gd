@@ -16,5 +16,10 @@ func pump_down():
 func pump_up():
 	pump_child.play("PumpUp")
 
+
+func increase_counter(value):
+	pump_counter += value
+
+
 func _on_PumpSprite_animation_finished():
 	pump_child.stop()
