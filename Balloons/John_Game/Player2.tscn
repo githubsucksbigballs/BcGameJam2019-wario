@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://John_Game/Scripts/Player2.gd" type="Script" id=1]
+[ext_resource path="res://John_Game/Scripts/Area2.gd" type="Script" id=2]
+[ext_resource path="res://John_Game/assets/pizza.png" type="Texture" id=3]
+[ext_resource path="res://John_Game/Scripts/Balloon1.gd" type="Script" id=4]
+[ext_resource path="res://John_Game/assets/balloon_red.png" type="Texture" id=5]
+[ext_resource path="res://John_Game/Scripts/Balloon2.gd" type="Script" id=6]
+[ext_resource path="res://John_Game/Scripts/OnScreen2.gd" type="Script" id=7]
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[node name="Player2" type="KinematicBody2D" groups=[
+"Player2",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+
+[node name="Body" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 2.45629, 2.49239 )
+scale = Vector2( 1.37945, 1.13794 )
+shape = SubResource( 1 )
+
+[node name="Area2" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 1.66226, 1.95598 )
+scale = Vector2( 0.903823, 0.877751 )
+texture = ExtResource( 3 )
+
+[node name="Balloon1" type="Area2D" parent="." index="3"]
+
+position = Vector2( -5.88658, -25.1536 )
+scale = Vector2( 0.187234, 0.218779 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="col1" type="CollisionShape2D" parent="Balloon1" index="0"]
+
+position = Vector2( -0.609665, -2.07992 )
+scale = Vector2( 2.98419, 1.70014 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Balloon1" index="1"]
+
+position = Vector2( -0.209049, -1.92418 )
+scale = Vector2( 0.265684, 0.254823 )
+texture = ExtResource( 5 )
+
+[node name="Balloon2" type="Area2D" parent="." index="4"]
+
+position = Vector2( 11.6868, -25.7122 )
+scale = Vector2( 0.201157, 0.227781 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="col2" type="CollisionShape2D" parent="Balloon2" index="0"]
+
+position = Vector2( 0.0353546, -0.943756 )
+scale = Vector2( 2.72095, 1.62608 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Balloon2" index="1"]
+
+position = Vector2( 0.0716953, -0.565468 )
+scale = Vector2( 0.244634, 0.226998 )
+texture = ExtResource( 5 )
+
+[node name="OnScreen2" type="VisibilityEnabler2D" parent="." index="5"]
+
+rect = Rect2( -10, -10, 20, 20 )
+pause_animations = true
+freeze_bodies = true
+pause_particles = true
+pause_animated_sprites = true
+process_parent = false
+physics_process_parent = false
+script = ExtResource( 7 )
+
+[connection signal="body_shape_entered" from="Balloon1" to="Balloon1" method="_on_Balloon1_body_shape_entered"]
+
+[connection signal="body_shape_entered" from="Balloon2" to="Balloon2" method="_on_Balloon2_body_shape_entered"]
+
+[connection signal="viewport_exited" from="OnScreen2" to="OnScreen2" method="_on_OnScreen2_viewport_exited"]
+
+
