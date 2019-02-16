@@ -2,28 +2,31 @@ extends KinematicBody2D
 
 var speed = 400
 var velocity = Vector2()
-var friction = 0.3
 
-#timer
-var timer = null
-var stun_duration = 2
 var hitstun = false
 
+func _ready():
+	get_parent().get_node("MessageTimer").start()
+	hitstun = true
 
 func hit(vel):
 	hitstun = true
+	$AnimatedSprite.animation = "oof"
 	get_parent().get_node("HitStun2").start()
 	velocity = vel
 
 func _physics_process(delta):
 	if (Input.is_key_pressed(KEY_D) && !hitstun):
 		velocity.x = speed
+		$AnimatedSprite.flip_h = true
 	if Input.is_key_pressed(KEY_A) && !hitstun:
 		velocity.x = -speed
+		$AnimatedSprite.flip_h = false
 	if Input.is_key_pressed(KEY_S) && !hitstun:
 		velocity.y = speed
 	if Input.is_key_pressed(KEY_W) && !hitstun:
 		velocity.y = -speed
+		$AnimatedSprite.flip_v = false
 	
 	if (velocity.x > 0):
 		velocity.x -= 10
@@ -47,6 +50,7 @@ func _physics_process(delta):
 
 func _on_HitStun2_timeout():
 	hitstun = false
+	$AnimatedSprite.animation = "default"
 
 
 func _on_LoopFix2_timeout():
@@ -54,5 +58,13 @@ func _on_LoopFix2_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	print("deleted")
+	get_parent().get_node("MessageLabel").text = "Arrow Key Player\n has won!"
+	get_parent().get_node("MessageLabel").show()
+	get_parent().get_node("Player3").hitstun = true
 	queue_free()
+
+
+func _on_MessageTimer_timeout():
+	get_parent().get_node("MessageLabel").hide()
+	hitstun = false
+	

@@ -3,7 +3,6 @@
 [ext_resource path="res://Cameron Stuff/Main Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
-
 [node name="MainMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
