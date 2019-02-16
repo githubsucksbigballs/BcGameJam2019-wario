@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Sumo/test.gd" type="Script" id=1]
 [ext_resource path="res://Sumo/Asteroid.tscn" type="PackedScene" id=2]
@@ -19,7 +19,8 @@
 [ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=17]
 [ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=18]
 [ext_resource path="res://cure.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://Sumo/assets/pixel-space-background-4.jpg" type="Texture" id=20]
+[ext_resource path="res://Sumo/ScrollingBackground.gd" type="Script" id=20]
+[ext_resource path="res://Sumo/assets/long_bg.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=16]
 
@@ -248,7 +249,6 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -303,7 +303,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 4 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
@@ -427,12 +427,15 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
+script = ExtResource( 20 )
+_sections_unfolded = [ "Motion" ]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
@@ -448,7 +451,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 stretch_mode = 0
 
 [connection signal="screen_exited" from="Player2/VisibilityNotifier2D" to="Player2" method="_on_VisibilityNotifier2D_screen_exited"]

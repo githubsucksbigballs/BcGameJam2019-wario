@@ -16,7 +16,7 @@ func hit(vel):
 	velocity = vel
 
 func _physics_process(delta):
-	if (Input.is_key_pressed(KEY_D) && !hitstun):
+	if Input.is_key_pressed(KEY_D) && !hitstun:
 		velocity.x = speed
 		$AnimatedSprite.flip_h = true
 	if Input.is_key_pressed(KEY_A) && !hitstun:
@@ -63,7 +63,7 @@ func _on_LoopFix2_timeout():
 func _on_VisibilityNotifier2D_screen_exited():
 	get_parent().get_node("MessageLabel").text = "Arrow Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
-	#get_parent().get_node("Player3").hitstun = true
+	get_parent().get_node("Player3").hitstun = true
 	get_parent().get_node("MobTimer").stop()
 	queue_free()
 
