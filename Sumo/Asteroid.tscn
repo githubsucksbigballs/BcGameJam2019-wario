@@ -24,9 +24,9 @@ collision_layer = 2
 collision_mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
+friction = 0.0
+bounce = 1.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -38,7 +38,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 MIN_SPEED = 150
 MAX_SPEED = 250
 
@@ -58,6 +58,8 @@ shape = SubResource( 2 )
 
 position = Vector2( 0, 0.527039 )
 rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="body_entered" from="." to="." method="_on_Asteroid_body_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 

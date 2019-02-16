@@ -56,7 +56,6 @@ func _physics_process(delta):
 			get_parent().get_node("Player2").hit(velocity*2)
 		if(collision.collider.has_method("isAsteroid")):
 			velocity = -velocity
-			
 
 
 func _on_HitStun_timeout():
