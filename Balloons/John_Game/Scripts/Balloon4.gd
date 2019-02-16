@@ -20,7 +20,25 @@ func _on_Balloon4_body_shape_entered(body_id, body, body_shape, area_shape):
 		Player1.health = Player1.health - 1
 		print(Player1.health)
 		self.queue_free()
-
+	if(body.name.begins_with("Top")):
+		Player1.health = Player1.health - 2
+		print(Player1.health)
+		self.queue_free()
+		
+	if(body.name.begins_with("Bottom")):
+		Player1.health = Player1.health - 2
+		print(Player1.health)
+		self.queue_free()
+		
+	if(body.name.begins_with("Left")):
+		Player1.health = Player1.health - 2
+		print(Player1.health)
+		self.queue_free()
+		
+	if(body.name.begins_with("Right")):
+		Player1.health = Player1.health - 2
+		print(Player1.health)
+		self.queue_free()	
 		
 	if(Player1.health == 0):
 		print("Player2 Wins!")
