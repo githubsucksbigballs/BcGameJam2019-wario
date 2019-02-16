@@ -23,3 +23,7 @@ func increase_counter(value):
 
 func _on_PumpSprite_animation_finished():
 	pump_child.stop()
+
+
+func _on_PlayerSprite_animation_finished():
+	player_child.stop()

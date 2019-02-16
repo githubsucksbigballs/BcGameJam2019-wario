@@ -23,8 +23,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ScoreShow" parent="." index="2" instance=ExtResource( 4 )]
 
-margin_top = -109.0
-margin_bottom = -72.0
+margin_top = -200.0
+margin_bottom = -163.0
 text = ""
 
 

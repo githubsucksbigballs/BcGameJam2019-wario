@@ -6,7 +6,6 @@ var current_flying
 var center
 var spawn_pos
 var input_box
-var speed = 2
 var timing_text
 
 
@@ -16,16 +15,19 @@ func _ready():
 	input_box = get_child(1)
 	timing_text = get_child(2)
 	
+func get_random_speed():
+	return rand_range(1.15,2.2)
 	
 func generate_random_flying_input(input):
 	var random_pos = randi()%count_direct
+	var speed = get_random_speed()
+	print(speed)
 	var radius = Vector2(100*speed, 0)
 	center = Vector2(input_box.position.x,input_box.position.y)
 	var step = 2 * PI / count_direct
 	spawn_pos = center + radius.rotated(step * random_pos)
 	var flying_input = load("res://Cameron Stuff/Pumping Game/FlyingInput.tscn")
 	current_flying = flying_input.instance()
-	var img_name = "pump1.png"
 	current_flying.input_sprite = current_flying.get_child(1)
 	current_flying.input_sprite.play(input)
 	#current_flying.get_child(0).scale = Vector2(0.25,0.25)

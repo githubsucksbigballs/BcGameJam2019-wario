@@ -22,7 +22,7 @@ position = Vector2( 574.401, 300 )
 [node name="Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 1.2
+wait_time = 1.25
 one_shot = false
 autostart = true
 

@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -62, -38 ), Vector2( -63, -103 ), Vector2( -63, -51 ) ]
+"values": [ Vector2( -63, -142 ), Vector2( -63, -220 ), Vector2( -63, -142 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:modulate")
@@ -42,9 +42,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -63.0
-margin_top = -51.0
+margin_top = -142.0
 margin_right = 64.0
-margin_bottom = -14.0
+margin_bottom = -105.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
