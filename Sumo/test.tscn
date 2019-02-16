@@ -218,7 +218,6 @@ visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 16 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="Player2" type="KinematicBody2D" parent="." index="1"]
@@ -249,6 +248,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 3 )
 animation = "default"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -303,7 +303,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 4 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 flip_h = true
 
