@@ -207,7 +207,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.294495, -5.29266, 0, 0, 0, 0, 798.595, -5.29266, 0, 0, 0, 0, 795.581, 594.628, 0, 0, 0, 0, 2.72021, 593.121, 0, 0, 0, 0, -0.294495, -5.29266 )
 }
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 Asteroid = ExtResource( 2 )
@@ -218,6 +218,7 @@ visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 16 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="Player2" type="KinematicBody2D" parent="." index="1"]
@@ -248,7 +249,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 3 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -303,7 +304,6 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 4 )
 animation = "default"
-frame = 2
 playing = true
 flip_h = true
 
