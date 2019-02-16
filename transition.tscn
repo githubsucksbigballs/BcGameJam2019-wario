@@ -47,7 +47,7 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0, 0, 0, 0 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 800, 600 )
 _sections_unfolded = [ "Animation", "Region", "Visibility" ]
