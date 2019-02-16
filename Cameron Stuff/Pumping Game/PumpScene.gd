@@ -13,7 +13,10 @@ const bad_threshold = 12
 const good_threshold = 5
 var timing_text
 var timing_text2
+var p1_pressed = false
+var p2_pressed = false
 
+ 
 
 func _ready():
 	p1 = get_child(0)
@@ -34,10 +37,10 @@ func get_random_input_key():
 
 func check_input(direct):
 	var directions = get_direction(direct)
-	if (Input.is_action_just_pressed(directions[0])):
+	if (not p1_pressed and Input.is_action_just_pressed(directions[0])):
 		get_score_value(p1)
 		p1.get_child(0).pump_down()
-	if (Input.is_action_just_pressed(directions[1])):
+	if (not p2_pressed and Input.is_action_just_pressed(directions[1])):
 		get_score_value(p2)
 		p2.get_child(0).pump_down()
 			
