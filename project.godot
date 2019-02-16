@@ -18,8 +18,6 @@ config/icon="res://icon.png"
 
 window/size/width=800
 
-<<<<<<< HEAD
-=======
 [input]
 
 ui_up=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
@@ -37,7 +35,9 @@ p2_left=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 p2_right=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 
->>>>>>> f6edf6df8d20ab39cfc90e08b9de1868425106a6
+<<<<<<< HEAD
+=======
 [rendering]
 
+>>>>>>> f121e187ad913705f6e8593c0a32007ce03054b6
 environment/default_environment="res://default_env.tres"
