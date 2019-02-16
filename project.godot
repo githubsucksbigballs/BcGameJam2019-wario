@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="BCGameJam2019-wario"
-run/main_scene="res://Cameron Stuff/Pumping Game/PumpScene.tscn"
+run/main_scene="res://Cameron Stuff/Main Menu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
