@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/page_flip.wav-3b3e353f8b3b03bf27c80c9f1b4b1297.sample"
+
+[deps]
+
+source_file="res://Cameron Stuff/Pumping Game/page_flip.wav"
+dest_files=[ "res://.import/page_flip.wav-3b3e353f8b3b03bf27c80c9f1b4b1297.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

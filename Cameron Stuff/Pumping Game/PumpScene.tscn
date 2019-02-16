@@ -1,18 +1,27 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Cameron Stuff/Pumping Game/PumpScene.gd" type="Script" id=1]
-[ext_resource path="res://Cameron Stuff/Pumping Game/pump_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cameron Stuff/Pumping Game/PlayerWithFlyingInput.tscn" type="PackedScene" id=2]
 
 [node name="PumpScene" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="PlayerWithFlyingInput" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 200, 400 )
+position = Vector2( 262.553, 330.572 )
 
-[node name="Player2" parent="." index="1" instance=ExtResource( 2 )]
+[node name="PlayerWithFlyingInput2" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 600, 400 )
+position = Vector2( 594.485, 316.968 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
