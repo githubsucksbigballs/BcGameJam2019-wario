@@ -5,6 +5,8 @@ var velocity = Vector2()
 
 var hitstun = false
 
+var win = false
+
 func _ready():
 	get_parent().get_node("MessageTimer").start()
 	hitstun = true
@@ -63,12 +65,21 @@ func _on_LoopFix2_timeout():
 func _on_VisibilityNotifier2D_screen_exited():
 	get_parent().get_node("MessageLabel").text = "Arrow Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
-	get_parent().get_node("Player3").hitstun = true
 	get_parent().get_node("MobTimer").stop()
-	queue_free()
+	get_parent().get_node("WinTimer").start()
+	get_parent().get_node("Player3").win = true
+	
+	
 
 
 func _on_MessageTimer_timeout():
 	get_parent().get_node("MessageLabel").hide()
 	hitstun = false
 	
+
+
+func _on_WinTimer_timeout():
+	queue_free()
+	
+	if(win):
+		transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")

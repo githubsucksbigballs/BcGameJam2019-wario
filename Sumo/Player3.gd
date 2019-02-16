@@ -5,6 +5,8 @@ var velocity = Vector2()
 
 var hitstun = false
 
+var win = false
+
 func _ready():
 	get_parent().get_node("MessageTimer").start()
 	get_parent().get_node("MobTimer").start()
@@ -67,15 +69,24 @@ func _on_LoopFix_timeout():
 	velocity = -velocity / 2
 
 
+
 func _on_VisibilityNotifier2D_screen_exited():
 	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
-	get_parent().get_node("Player2").hitstun = true
 	get_parent().get_node("MobTimer").stop()
-	queue_free()
+	get_parent().get_node("WinTimer").start()
+	get_parent().get_node("Player2").win = true
+	
+	
 
 
 func _on_MessageTimer_timeout():
 	get_parent().get_node("MessageLabel").hide()
 	hitstun = false
 	
+
+
+func _on_WinTimer_timeout():
+	queue_free()
+	if(win):
+		transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")
