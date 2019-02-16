@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sumo/Player2.gd" type="Script" id=1]
+[ext_resource path="res://Sumo/dodge_assets/art/playerGrey_up1.png" type="Texture" id=2]
+[ext_resource path="res://Sumo/Player3.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.3322, 34.8196 )
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Player2" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 585.212, 302.14 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player2" index="0"]
+
+position = Vector2( -2.84003, 2.20891 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" index="1"]
+
+position = Vector2( -2.20891, 2.84003 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player2" index="2"]
+
+position = Vector2( -2.98269, 2.99792 )
+scale = Vector2( 2.88689, 3.48788 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="Player3" type="KinematicBody2D" parent="." index="1"]
+
+position = Vector2( 233.218, 305.978 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player3" index="0"]
+
+position = Vector2( -2.84003, 2.20891 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3" index="1"]
+
+position = Vector2( -2.20891, 2.84003 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player3" index="2"]
+
+position = Vector2( -3.86411, 1.95054 )
+scale = Vector2( 1.5776, 1.62052 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="HitStun" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="HitStun2" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="LoopFix" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = true
+autostart = false
+
+[node name="LoopFix2" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = true
+autostart = false
+
+[connection signal="screen_exited" from="Player2/VisibilityNotifier2D" to="Player2" method="_on_VisibilityNotifier2D_screen_exited"]
+
+[connection signal="screen_exited" from="Player3/VisibilityNotifier2D" to="Player3" method="_on_VisibilityNotifier2D_screen_exited"]
+
+[connection signal="timeout" from="HitStun" to="Player3" method="_on_HitStun_timeout"]
+
+[connection signal="timeout" from="HitStun2" to="Player2" method="_on_HitStun2_timeout"]
+
+[connection signal="timeout" from="LoopFix" to="Player3" method="_on_LoopFix_timeout"]
+
+[connection signal="timeout" from="LoopFix2" to="Player2" method="_on_LoopFix2_timeout"]
+
+
