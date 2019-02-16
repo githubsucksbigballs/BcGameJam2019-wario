@@ -425,7 +425,7 @@ scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
+scroll_limit_end = Vector2( -100, 0 )
 scroll_ignore_camera_zoom = true
 _sections_unfolded = [ "Scroll" ]
 
