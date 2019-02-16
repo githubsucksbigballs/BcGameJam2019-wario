@@ -70,7 +70,7 @@ func _on_LoopFix_timeout():
 func _on_VisibilityNotifier2D_screen_exited():
 	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
-	get_parent().get_node("Player2").hitstun = true
+	#get_parent().get_node("Player2").hitstun = true
 	get_parent().get_node("MobTimer").stop()
 	queue_free()
 
