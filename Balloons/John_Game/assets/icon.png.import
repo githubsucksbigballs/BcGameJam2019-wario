@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-d9133740fbcd4506d994bbf8877ca2c5.stex"
+path="res://.import/icon.png-296f3c5336e757c22966f76b322b682a.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/icon.png"
-dest_files=[ "res://.import/icon.png-d9133740fbcd4506d994bbf8877ca2c5.stex" ]
+source_file="res://Balloons/John_Game/assets/icon.png"
+dest_files=[ "res://.import/icon.png-296f3c5336e757c22966f76b322b682a.stex" ]
 
 [params]
 

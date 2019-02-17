@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/balloon_red.png-aa4fa6111b32c59286de44ecec01890c.stex"
+path="res://.import/balloon_red.png-80c4bdbae94df4e1cb14d61d125bc0b5.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/balloon_red.png"
-dest_files=[ "res://.import/balloon_red.png-aa4fa6111b32c59286de44ecec01890c.stex" ]
+source_file="res://Balloons/John_Game/assets/balloon_red.png"
+dest_files=[ "res://.import/balloon_red.png-80c4bdbae94df4e1cb14d61d125bc0b5.stex" ]
 
 [params]
 

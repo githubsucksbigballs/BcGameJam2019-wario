@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/guy_idle_blue3.png-96ef4a48f39091a237590bc8832c1e26.stex"
+path="res://.import/guy_idle_blue3.png-815038f1fbe8ee444c4aefbecb26f9ee.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/guy_idle_blue3.png"
-dest_files=[ "res://.import/guy_idle_blue3.png-96ef4a48f39091a237590bc8832c1e26.stex" ]
+source_file="res://Balloons/John_Game/assets/guy_idle_blue3.png"
+dest_files=[ "res://.import/guy_idle_blue3.png-815038f1fbe8ee444c4aefbecb26f9ee.stex" ]
 
 [params]
 

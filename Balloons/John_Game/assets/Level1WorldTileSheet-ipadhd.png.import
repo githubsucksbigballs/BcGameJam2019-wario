@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level1WorldTileSheet-ipadhd.png-d69c1d98cb2d80c4c720d60e0d5c2377.stex"
+path="res://.import/Level1WorldTileSheet-ipadhd.png-cb17ff065c67f1f4cd0e9a3aa4e01e05.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/Level1WorldTileSheet-ipadhd.png"
-dest_files=[ "res://.import/Level1WorldTileSheet-ipadhd.png-d69c1d98cb2d80c4c720d60e0d5c2377.stex" ]
+source_file="res://Balloons/John_Game/assets/Level1WorldTileSheet-ipadhd.png"
+dest_files=[ "res://.import/Level1WorldTileSheet-ipadhd.png-cb17ff065c67f1f4cd0e9a3aa4e01e05.stex" ]
 
 [params]
 
