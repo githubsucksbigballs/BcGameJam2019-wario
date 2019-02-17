@@ -10,6 +10,7 @@ var hitstun = false
 
 var win = false
 
+
 func _ready():
 	if player_id == 1:
 		#$Particles2D.texture = load("res://Sumo/assets/red1.png")
@@ -101,6 +102,7 @@ func _on_LoopFix_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
+	$AnimatedSprite.animation = "explosion"
 	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
 	get_parent().get_node("MobTimer").stop()
