@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Balloons/John_Game/Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -47,7 +48,7 @@ editor_draw_drag_margin = false
 
 [node name="Right" type="Area2D" parent="Camera2D" index="0"]
 
-position = Vector2( 466.289, 16.3201 )
+position = Vector2( 464.481, 12.704 )
 scale = Vector2( 0.379344, 11.5312 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -91,7 +92,7 @@ shape = SubResource( 1 )
 
 [node name="Bottom" type="Area2D" parent="Camera2D" index="2"]
 
-position = Vector2( 14.5876, 467.169 )
+position = Vector2( 10.9716, 443.664 )
 scale = Vector2( 17.557, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -133,6 +134,37 @@ position = Vector2( 0.300049, -1.45837 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 2.5
+one_shot = false
+autostart = true
+
+[node name="StartLabel" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -120.0
+margin_top = -162.0
+margin_right = 139.0
+margin_bottom = -119.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Collect 80 batteries."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="body_entered" from="Camera2D/Right" to="." method="_on_Right_body_entered"]
 
 [connection signal="body_entered" from="Camera2D/Left" to="." method="_on_Left_body_entered"]
@@ -140,5 +172,7 @@ shape = SubResource( 1 )
 [connection signal="body_entered" from="Camera2D/Bottom" to="." method="_on_Bottom_body_entered"]
 
 [connection signal="body_entered" from="Camera2D/Top" to="." method="_on_Top_body_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

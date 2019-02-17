@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/song5.ogg-3e0c0eb8f6f34db4544477ff847213c3.oggstr"
+
+[deps]
+
+source_file="res://Balloons/John_Game/assets/song5.ogg"
+dest_files=[ "res://.import/song5.ogg-3e0c0eb8f6f34db4544477ff847213c3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
