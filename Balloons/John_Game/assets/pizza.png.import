@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pizza.png-8632044cc42a6bfc7d4eab897c2f12ff.stex"
+path="res://.import/pizza.png-22af9d033f8705259449583b5cda46a1.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/pizza.png"
-dest_files=[ "res://.import/pizza.png-8632044cc42a6bfc7d4eab897c2f12ff.stex" ]
+source_file="res://Balloons/John_Game/assets/pizza.png"
+dest_files=[ "res://.import/pizza.png-22af9d033f8705259449583b5cda46a1.stex" ]
 
 [params]
 

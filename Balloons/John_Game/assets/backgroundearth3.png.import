@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroundearth3.png-0ec1e35c019c3a0b05a348689b4f751a.stex"
+path="res://.import/backgroundearth3.png-f0221324d819eb449a0b4a62c8fa7ab8.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/backgroundearth3.png"
-dest_files=[ "res://.import/backgroundearth3.png-0ec1e35c019c3a0b05a348689b4f751a.stex" ]
+source_file="res://Balloons/John_Game/assets/backgroundearth3.png"
+dest_files=[ "res://.import/backgroundearth3.png-f0221324d819eb449a0b4a62c8fa7ab8.stex" ]
 
 [params]
 

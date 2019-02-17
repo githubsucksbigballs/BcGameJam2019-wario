@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SpaceBackground.png-9042104d2924cf7ca4bcabb371d6c479.stex"
+path="res://.import/SpaceBackground.png-65fbfbab639f740974b423e46bfc11ee.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/SpaceBackground.png"
-dest_files=[ "res://.import/SpaceBackground.png-9042104d2924cf7ca4bcabb371d6c479.stex" ]
+source_file="res://Balloons/John_Game/assets/SpaceBackground.png"
+dest_files=[ "res://.import/SpaceBackground.png-65fbfbab639f740974b423e46bfc11ee.stex" ]
 
 [params]
 

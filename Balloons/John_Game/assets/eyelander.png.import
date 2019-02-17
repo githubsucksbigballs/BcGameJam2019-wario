@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eyelander.png-3a3f5d07d93c8257c80efe244622a0c4.stex"
+path="res://.import/eyelander.png-d4dd1dcd25044317434d7a53131bf356.stex"
 
 [deps]
 
-source_file="res://John_Game/assets/eyelander.png"
-dest_files=[ "res://.import/eyelander.png-3a3f5d07d93c8257c80efe244622a0c4.stex" ]
+source_file="res://Balloons/John_Game/assets/eyelander.png"
+dest_files=[ "res://.import/eyelander.png-d4dd1dcd25044317434d7a53131bf356.stex" ]
 
 [params]
 

@@ -76,14 +76,14 @@ func _physics_process(delta):
 			var multiplier = 1.5
 			if player_id == 0:
 				if random == 0:
-					get_parent().get_node("Player").hit(velocity*multiplier)
-				else:
-					get_parent().get_node("Player").hit(velocity)
-			else:
-				if random == 1:
 					get_parent().get_node("Player2").hit(velocity*multiplier)
 				else:
-					get_parent().get_node("Player2").hit(velocity)
+					get_parent().get_node("Player2").hit(velocity*1.1)
+			else:
+				if random == 1:
+					get_parent().get_node("Player").hit(velocity*multiplier)
+				else:
+					get_parent().get_node("Player").hit(velocity*1.1)
 			#velocity = -velocity
 		if(collision.collider.has_method("isAsteroid")):
 			velocity = -velocity
