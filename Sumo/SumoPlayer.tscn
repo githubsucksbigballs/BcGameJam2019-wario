@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Sumo/Player3.gd" type="Script" id=1]
 [ext_resource path="res://Sumo/assets/blue1.png" type="Texture" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=11]
 [ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=12]
 [ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=13]
-[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=14]
+[ext_resource path="res://global_assets/smoke.png" type="Texture" id=14]
+[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -60,7 +61,7 @@ width = 2048
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0.722656 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=6]
 
@@ -144,6 +145,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Particles2D" type="Particles2D" parent="." index="3"]
 
 show_behind_parent = true
+scale = Vector2( 2, 2 )
 emitting = true
 amount = 10
 lifetime = 1.0
@@ -158,16 +160,16 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
 process_material = SubResource( 7 )
-texture = ExtResource( 2 )
+texture = ExtResource( 14 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Transform", "Visibility" ]
 
 [node name="Bump" type="AudioStreamPlayer2D" parent="." index="4"]
 
 position = Vector2( -658.188, -300 )
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

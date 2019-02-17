@@ -12,7 +12,7 @@ var win = false
 
 func _ready():
 	if player_id == 1:
-		$Particles2D.texture = load("res://Sumo/assets/red1.png")
+		#$Particles2D.texture = load("res://Sumo/assets/red1.png")
 		$AnimatedSprite.animation = "redDefault"
 	else:
 		$AnimatedSprite.flip_h = true
