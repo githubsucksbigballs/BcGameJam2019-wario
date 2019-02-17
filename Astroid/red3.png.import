@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red3.png-cfe90c0707e1f9da801d8879e4d57a47.stex"
+path="res://.import/red3.png-719583014878bce35adfe039c5f5d86e.stex"
 
 [deps]
 
-source_file="res://red3.png"
-dest_files=[ "res://.import/red3.png-cfe90c0707e1f9da801d8879e4d57a47.stex" ]
+source_file="res://Astroid/red3.png"
+dest_files=[ "res://.import/red3.png-719583014878bce35adfe039c5f5d86e.stex" ]
 
 [params]
 

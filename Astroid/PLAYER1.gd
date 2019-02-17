@@ -24,14 +24,14 @@ func game_overP1():
 	#get_parent().get_node("MobTimer").start()
 
 
-const Explosion = preload("res://Explosion.tscn")
+#const Explosion = preload("res://Astroid/Explosion.tscn")
 
-func megumin():	
-	var megumin = Explosion.instance()
-	var pos = velocity
-	megumin.position = pos
-	megumin.scale = Vector2(3,3)
-	return megumin
+#func megumin():	
+#	var megumin = Explosion.instance()
+#	var pos = velocity
+#	megumin.position = pos
+#	megumin.scale = Vector2(3,3)
+#	return megumin
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
@@ -55,7 +55,7 @@ func _physics_process(delta):
 			
 	if collision:
 		if collision.collider.has_method("returning"):
-			get_parent().add_child(megumin())
+			#get_parent().add_child(megumin())
 			game_overP1()
 			print("COOOOOOOOL")
 		if collision.collider.has_method("game_overP2"):

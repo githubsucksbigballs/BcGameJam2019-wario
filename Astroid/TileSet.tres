@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=2]
 
-[ext_resource path="res://sheet (1).png" type="Texture" id=1]
+[ext_resource path="res://Astroid/Black.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -23,4 +23,5 @@ extents = Vector2( 8.00607, 7.96713 )
 "shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
+_sections_unfolded = [ "0" ]
 

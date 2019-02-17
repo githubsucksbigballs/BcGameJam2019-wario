@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explosion4.png-a2159d7819a583d899d08c1cb3dde058.stex"
+path="res://.import/explosion4.png-d70a8ba70dc126b077afdbeff837d774.stex"
 
 [deps]
 
-source_file="res://explosion4.png"
-dest_files=[ "res://.import/explosion4.png-a2159d7819a583d899d08c1cb3dde058.stex" ]
+source_file="res://Astroid/explosion4.png"
+dest_files=[ "res://.import/explosion4.png-d70a8ba70dc126b077afdbeff837d774.stex" ]
 
 [params]
 

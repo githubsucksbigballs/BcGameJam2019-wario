@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explosion5.png-fa96a77001e9bc563a1257509f6dd97e.stex"
+path="res://.import/explosion5.png-7c2f4a5d3b3506cfa4dfe801162f0ae2.stex"
 
 [deps]
 
-source_file="res://explosion5.png"
-dest_files=[ "res://.import/explosion5.png-fa96a77001e9bc563a1257509f6dd97e.stex" ]
+source_file="res://Astroid/explosion5.png"
+dest_files=[ "res://.import/explosion5.png-7c2f4a5d3b3506cfa4dfe801162f0ae2.stex" ]
 
 [params]
 

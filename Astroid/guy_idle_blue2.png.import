@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/guy_idle_blue2.png-05c249a246df1d206b570e61fa3b9d00.stex"
+path="res://.import/guy_idle_blue2.png-16a63be4b3a5daff5e493590ea364572.stex"
 
 [deps]
 
-source_file="res://guy_idle_blue2.png"
-dest_files=[ "res://.import/guy_idle_blue2.png-05c249a246df1d206b570e61fa3b9d00.stex" ]
+source_file="res://Astroid/guy_idle_blue2.png"
+dest_files=[ "res://.import/guy_idle_blue2.png-16a63be4b3a5daff5e493590ea364572.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Astroid sheet2.png-51286b2ad41e6c989518f9e311a9b075.stex"
+path="res://.import/Astroid sheet2.png-416e5210e6e17b12804622ba59725013.stex"
 
 [deps]
 
-source_file="res://Astroid sheet2.png"
-dest_files=[ "res://.import/Astroid sheet2.png-51286b2ad41e6c989518f9e311a9b075.stex" ]
+source_file="res://Astroid/Astroid sheet2.png"
+dest_files=[ "res://.import/Astroid sheet2.png-416e5210e6e17b12804622ba59725013.stex" ]
 
 [params]
 

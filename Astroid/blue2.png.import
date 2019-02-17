@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue2.png-934a7f4ca1c0740f5f33910e69393e73.stex"
+path="res://.import/blue2.png-024a194a3495d8321a210fef9c9495bf.stex"
 
 [deps]
 
-source_file="res://blue2.png"
-dest_files=[ "res://.import/blue2.png-934a7f4ca1c0740f5f33910e69393e73.stex" ]
+source_file="res://Astroid/blue2.png"
+dest_files=[ "res://.import/blue2.png-024a194a3495d8321a210fef9c9495bf.stex" ]
 
 [params]
 

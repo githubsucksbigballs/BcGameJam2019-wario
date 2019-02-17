@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://PLAYER2.gd" type="Script" id=1]
-[ext_resource path="res://blue1.png" type="Texture" id=2]
-[ext_resource path="res://blue2.png" type="Texture" id=3]
-[ext_resource path="res://blue3.png" type="Texture" id=4]
-[ext_resource path="res://blue_oof1.png" type="Texture" id=5]
-[ext_resource path="res://blue_oof2.png" type="Texture" id=6]
-[ext_resource path="res://blue_oof3.png" type="Texture" id=7]
+[ext_resource path="res://Astroid/PLAYER2.gd" type="Script" id=1]
+[ext_resource path="res://Astroid/blue1.png" type="Texture" id=2]
+[ext_resource path="res://Astroid/blue2.png" type="Texture" id=3]
+[ext_resource path="res://Astroid/blue3.png" type="Texture" id=4]
+[ext_resource path="res://Astroid/blue_oof1.png" type="Texture" id=5]
+[ext_resource path="res://Astroid/blue_oof2.png" type="Texture" id=6]
+[ext_resource path="res://Astroid/blue_oof3.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
