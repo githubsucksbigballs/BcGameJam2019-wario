@@ -18,30 +18,33 @@ func _ready():
 
 func _on_Balloon_body_shape_entered(body_id, body, body_shape, area_shape):
 	if(body.name.begins_with("Player1")):
-		Player2.health = Player2.health - 1
-		print(Player2.health)
+		GlobalValues.health2 = GlobalValues.health2 - 1
+		print("Health: " + str(GlobalValues.health1))
+		print("2 Touched player")
 		self.queue_free()
 
 	if(body.name.begins_with("Top")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		GlobalValues.health2 = GlobalValues.health2 - 3
+		print("Health: " + str(GlobalValues.health1))
+		print("2 Touched Top")
 		self.queue_free()
 		
 	if(body.name.begins_with("Bottom")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		GlobalValues.health2 = GlobalValues.health2 - 3
+		print("Health: " + str(GlobalValues.health1))
+		print("2 Touched Bottom")
 		self.queue_free()
 		
 	if(body.name.begins_with("Left")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		GlobalValues.health2 = GlobalValues.health2 - 3
+		print("Health: " + str(GlobalValues.health1))
+		print("2 Touched Left")
 		self.queue_free()
 		
 	if(body.name.begins_with("Right")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		GlobalValues.health2 = GlobalValues.health2 - 3
+		print("Health: " + str(GlobalValues.health1))
+		print("2 Touched Right")
 		self.queue_free()	
 
-	if(Player2.health == 0):
-		print("Player 1 Wins!")
 

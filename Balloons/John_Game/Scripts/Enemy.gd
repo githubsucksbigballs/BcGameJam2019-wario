@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	translate(-velocity * delta)
+	translate(-velocity * delta * 2.5)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

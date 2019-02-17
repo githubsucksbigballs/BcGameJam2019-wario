@@ -28,8 +28,8 @@ _sections_unfolded = [ "Resource" ]
 
 [node name="Balloon1" type="Area2D"]
 
-position = Vector2( 11.178, -25.1469 )
-scale = Vector2( 0.201157, 0.227781 )
+position = Vector2( 23.8675, -37.3438 )
+scale = Vector2( 0.480202, 0.542 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -38,6 +38,10 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="col2" type="CollisionShape2D" parent="." index="0"]
 
@@ -51,7 +55,7 @@ position = Vector2( -2.25209, 1.24907 )
 scale = Vector2( 0.61352, 0.515137 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
+frame = 7
 playing = true
 flip_h = true
 

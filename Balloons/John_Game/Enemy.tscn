@@ -45,10 +45,10 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="Right" type="Area2D" parent="." index="1"]
+[node name="Right" type="Area2D" parent="Camera2D" index="0"]
 
-position = Vector2( 414.699, 17.1428 )
-scale = Vector2( 0.380593, 9.84563 )
+position = Vector2( 549.46, 10.8959 )
+scale = Vector2( 0.379344, 11.5312 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -60,38 +60,16 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Right" index="0"]
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
-[node name="RightCol" type="StaticBody2D" parent="Right" index="1" groups=[
-"Enemy",
-]]
+[node name="Left" type="Area2D" parent="Camera2D" index="1"]
 
-position = Vector2( 0, -0.29409 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Right/RightCol" index="0"]
-
-position = Vector2( 0.300049, -1.45828 )
-scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 1 )
-
-[node name="Left" type="Area2D" parent="." index="2"]
-
-position = Vector2( -414.008, 20.0601 )
-scale = Vector2( 0.380593, 10.423 )
+position = Vector2( -526.674, 9.81227 )
+scale = Vector2( 0.380593, 11.3324 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -103,20 +81,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="LeftCol" type="StaticBody2D" parent="Left" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftCol" index="0" groups=[
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Left" index="0" groups=[
 "Enemy",
 ]]
 
@@ -124,18 +89,10 @@ position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Left" index="1" groups=[
-"Enemy",
-]]
+[node name="Bottom" type="Area2D" parent="Camera2D" index="2"]
 
-position = Vector2( 0.300049, -1.45828 )
-scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 1 )
-
-[node name="Bottom" type="Area2D" parent="." index="3"]
-
-position = Vector2( 2.39327, 299.796 )
-scale = Vector2( 12.7325, 0.285445 )
+position = Vector2( -0.223389, 338.796 )
+scale = Vector2( 17.557, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -147,7 +104,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom" index="0" groups=[
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Bottom" index="0" groups=[
 "Enemy",
 ]]
 
@@ -155,10 +112,10 @@ position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
-[node name="Top" type="Area2D" parent="." index="4"]
+[node name="Top" type="Area2D" parent="Camera2D" index="3"]
 
-position = Vector2( 0.448486, -296.347 )
-scale = Vector2( 12.8844, 0.285445 )
+position = Vector2( 5.87378, -351.347 )
+scale = Vector2( 17.3977, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -170,37 +127,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Top" index="0"]
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
-[node name="TopCol" type="StaticBody2D" parent="Top" index="1" groups=[
-"Enemy",
-]]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Top/TopCol" index="0"]
-
-position = Vector2( 0.300049, -1.45828 )
-scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="P1Wins" type="Label" parent="." index="5"]
+[node name="P1Wins" type="Label" parent="." index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -225,7 +158,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="P2Wins" type="Label" parent="." index="6"]
+[node name="P2Wins" type="Label" parent="." index="2"]
 
 visible = false
 anchor_left = 0.0
