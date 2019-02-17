@@ -4,6 +4,7 @@ export (PackedScene) var Asteroid
 
 func _ready():
 	randomize()
+	$MobTimer.start()
 
 func _on_MobTimer_timeout():
 	# Choose a random location on Path2D.

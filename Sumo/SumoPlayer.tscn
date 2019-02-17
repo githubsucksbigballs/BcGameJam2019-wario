@@ -1,0 +1,208 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Sumo/Player3.gd" type="Script" id=1]
+[ext_resource path="res://Sumo/assets/blue1.png" type="Texture" id=2]
+[ext_resource path="res://Sumo/assets/blue2.png" type="Texture" id=3]
+[ext_resource path="res://Sumo/assets/blue3.png" type="Texture" id=4]
+[ext_resource path="res://Sumo/assets/blue_oof1.png" type="Texture" id=5]
+[ext_resource path="res://Sumo/assets/blue_oof2.png" type="Texture" id=6]
+[ext_resource path="res://Sumo/assets/blue_oof3.png" type="Texture" id=7]
+[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=8]
+[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=9]
+[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=10]
+[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=11]
+[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=12]
+[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=13]
+[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 44.2564, 42.2938 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "oof",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "redOof",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "redDefault",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0.994859, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.39502, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+
+flags = 4
+gradient = SubResource( 3 )
+width = 2048
+
+[sub_resource type="Curve" id=5]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.722656 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+
+flags = 4
+width = 2048
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Scale" ]
+
+[node name="SumoPlayer" type="KinematicBody2D"]
+
+position = Vector2( 658.188, 300 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+player_id = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -2.20891, 2.84003 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="1"]
+
+position = Vector2( -2.98269, 2.99792 )
+scale = Vector2( 2.88689, 3.48788 )
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="3"]
+
+show_behind_parent = true
+emitting = true
+amount = 10
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 7 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Visibility" ]
+
+[node name="Bump" type="AudioStreamPlayer2D" parent="." index="4"]
+
+position = Vector2( -658.188, -300 )
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HitStun" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="LoopFix" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = true
+autostart = false
+
+[node name="MessageTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.1
+one_shot = false
+autostart = false
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[connection signal="timeout" from="HitStun" to="." method="_on_HitStun_timeout"]
+
+[connection signal="timeout" from="LoopFix" to="." method="_on_LoopFix_timeout"]
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
+
+

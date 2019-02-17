@@ -1,207 +1,32 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sumo/test.gd" type="Script" id=1]
 [ext_resource path="res://Sumo/Asteroid.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sumo/assets/animated_bg1.png" type="Texture" id=3]
-[ext_resource path="res://Sumo/assets/animated_bg2.png" type="Texture" id=4]
-[ext_resource path="res://Sumo/Player2.gd" type="Script" id=5]
-[ext_resource path="res://Sumo/assets/blue1.png" type="Texture" id=6]
-[ext_resource path="res://Sumo/assets/blue2.png" type="Texture" id=7]
-[ext_resource path="res://Sumo/assets/blue3.png" type="Texture" id=8]
-[ext_resource path="res://Sumo/assets/blue_oof1.png" type="Texture" id=9]
-[ext_resource path="res://Sumo/assets/blue_oof2.png" type="Texture" id=10]
-[ext_resource path="res://Sumo/assets/blue_oof3.png" type="Texture" id=11]
-[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sumo/Player3.gd" type="Script" id=13]
-[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=14]
-[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=15]
-[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=16]
-[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=17]
-[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=18]
-[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=19]
-[ext_resource path="res://cure.ttf" type="DynamicFontData" id=20]
-[ext_resource path="res://Sumo/ScrollingBackground.gd" type="Script" id=21]
-[ext_resource path="res://Sumo/assets/long_bg.png" type="Texture" id=22]
+[ext_resource path="res://Sumo/SumoPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sumo/assets/animated_bg1.png" type="Texture" id=4]
+[ext_resource path="res://Sumo/assets/animated_bg2.png" type="Texture" id=5]
+[ext_resource path="res://cure.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sumo/ScrollingBackground.gd" type="Script" id=7]
+[ext_resource path="res://Sumo/assets/long_bg.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 44.2564, 42.2938 )
-
-[sub_resource type="SpriteFrames" id=3]
-
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "oof",
-"speed": 5.0
-} ]
-
-[sub_resource type="Gradient" id=4]
-
-offsets = PoolRealArray( 0.994859, 1 )
-colors = PoolColorArray( 1, 1, 1, 0.39502, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=5]
-
-flags = 4
-gradient = SubResource( 4 )
-width = 2048
-
-[sub_resource type="Curve" id=6]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0, 0.722656 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-
-flags = 4
-width = 2048
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=8]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 5 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Scale" ]
-
-[sub_resource type="SpriteFrames" id=9]
-
-animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "oof",
-"speed": 10.0
-} ]
-
-[sub_resource type="Gradient" id=10]
-
-offsets = PoolRealArray( 0, 0.00257069, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 0.30502, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=11]
-
-flags = 4
-gradient = SubResource( 10 )
-width = 2048
-
-[sub_resource type="Curve" id=12]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0, 0.741211 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=13]
-
-flags = 4
-width = 2048
-curve = SubResource( 12 )
-
-[sub_resource type="ParticlesMaterial" id=14]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 45.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 1.0
-scale_random = 0.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Scale" ]
-
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=2]
 
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 20 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Curve2D" id=16]
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
@@ -213,184 +38,24 @@ _data = {
 script = ExtResource( 1 )
 Asteroid = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="Player" parent="." index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 200, 300 )
+
+[node name="Player2" parent="." index="1" instance=ExtResource( 3 )]
+
+player_id = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
 visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 1 )
 animation = "default"
-playing = true
-
-[node name="Player2" type="KinematicBody2D" parent="." index="1"]
-
-position = Vector2( 658.188, 300 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2" index="0"]
-
-position = Vector2( -2.20891, 2.84003 )
-shape = SubResource( 2 )
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player2" index="1"]
-
-position = Vector2( -2.98269, 2.99792 )
-scale = Vector2( 2.88689, 3.48788 )
-rect = Rect2( -10, -10, 20, 20 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player2" index="2"]
-
-frames = SubResource( 3 )
-animation = "default"
 frame = 1
 playing = true
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Particles2D" type="Particles2D" parent="Player2" index="3"]
-
-show_behind_parent = true
-emitting = true
-amount = 10
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 8 )
-texture = ExtResource( 6 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Visibility" ]
-
-[node name="Bump" type="AudioStreamPlayer2D" parent="Player2" index="4"]
-
-position = Vector2( -658.188, -300 )
-stream = ExtResource( 12 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
-[node name="Player3" type="KinematicBody2D" parent="." index="2"]
-
-position = Vector2( 142.992, 300 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 13 )
-_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player3" index="0"]
-
-position = Vector2( -2.20891, 2.84003 )
-shape = SubResource( 2 )
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Player3" index="1"]
-
-position = Vector2( -3.86411, 1.95054 )
-scale = Vector2( 1.5776, 1.62052 )
-rect = Rect2( -10, -10, 20, 20 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player3" index="2"]
-
-frames = SubResource( 9 )
-animation = "default"
-frame = 2
-playing = true
-flip_h = true
-
-[node name="Particles2D" type="Particles2D" parent="Player3" index="3"]
-
-show_behind_parent = true
-emitting = true
-amount = 10
-lifetime = 1.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 14 )
-texture = ExtResource( 14 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
-
-[node name="Bump" type="AudioStreamPlayer2D" parent="Player3" index="4"]
-
-position = Vector2( -142.992, -300 )
-stream = ExtResource( 12 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
-[node name="HitStun" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 0.5
-one_shot = true
-autostart = false
-
-[node name="HitStun2" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 0.5
-one_shot = true
-autostart = false
-
-[node name="LoopFix" type="Timer" parent="." index="5"]
-
-process_mode = 1
-wait_time = 0.01
-one_shot = true
-autostart = false
-
-[node name="LoopFix2" type="Timer" parent="." index="6"]
-
-process_mode = 1
-wait_time = 0.01
-one_shot = true
-autostart = false
-
-[node name="MessageTimer" type="Timer" parent="." index="7"]
-
-process_mode = 1
-wait_time = 1.01
-one_shot = true
-autostart = false
-
-[node name="MessageLabel" type="Label" parent="." index="8"]
+[node name="MessageLabel" type="Label" parent="." index="3"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -406,7 +71,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 2 )
 text = "PUSH YOUR OPPONENT
 OFF THE SCREEN!"
 align = 1
@@ -416,18 +81,18 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="MobTimer" type="Timer" parent="." index="9"]
+[node name="MobTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = false
 autostart = false
 
-[node name="MobPath" type="Path2D" parent="." index="10"]
+[node name="MobPath" type="Path2D" parent="." index="5"]
 
 editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 16 )
+curve = SubResource( 3 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
 
@@ -441,7 +106,7 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="11"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
 editor/display_folded = true
 layer = -1
@@ -462,7 +127,7 @@ _sections_unfolded = [ "Scroll" ]
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
-script = ExtResource( 21 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer" index="0"]
@@ -471,44 +136,24 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 3000.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 22 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 
-[node name="WinTimer" type="Timer" parent="." index="12"]
+[node name="WinTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[connection signal="screen_exited" from="Player2/VisibilityNotifier2D" to="Player2" method="_on_VisibilityNotifier2D_screen_exited"]
-
-[connection signal="screen_exited" from="Player3/VisibilityNotifier2D" to="Player3" method="_on_VisibilityNotifier2D_screen_exited"]
-
-[connection signal="timeout" from="HitStun" to="Player3" method="_on_HitStun_timeout"]
-
-[connection signal="timeout" from="HitStun2" to="Player2" method="_on_HitStun2_timeout"]
-
-[connection signal="timeout" from="LoopFix" to="Player3" method="_on_LoopFix_timeout"]
-
-[connection signal="timeout" from="LoopFix2" to="Player2" method="_on_LoopFix2_timeout"]
-
-[connection signal="timeout" from="MessageTimer" to="Player2" method="_on_MessageTimer_timeout"]
-
-[connection signal="timeout" from="MessageTimer" to="Player3" method="_on_MessageTimer_timeout"]
-
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
-
-[connection signal="timeout" from="WinTimer" to="Player2" method="_on_WinTimer_timeout"]
-
-[connection signal="timeout" from="WinTimer" to="Player3" method="_on_WinTimer_timeout"]
 
 

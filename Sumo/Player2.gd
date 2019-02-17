@@ -70,14 +70,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 	get_parent().get_node("WinTimer").start()
 	get_parent().get_node("Player3").win = true
 	
-	
-
-
 func _on_MessageTimer_timeout():
 	get_parent().get_node("MessageLabel").hide()
 	hitstun = false
-	
-
 
 func _on_WinTimer_timeout():
 	queue_free()
