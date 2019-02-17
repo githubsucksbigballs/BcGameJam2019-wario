@@ -67,7 +67,7 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="WaitTime" type="Timer" parent="." index="1"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 1.0
 one_shot = true
 autostart = false
 

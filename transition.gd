@@ -6,13 +6,15 @@ extends CanvasLayer
 var path = ""
 var t = load("res://transition.tscn")
 var inst
-
+var playing = false
 
 func fade_to(scn_path):
-	print("iggkggkg")
-	path = scn_path
-	get_child(0).get_child(0).play("fade")
-	$WaitTime.start()
+	if (!playing):
+		print("iggkggkg")
+		path = scn_path
+		get_child(0).get_child(0).play("fade")
+		$WaitTime.start()
+		playing = true
 
 
 
@@ -28,5 +30,4 @@ func _ready():
 
 
 func _on_WaitTime_timeout():
-	print("big")
 	get_tree().change_scene(path)

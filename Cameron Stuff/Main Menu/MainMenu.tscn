@@ -3,7 +3,7 @@
 [ext_resource path="res://Cameron Stuff/Main Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="MainMenu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -43,7 +43,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-text = "Roblox 2"
+text = "God Ought"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -68,6 +68,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
+text = "Remastered"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
