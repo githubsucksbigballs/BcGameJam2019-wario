@@ -10,9 +10,9 @@ var player = 1
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("p1_right"):
-		velocity.x = SPEED
+		velocity.x = SPEED + GRAVITY
 	elif Input.is_action_pressed("p1_left"):
-		velocity.x = -SPEED
+		velocity.x = -SPEED + GRAVITY
 	else:
 		velocity.x = 0
 		
@@ -26,7 +26,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR) 
 	
 	if Input.is_action_just_pressed("p1_up"):
-		$Jump.play(0.0)
+		$Jump.play(0.1)
 
 	if(GlobalValues.health1 <= 0):
 		velocity.y = 1000
