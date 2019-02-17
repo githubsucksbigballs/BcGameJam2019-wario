@@ -37,37 +37,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="StartLabel" type="Label" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 143.0
-margin_top = 142.0
-margin_right = 679.0
-margin_bottom = 202.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="MessageTimer" type="Timer" parent="." index="3"]
+[node name="MessageTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = true
 
-[node name="P2Score" type="Label" parent="." index="4"]
+[node name="P2Score" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -91,7 +68,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="P1Score" type="Label" parent="." index="5"]
+[node name="P1Score" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -115,7 +92,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="TotalScore" type="Label" parent="." index="6"]
+[node name="TotalScore" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -139,15 +116,6 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="StartTimer" type="Timer" parent="." index="7"]
-
-process_mode = 1
-wait_time = 2.5
-one_shot = false
-autostart = true
-
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
-
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 
 

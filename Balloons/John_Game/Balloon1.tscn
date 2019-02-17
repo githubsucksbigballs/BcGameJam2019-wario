@@ -55,7 +55,7 @@ position = Vector2( -2.25209, 1.24907 )
 scale = Vector2( 0.61352, 0.515137 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 5
+frame = 4
 playing = true
 flip_h = true
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Balloons/John_Game/Scripts/Player1.gd" type="Script" id=1]
 [ext_resource path="res://global_assets/guy_idle_blue1.png" type="Texture" id=2]
 [ext_resource path="res://global_assets/guy_idle_blue2.png" type="Texture" id=3]
 [ext_resource path="res://global_assets/guy_idle_blue3.png" type="Texture" id=4]
 [ext_resource path="res://Balloons/John_Game/Balloon1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -31,9 +32,6 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Body" type="CollisionShape2D" parent="." index="0" groups=[
 "Player1",
@@ -52,6 +50,7 @@ position = Vector2( 6.74884, -4.19208 )
 scale = Vector2( 0.278901, 0.31792 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -68,5 +67,16 @@ position = Vector2( 7.7261, -36.7079 )
 position = Vector2( -15.7584, -29.5718 )
 scale = Vector2( -0.486179, 0.542 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = -1.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

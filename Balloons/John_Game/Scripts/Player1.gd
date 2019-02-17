@@ -24,7 +24,9 @@ func _physics_process(delta):
 #		velocity.y = 0	
 		velocity.y = velocity.y + GRAVITY
 	velocity = move_and_slide(velocity, FLOOR) 
-
+	
+	if Input.is_action_just_pressed("p1_up"):
+		$Jump.play(0.0)
 
 	if(GlobalValues.health1 <= 0):
 		velocity.y = 1000

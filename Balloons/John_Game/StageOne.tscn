@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Balloons/John_Game/StageOne.gd" type="Script" id=1]
 [ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=16]
 [ext_resource path="res://ryan_font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Balloons/John_Game/assets/song2.ogg" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -47,7 +48,7 @@ points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.7334, 10 )
 
-[node name="StageOne" type="Node2D" index="0"]
+[node name="StageOne" type="Node2D"]
 
 position = Vector2( 317.902, 156.834 )
 script = ExtResource( 1 )
@@ -64,6 +65,7 @@ position = Vector2( 71.2224, 246.564 )
 scale = Vector2( 1.19908, 1.36653 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 3
 playing = true
 
 [node name="Ground" parent="." index="2" instance=ExtResource( 7 )]
@@ -516,7 +518,6 @@ position = Vector2( 4.79297, -22.2796 )
 scale = Vector2( 1.13196, 0.892816 )
 frames = SubResource( 3 )
 animation = "default"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -565,7 +566,7 @@ position = Vector2( 0.146362, -2.96289 )
 scale = Vector2( 2.41301, 2.37338 )
 shape = SubResource( 2 )
 
-[node name="Label" type="Label" parent="." index="109"]
+[node name="Lost" type="Label" parent="." index="109"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -588,6 +589,24 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="110"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="111"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="SpaceCeil" to="SpaceCeil" method="_on_SpaceCeil_body_entered"]
 
