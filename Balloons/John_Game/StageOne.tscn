@@ -1,28 +1,71 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Balloons/John_Game/StageOne.gd" type="Script" id=1]
 [ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=2]
-[ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=3]
-[ext_resource path="res://Balloons/John_Game/assets/backgroundearth2.png" type="Texture" id=4]
-[ext_resource path="res://Balloons/John_Game/assets/backgroundearth3.png" type="Texture" id=5]
-[ext_resource path="res://Balloons/John_Game/assets/backgroundearth4.png" type="Texture" id=6]
-[ext_resource path="res://Balloons/John_Game/ground.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Balloons/John_Game/Player1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Balloons/John_Game/Player2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Balloons/John_Game/Battery.tscn" type="PackedScene" id=10]
-[ext_resource path="res://global_assets/generator_0.png" type="Texture" id=11]
-[ext_resource path="res://global_assets/generator_1.png" type="Texture" id=12]
-[ext_resource path="res://global_assets/generator_2.png" type="Texture" id=13]
-[ext_resource path="res://global_assets/generator_3.png" type="Texture" id=14]
-[ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=16]
-[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=17]
-[ext_resource path="res://Balloons/John_Game/assets/song2.ogg" type="AudioStream" id=18]
+[ext_resource path="res://global_assets/planets/neptune/neptune1.png" type="Texture" id=3]
+[ext_resource path="res://global_assets/planets/neptune/neptune3.png" type="Texture" id=4]
+[ext_resource path="res://global_assets/planets/neptune/neptune2.png" type="Texture" id=5]
+[ext_resource path="res://global_assets/planets/neptune/neptune4.png" type="Texture" id=6]
+[ext_resource path="res://global_assets/planets/saturn/saturn1.png" type="Texture" id=7]
+[ext_resource path="res://global_assets/planets/saturn/saturn2.png" type="Texture" id=8]
+[ext_resource path="res://global_assets/planets/saturn/saturn3.png" type="Texture" id=9]
+[ext_resource path="res://global_assets/planets/saturn/saturn4.png" type="Texture" id=10]
+[ext_resource path="res://global_assets/planets/saturn/saturn5.png" type="Texture" id=11]
+[ext_resource path="res://global_assets/planets/saturn/saturn6.png" type="Texture" id=12]
+[ext_resource path="res://global_assets/planets/saturn/saturn7.png" type="Texture" id=13]
+[ext_resource path="res://global_assets/planets/saturn/saturn.png" type="Texture" id=14]
+[ext_resource path="res://global_assets/planets/saturn/saturn8.png" type="Texture" id=15]
+[ext_resource path="res://global_assets/planets/moon/moon1.png" type="Texture" id=16]
+[ext_resource path="res://global_assets/planets/moon/moon2.png" type="Texture" id=17]
+[ext_resource path="res://global_assets/planets/moon/moon3.png" type="Texture" id=18]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=19]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth2.png" type="Texture" id=20]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth3.png" type="Texture" id=21]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth4.png" type="Texture" id=22]
+[ext_resource path="res://Balloons/John_Game/ground.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Balloons/John_Game/Player1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Balloons/John_Game/Player2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Balloons/John_Game/Battery.tscn" type="PackedScene" id=26]
+[ext_resource path="res://global_assets/generator_0.png" type="Texture" id=27]
+[ext_resource path="res://global_assets/generator_1.png" type="Texture" id=28]
+[ext_resource path="res://global_assets/generator_2.png" type="Texture" id=29]
+[ext_resource path="res://global_assets/generator_3.png" type="Texture" id=30]
+[ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=32]
+[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=33]
+[ext_resource path="res://Balloons/John_Game/assets/song2.ogg" type="AudioStream" id=34]
+
+[sub_resource type="SpriteFrames" id=7]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -32,7 +75,7 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "default",
 "speed": 15.0
@@ -59,434 +102,459 @@ position = Vector2( 66.8143, -2615.5 )
 scale = Vector2( 1.19854, 1.74982 )
 texture = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+[node name="neptune" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 336.181, -2796.21 )
+scale = Vector2( 1.92973, 1.66454 )
+frames = SubResource( 7 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="saturn" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -155.531, -5175.87 )
+scale = Vector2( 1.59756, 1.57658 )
+frames = SubResource( 6 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="moon" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 302.398, -4230.33 )
+scale = Vector2( 0.808562, 0.760407 )
+frames = SubResource( 5 )
+animation = "default"
+playing = true
+
+[node name="Generator" type="AnimatedSprite" parent="." index="4"]
 
 position = Vector2( 71.2224, 246.564 )
 scale = Vector2( 1.19908, 1.36653 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 
-[node name="Ground" parent="." index="2" instance=ExtResource( 7 )]
+[node name="Ground" parent="." index="5" instance=ExtResource( 23 )]
 
 position = Vector2( 26.8282, 279.128 )
 scale = Vector2( 2.58316, 0.915729 )
 
-[node name="Player1" parent="." index="3" instance=ExtResource( 8 )]
+[node name="Player1" parent="." index="6" instance=ExtResource( 24 )]
 
 position = Vector2( -85.9576, 241.384 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="Player2" parent="." index="4" instance=ExtResource( 9 )]
+[node name="Player2" parent="." index="7" instance=ExtResource( 25 )]
 
 position = Vector2( 180.432, 235.908 )
 
-[node name="Battery" parent="." index="5" instance=ExtResource( 10 )]
+[node name="Battery" parent="." index="8" instance=ExtResource( 26 )]
 
 position = Vector2( 272.891, -1010.8 )
 
-[node name="Battery101" parent="." index="6" instance=ExtResource( 10 )]
+[node name="Battery101" parent="." index="9" instance=ExtResource( 26 )]
 
 position = Vector2( 241.341, -1054.32 )
 
-[node name="Battery2" parent="." index="7" instance=ExtResource( 10 )]
+[node name="Battery2" parent="." index="10" instance=ExtResource( 26 )]
 
 position = Vector2( -64.5428, -970.854 )
 
-[node name="Battery88" parent="." index="8" instance=ExtResource( 10 )]
+[node name="Battery88" parent="." index="11" instance=ExtResource( 26 )]
 
 position = Vector2( -93.594, -928.494 )
 
-[node name="Battery89" parent="." index="9" instance=ExtResource( 10 )]
+[node name="Battery89" parent="." index="12" instance=ExtResource( 26 )]
 
 position = Vector2( -79.7742, -871.851 )
 
-[node name="Battery90" parent="." index="10" instance=ExtResource( 10 )]
+[node name="Battery90" parent="." index="13" instance=ExtResource( 26 )]
 
 position = Vector2( -36.2565, -846.829 )
 
-[node name="Battery91" parent="." index="11" instance=ExtResource( 10 )]
+[node name="Battery91" parent="." index="14" instance=ExtResource( 26 )]
 
 position = Vector2( 1.82155, -819.63 )
 
-[node name="Battery92" parent="." index="12" instance=ExtResource( 10 )]
+[node name="Battery92" parent="." index="15" instance=ExtResource( 26 )]
 
 position = Vector2( 44.2514, -786.992 )
 
-[node name="Battery93" parent="." index="13" instance=ExtResource( 10 )]
+[node name="Battery93" parent="." index="16" instance=ExtResource( 26 )]
 
 position = Vector2( 77.9776, -758.705 )
 
-[node name="Battery94" parent="." index="14" instance=ExtResource( 10 )]
+[node name="Battery94" parent="." index="17" instance=ExtResource( 26 )]
 
 position = Vector2( 113.88, -729.331 )
 
-[node name="Battery3" parent="." index="15" instance=ExtResource( 10 )]
+[node name="Battery3" parent="." index="18" instance=ExtResource( 26 )]
 
 position = Vector2( -2.43918, -1514.14 )
 
-[node name="Battery4" parent="." index="16" instance=ExtResource( 10 )]
+[node name="Battery4" parent="." index="19" instance=ExtResource( 26 )]
 
 position = Vector2( 135.089, -996.056 )
 
-[node name="Battery78" parent="." index="17" instance=ExtResource( 10 )]
+[node name="Battery78" parent="." index="20" instance=ExtResource( 26 )]
 
 position = Vector2( 163.853, -1022.11 )
 
-[node name="Battery5" parent="." index="18" instance=ExtResource( 10 )]
+[node name="Battery5" parent="." index="21" instance=ExtResource( 26 )]
 
 position = Vector2( 10.852, -983.296 )
 
-[node name="Battery82" parent="." index="19" instance=ExtResource( 10 )]
+[node name="Battery82" parent="." index="22" instance=ExtResource( 26 )]
 
 position = Vector2( -27.6372, -2069.26 )
 
-[node name="Battery83" parent="." index="20" instance=ExtResource( 10 )]
+[node name="Battery83" parent="." index="23" instance=ExtResource( 26 )]
 
 position = Vector2( 43.0792, -2067.08 )
 
-[node name="Battery84" parent="." index="21" instance=ExtResource( 10 )]
+[node name="Battery84" parent="." index="24" instance=ExtResource( 26 )]
 
 position = Vector2( 102.916, -2081.23 )
 
-[node name="Battery85" parent="." index="22" instance=ExtResource( 10 )]
+[node name="Battery85" parent="." index="25" instance=ExtResource( 26 )]
 
 position = Vector2( 157.313, -2104.07 )
 
-[node name="Battery86" parent="." index="23" instance=ExtResource( 10 )]
+[node name="Battery86" parent="." index="26" instance=ExtResource( 26 )]
 
 position = Vector2( 208.447, -2128.01 )
 
-[node name="Battery87" parent="." index="24" instance=ExtResource( 10 )]
+[node name="Battery87" parent="." index="27" instance=ExtResource( 26 )]
 
 position = Vector2( 263.932, -2156.3 )
 
-[node name="Battery6" parent="." index="25" instance=ExtResource( 10 )]
+[node name="Battery6" parent="." index="28" instance=ExtResource( 26 )]
 
 position = Vector2( 248.038, -2456.32 )
 
-[node name="Battery7" parent="." index="26" instance=ExtResource( 10 )]
+[node name="Battery7" parent="." index="29" instance=ExtResource( 26 )]
 
 position = Vector2( -1.74673, -1472.93 )
 
-[node name="Battery79" parent="." index="27" instance=ExtResource( 10 )]
+[node name="Battery79" parent="." index="30" instance=ExtResource( 26 )]
 
 position = Vector2( 195.477, -1730.5 )
 
-[node name="Battery80" parent="." index="28" instance=ExtResource( 10 )]
+[node name="Battery80" parent="." index="31" instance=ExtResource( 26 )]
 
 position = Vector2( 194.765, -1685.09 )
 
-[node name="Battery81" parent="." index="29" instance=ExtResource( 10 )]
+[node name="Battery81" parent="." index="32" instance=ExtResource( 26 )]
 
 position = Vector2( 194.765, -1636.83 )
 
-[node name="Battery8" parent="." index="30" instance=ExtResource( 10 )]
+[node name="Battery8" parent="." index="33" instance=ExtResource( 26 )]
 
 position = Vector2( 89.4038, -939.34 )
 
-[node name="Battery9" parent="." index="31" instance=ExtResource( 10 )]
+[node name="Battery9" parent="." index="34" instance=ExtResource( 26 )]
 
 position = Vector2( 146.316, -688.493 )
 
-[node name="Battery95" parent="." index="32" instance=ExtResource( 10 )]
+[node name="Battery95" parent="." index="35" instance=ExtResource( 26 )]
 
 position = Vector2( 163.723, -735.275 )
 
-[node name="Battery96" parent="." index="33" instance=ExtResource( 10 )]
+[node name="Battery96" parent="." index="36" instance=ExtResource( 26 )]
 
 position = Vector2( 178.954, -784.232 )
 
-[node name="Battery97" parent="." index="34" instance=ExtResource( 10 )]
+[node name="Battery97" parent="." index="37" instance=ExtResource( 26 )]
 
 position = Vector2( 196.361, -834.278 )
 
-[node name="Battery98" parent="." index="35" instance=ExtResource( 10 )]
+[node name="Battery98" parent="." index="38" instance=ExtResource( 26 )]
 
 position = Vector2( 213.769, -879.971 )
 
-[node name="Battery99" parent="." index="36" instance=ExtResource( 10 )]
+[node name="Battery99" parent="." index="39" instance=ExtResource( 26 )]
 
 position = Vector2( 239.879, -921.313 )
 
-[node name="Battery100" parent="." index="37" instance=ExtResource( 10 )]
+[node name="Battery100" parent="." index="40" instance=ExtResource( 26 )]
 
 position = Vector2( 268.166, -963.743 )
 
-[node name="Battery10" parent="." index="38" instance=ExtResource( 10 )]
+[node name="Battery10" parent="." index="41" instance=ExtResource( 26 )]
 
 position = Vector2( 196.881, -1047.31 )
 
-[node name="Battery11" parent="." index="39" instance=ExtResource( 10 )]
+[node name="Battery11" parent="." index="42" instance=ExtResource( 26 )]
 
 position = Vector2( -28.205, -987.735 )
 
-[node name="Battery12" parent="." index="40" instance=ExtResource( 10 )]
+[node name="Battery12" parent="." index="43" instance=ExtResource( 26 )]
 
 position = Vector2( -1.93124, -1429.54 )
 
-[node name="Battery13" parent="." index="41" instance=ExtResource( 10 )]
+[node name="Battery13" parent="." index="44" instance=ExtResource( 26 )]
 
 position = Vector2( 111.367, -970.061 )
 
-[node name="Battery14" parent="." index="42" instance=ExtResource( 10 )]
+[node name="Battery14" parent="." index="45" instance=ExtResource( 26 )]
 
 position = Vector2( 51.5725, -963.345 )
 
-[node name="Battery15" parent="." index="43" instance=ExtResource( 10 )]
+[node name="Battery15" parent="." index="46" instance=ExtResource( 26 )]
 
 position = Vector2( -96.9778, -2439.9 )
 
-[node name="Battery16" parent="." index="44" instance=ExtResource( 10 )]
+[node name="Battery16" parent="." index="47" instance=ExtResource( 26 )]
 
 position = Vector2( -253.366, -3607.94 )
 
-[node name="Battery17" parent="." index="45" instance=ExtResource( 10 )]
+[node name="Battery17" parent="." index="48" instance=ExtResource( 26 )]
 
 position = Vector2( -233.789, -3550.43 )
 
-[node name="Battery18" parent="." index="46" instance=ExtResource( 10 )]
+[node name="Battery18" parent="." index="49" instance=ExtResource( 26 )]
 
 position = Vector2( -181.175, -3605.5 )
 
-[node name="Battery19" parent="." index="47" instance=ExtResource( 10 )]
+[node name="Battery19" parent="." index="50" instance=ExtResource( 26 )]
 
 position = Vector2( 206.703, -3291.03 )
 
-[node name="Battery20" parent="." index="48" instance=ExtResource( 10 )]
+[node name="Battery20" parent="." index="51" instance=ExtResource( 26 )]
 
 position = Vector2( 239.74, -3229.85 )
 
-[node name="Battery21" parent="." index="49" instance=ExtResource( 10 )]
+[node name="Battery21" parent="." index="52" instance=ExtResource( 26 )]
 
 position = Vector2( 283.789, -3293.48 )
 
-[node name="Battery22" parent="." index="50" instance=ExtResource( 10 )]
+[node name="Battery22" parent="." index="53" instance=ExtResource( 26 )]
 
-position = Vector2( 442.856, -3649.55 )
+position = Vector2( 320.617, -3751.41 )
 
-[node name="Battery23" parent="." index="51" instance=ExtResource( 10 )]
+[node name="Battery23" parent="." index="54" instance=ExtResource( 26 )]
 
-position = Vector2( 402.478, -3603.05 )
+position = Vector2( 327.776, -3696.77 )
 
-[node name="Battery24" parent="." index="52" instance=ExtResource( 10 )]
+[node name="Battery24" parent="." index="55" instance=ExtResource( 26 )]
 
-position = Vector2( 370.664, -3654.44 )
+position = Vector2( 275.589, -3715.56 )
 
-[node name="Battery25" parent="." index="53" instance=ExtResource( 10 )]
+[node name="Battery25" parent="." index="56" instance=ExtResource( 26 )]
 
 position = Vector2( -182.398, -3041.42 )
 
-[node name="Battery26" parent="." index="54" instance=ExtResource( 10 )]
+[node name="Battery26" parent="." index="57" instance=ExtResource( 26 )]
 
 position = Vector2( -139.573, -3001.04 )
 
-[node name="Battery27" parent="." index="55" instance=ExtResource( 10 )]
+[node name="Battery27" parent="." index="58" instance=ExtResource( 26 )]
 
 position = Vector2( -200.752, -2990.03 )
 
-[node name="Battery28" parent="." index="56" instance=ExtResource( 10 )]
+[node name="Battery28" parent="." index="59" instance=ExtResource( 26 )]
 
 position = Vector2( -33.9422, -4866.12 )
 
-[node name="Battery60" parent="." index="57" instance=ExtResource( 10 )]
+[node name="Battery60" parent="." index="60" instance=ExtResource( 26 )]
 
 position = Vector2( 211.099, -4867.04 )
 
-[node name="Battery52" parent="." index="58" instance=ExtResource( 10 )]
+[node name="Battery52" parent="." index="61" instance=ExtResource( 26 )]
 
 position = Vector2( -51.1591, -4870.57 )
 
-[node name="Battery56" parent="." index="59" instance=ExtResource( 10 )]
+[node name="Battery56" parent="." index="62" instance=ExtResource( 26 )]
 
 position = Vector2( 193.882, -4871.48 )
 
-[node name="Battery51" parent="." index="60" instance=ExtResource( 10 )]
+[node name="Battery51" parent="." index="63" instance=ExtResource( 26 )]
 
 position = Vector2( -71.4952, -4872.36 )
 
-[node name="Battery57" parent="." index="61" instance=ExtResource( 10 )]
+[node name="Battery57" parent="." index="64" instance=ExtResource( 26 )]
 
 position = Vector2( 173.546, -4873.27 )
 
-[node name="Battery29" parent="." index="62" instance=ExtResource( 10 )]
+[node name="Battery29" parent="." index="65" instance=ExtResource( 26 )]
 
 position = Vector2( -90.0994, -4866.12 )
 
-[node name="Battery68" parent="." index="63" instance=ExtResource( 10 )]
+[node name="Battery68" parent="." index="66" instance=ExtResource( 26 )]
 
 position = Vector2( 154.942, -4867.03 )
 
-[node name="Battery30" parent="." index="64" instance=ExtResource( 10 )]
+[node name="Battery30" parent="." index="67" instance=ExtResource( 26 )]
 
 position = Vector2( -107.823, -4854.42 )
 
-[node name="Battery63" parent="." index="65" instance=ExtResource( 10 )]
+[node name="Battery63" parent="." index="68" instance=ExtResource( 26 )]
 
 position = Vector2( 137.219, -4855.33 )
 
-[node name="Battery31" parent="." index="66" instance=ExtResource( 10 )]
+[node name="Battery31" parent="." index="69" instance=ExtResource( 26 )]
 
 position = Vector2( -120.796, -4842.71 )
 
-[node name="Battery69" parent="." index="67" instance=ExtResource( 10 )]
+[node name="Battery69" parent="." index="70" instance=ExtResource( 26 )]
 
 position = Vector2( 124.245, -4843.63 )
 
-[node name="Battery32" parent="." index="68" instance=ExtResource( 10 )]
+[node name="Battery32" parent="." index="71" instance=ExtResource( 26 )]
 
 position = Vector2( -124.272, -4818.38 )
 
-[node name="Battery59" parent="." index="69" instance=ExtResource( 10 )]
+[node name="Battery59" parent="." index="72" instance=ExtResource( 26 )]
 
 position = Vector2( 120.77, -4819.3 )
 
-[node name="Battery33" parent="." index="70" instance=ExtResource( 10 )]
+[node name="Battery33" parent="." index="73" instance=ExtResource( 26 )]
 
 position = Vector2( -126.754, -4793.06 )
 
-[node name="Battery71" parent="." index="71" instance=ExtResource( 10 )]
+[node name="Battery71" parent="." index="74" instance=ExtResource( 26 )]
 
 position = Vector2( 118.287, -4793.98 )
 
-[node name="Battery34" parent="." index="72" instance=ExtResource( 10 )]
+[node name="Battery34" parent="." index="75" instance=ExtResource( 26 )]
 
 position = Vector2( -128.74, -4772.71 )
 
-[node name="Battery72" parent="." index="73" instance=ExtResource( 10 )]
+[node name="Battery72" parent="." index="76" instance=ExtResource( 26 )]
 
 position = Vector2( 116.301, -4773.62 )
 
-[node name="Battery35" parent="." index="74" instance=ExtResource( 10 )]
+[node name="Battery35" parent="." index="77" instance=ExtResource( 26 )]
 
 position = Vector2( -130.23, -4751.36 )
 
-[node name="Battery75" parent="." index="75" instance=ExtResource( 10 )]
+[node name="Battery75" parent="." index="78" instance=ExtResource( 26 )]
 
 position = Vector2( 114.812, -4752.27 )
 
-[node name="Battery36" parent="." index="76" instance=ExtResource( 10 )]
+[node name="Battery36" parent="." index="79" instance=ExtResource( 26 )]
 
 position = Vector2( -130.726, -4725.54 )
 
-[node name="Battery74" parent="." index="77" instance=ExtResource( 10 )]
+[node name="Battery74" parent="." index="80" instance=ExtResource( 26 )]
 
 position = Vector2( 114.315, -4726.45 )
 
-[node name="Battery37" parent="." index="78" instance=ExtResource( 10 )]
+[node name="Battery37" parent="." index="81" instance=ExtResource( 26 )]
 
 position = Vector2( -125.761, -4704.68 )
 
-[node name="Battery58" parent="." index="79" instance=ExtResource( 10 )]
+[node name="Battery58" parent="." index="82" instance=ExtResource( 26 )]
 
 position = Vector2( 119.28, -4705.6 )
 
-[node name="Battery38" parent="." index="80" instance=ExtResource( 10 )]
+[node name="Battery38" parent="." index="83" instance=ExtResource( 26 )]
 
 position = Vector2( -112.852, -4693.26 )
 
-[node name="Battery64" parent="." index="81" instance=ExtResource( 10 )]
+[node name="Battery64" parent="." index="84" instance=ExtResource( 26 )]
 
 position = Vector2( 132.189, -4694.18 )
 
-[node name="Battery39" parent="." index="82" instance=ExtResource( 10 )]
+[node name="Battery39" parent="." index="85" instance=ExtResource( 26 )]
 
 position = Vector2( -95.9705, -4687.31 )
 
-[node name="Battery54" parent="." index="83" instance=ExtResource( 10 )]
+[node name="Battery54" parent="." index="86" instance=ExtResource( 26 )]
 
 position = Vector2( 149.071, -4688.22 )
 
-[node name="Battery40" parent="." index="84" instance=ExtResource( 10 )]
+[node name="Battery40" parent="." index="87" instance=ExtResource( 26 )]
 
 position = Vector2( -74.6205, -4684.82 )
 
-[node name="Battery73" parent="." index="85" instance=ExtResource( 10 )]
+[node name="Battery73" parent="." index="88" instance=ExtResource( 26 )]
 
 position = Vector2( 170.421, -4685.74 )
 
-[node name="Battery41" parent="." index="86" instance=ExtResource( 10 )]
+[node name="Battery41" parent="." index="89" instance=ExtResource( 26 )]
 
 position = Vector2( -58.2356, -4688.8 )
 
-[node name="Battery55" parent="." index="87" instance=ExtResource( 10 )]
+[node name="Battery55" parent="." index="90" instance=ExtResource( 26 )]
 
 position = Vector2( 186.806, -4689.71 )
 
-[node name="Battery42" parent="." index="88" instance=ExtResource( 10 )]
+[node name="Battery42" parent="." index="91" instance=ExtResource( 26 )]
 
 position = Vector2( -39.8647, -4693.26 )
 
-[node name="Battery53" parent="." index="89" instance=ExtResource( 10 )]
+[node name="Battery53" parent="." index="92" instance=ExtResource( 26 )]
 
 position = Vector2( 205.177, -4694.18 )
 
-[node name="Battery43" parent="." index="90" instance=ExtResource( 10 )]
+[node name="Battery43" parent="." index="93" instance=ExtResource( 26 )]
 
 position = Vector2( -23.9763, -4704.68 )
 
-[node name="Battery76" parent="." index="91" instance=ExtResource( 10 )]
+[node name="Battery76" parent="." index="94" instance=ExtResource( 26 )]
 
 position = Vector2( 221.065, -4705.6 )
 
-[node name="Battery44" parent="." index="92" instance=ExtResource( 10 )]
+[node name="Battery44" parent="." index="95" instance=ExtResource( 26 )]
 
 position = Vector2( -12.0601, -4719.58 )
 
-[node name="Battery70" parent="." index="93" instance=ExtResource( 10 )]
+[node name="Battery70" parent="." index="96" instance=ExtResource( 26 )]
 
 position = Vector2( 232.981, -4720.49 )
 
-[node name="Battery45" parent="." index="94" instance=ExtResource( 10 )]
+[node name="Battery45" parent="." index="97" instance=ExtResource( 26 )]
 
 position = Vector2( -13.0531, -4737.45 )
 
-[node name="Battery66" parent="." index="95" instance=ExtResource( 10 )]
+[node name="Battery66" parent="." index="98" instance=ExtResource( 26 )]
 
 position = Vector2( 231.988, -4738.37 )
 
-[node name="Battery46" parent="." index="96" instance=ExtResource( 10 )]
+[node name="Battery46" parent="." index="99" instance=ExtResource( 26 )]
 
 position = Vector2( -17.0251, -4756.32 )
 
-[node name="Battery65" parent="." index="97" instance=ExtResource( 10 )]
+[node name="Battery65" parent="." index="100" instance=ExtResource( 26 )]
 
 position = Vector2( 228.016, -4757.23 )
 
-[node name="Battery47" parent="." index="98" instance=ExtResource( 10 )]
+[node name="Battery47" parent="." index="101" instance=ExtResource( 26 )]
 
 position = Vector2( -26.4589, -4764.76 )
 
-[node name="Battery67" parent="." index="99" instance=ExtResource( 10 )]
+[node name="Battery67" parent="." index="102" instance=ExtResource( 26 )]
 
 position = Vector2( 218.582, -4765.68 )
 
-[node name="Battery48" parent="." index="100" instance=ExtResource( 10 )]
+[node name="Battery48" parent="." index="103" instance=ExtResource( 26 )]
 
 position = Vector2( -42.8437, -4767.74 )
 
-[node name="Battery77" parent="." index="101" instance=ExtResource( 10 )]
+[node name="Battery77" parent="." index="104" instance=ExtResource( 26 )]
 
 position = Vector2( 202.198, -4768.65 )
 
-[node name="Battery49" parent="." index="102" instance=ExtResource( 10 )]
+[node name="Battery49" parent="." index="105" instance=ExtResource( 26 )]
 
 position = Vector2( -58.7321, -4767.74 )
 
-[node name="Battery62" parent="." index="103" instance=ExtResource( 10 )]
+[node name="Battery62" parent="." index="106" instance=ExtResource( 26 )]
 
 position = Vector2( 186.309, -4768.65 )
 
-[node name="Battery50" parent="." index="104" instance=ExtResource( 10 )]
+[node name="Battery50" parent="." index="107" instance=ExtResource( 26 )]
 
 position = Vector2( -67.6693, -4767.24 )
 
-[node name="Battery61" parent="." index="105" instance=ExtResource( 10 )]
+[node name="Battery61" parent="." index="108" instance=ExtResource( 26 )]
 
 position = Vector2( 177.372, -4768.16 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="106"]
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="109"]
 
 position = Vector2( 57.2109, 231.827 )
 scale = Vector2( 2.30589, 2.63946 )
@@ -518,7 +586,6 @@ position = Vector2( 4.79297, -22.2796 )
 scale = Vector2( 1.13196, 0.892816 )
 frames = SubResource( 3 )
 animation = "default"
-frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -533,12 +600,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Enemy" parent="." index="107" instance=ExtResource( 15 )]
+[node name="Enemy" parent="." index="110" instance=ExtResource( 31 )]
 
 position = Vector2( 53.2473, 180.229 )
 velocity = Vector2( 0, 50 )
 
-[node name="SpaceCeil" type="Area2D" parent="." index="108"]
+[node name="SpaceCeil" type="Area2D" parent="." index="111"]
 
 modulate = Color( 0.886719, 0.109648, 0.109648, 1 )
 self_modulate = Color( 0.773438, 0.118511, 0.118511, 1 )
@@ -551,7 +618,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 16 )
+script = ExtResource( 32 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="EndTimer" type="Timer" parent="SpaceCeil" index="0"]
@@ -567,7 +634,7 @@ position = Vector2( 0.146362, -2.96289 )
 scale = Vector2( 2.41301, 2.37338 )
 shape = SubResource( 2 )
 
-[node name="Lost" type="Label" parent="." index="109"]
+[node name="Lost" type="Label" parent="." index="112"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -583,7 +650,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 33 )
 text = "Not enough batteries loser."
 align = 1
 percent_visible = 1.0
@@ -591,9 +658,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="110"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="113"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 34 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
