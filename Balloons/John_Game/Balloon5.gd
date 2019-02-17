@@ -15,33 +15,31 @@ func _ready():
 #	pass
 
 
-
-func _on_Balloon_body_shape_entered(body_id, body, body_shape, area_shape):
-	if(body.name.begins_with("Player1")):
-		Player2.health = Player2.health - 1
-		print(Player2.health)
+func _on_Balloon5_body_shape_entered(body_id, body, body_shape, area_shape):
+	if(body.name.begins_with("Player2")):
+		Player1.health = Player1.health - 1
+		print(Player1.health)
 		self.queue_free()
-
 	if(body.name.begins_with("Top")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		Player1.health = Player1.health - 3
+		print(Player1.health)
 		self.queue_free()
 		
 	if(body.name.begins_with("Bottom")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		Player1.health = Player1.health - 3
+		print(Player1.health)
 		self.queue_free()
 		
 	if(body.name.begins_with("Left")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		Player1.health = Player1.health - 3
+		print(Player1.health)
 		self.queue_free()
 		
 	if(body.name.begins_with("Right")):
-		Player2.health = Player2.health - 3
-		print(Player2.health)
+		Player1.health = Player1.health - 3
+		print(Player1.health)
 		self.queue_free()	
-
-	if(Player2.health == 0):
-		print("Player 1 Wins!")
+		
+	if(Player1.health == 0):
+		print("Player2 Wins!")
 	pass # replace with function body
