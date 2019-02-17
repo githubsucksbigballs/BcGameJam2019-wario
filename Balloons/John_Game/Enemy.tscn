@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Camera" type="Area2D" index="0"]
+[node name="Camera" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -46,8 +46,8 @@ editor_draw_drag_margin = false
 
 [node name="Right" type="Area2D" parent="." index="1"]
 
-position = Vector2( 178.404, 1.58195 )
-scale = Vector2( 0.380593, 3.3064 )
+position = Vector2( 414.699, 17.1428 )
+scale = Vector2( 0.380593, 9.84563 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -55,6 +55,9 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right" index="0"]
 
@@ -66,6 +69,7 @@ shape = SubResource( 2 )
 "Enemy",
 ]]
 
+position = Vector2( 0, -0.29409 )
 scale = Vector2( 1, 1 )
 input_pickable = false
 collision_layer = 1
@@ -86,8 +90,8 @@ shape = SubResource( 2 )
 
 [node name="Left" type="Area2D" parent="." index="2"]
 
-position = Vector2( -179.658, 2.79984 )
-scale = Vector2( 0.380593, 3.3064 )
+position = Vector2( -414.008, 20.0601 )
+scale = Vector2( 0.380593, 10.423 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -95,6 +99,9 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="LeftCol" type="StaticBody2D" parent="Left" index="0"]
 
@@ -128,8 +135,8 @@ shape = SubResource( 2 )
 
 [node name="Bottom" type="Area2D" parent="." index="3"]
 
-position = Vector2( -4.22934, 104.342 )
-scale = Vector2( 6.52556, 0.285445 )
+position = Vector2( 2.39327, 299.796 )
+scale = Vector2( 12.7325, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -137,6 +144,9 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom" index="0" groups=[
 "Enemy",
@@ -146,10 +156,14 @@ position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 2 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Bottom" index="1"]
+
+animation = "default"
+
 [node name="Top" type="Area2D" parent="." index="4"]
 
-position = Vector2( -0.575653, -110.617 )
-scale = Vector2( 6.52556, 0.285445 )
+position = Vector2( 0.448486, -296.347 )
+scale = Vector2( 12.8844, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -157,6 +171,9 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" index="0"]
 
@@ -185,5 +202,8 @@ __meta__ = {
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 

@@ -1,12 +1,27 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://John_Game/assets/SpaceBackground.png" type="Texture" id=1]
-[ext_resource path="res://John_Game/ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://John_Game/Player1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://John_Game/P1Win.gd" type="Script" id=4]
-[ext_resource path="res://John_Game/Player2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://John_Game/P2Win.gd" type="Script" id=6]
-[ext_resource path="res://John_Game/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://John_Game/assets/backgroundearth1.png" type="Texture" id=2]
+[ext_resource path="res://John_Game/assets/backgroundearth2.png" type="Texture" id=3]
+[ext_resource path="res://John_Game/assets/backgroundearth3.png" type="Texture" id=4]
+[ext_resource path="res://John_Game/assets/backgroundearth4.png" type="Texture" id=5]
+[ext_resource path="res://John_Game/ground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://John_Game/Player1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://John_Game/P1Win.gd" type="Script" id=8]
+[ext_resource path="res://John_Game/Player2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://John_Game/P2Win.gd" type="Script" id=10]
+[ext_resource path="res://John_Game/Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://John_Game/SpaceCeil.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,22 +30,33 @@ extents = Vector2( 10, 10 )
 
 [node name="StageOne" type="Node2D"]
 
-position = Vector2( 90.7555, 68.0056 )
+position = Vector2( 317.902, 156.834 )
 
 [node name="SpaceBackground" type="Sprite" parent="." index="0"]
 
-position = Vector2( 61.1671, -220.734 )
-scale = Vector2( 0.868342, 0.722282 )
+position = Vector2( 57.9599, -786.393 )
+scale = Vector2( 2.30529, 2.71362 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Ground" parent="." index="1" instance=ExtResource( 2 )]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 15.0515, 67.2861 )
+position = Vector2( 57.7241, 96.033 )
+scale = Vector2( 1.19908, 1.36653 )
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+[node name="Ground" parent="." index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 25.0057, 227.449 )
 scale = Vector2( 1.39033, 0.915729 )
 
-[node name="Player1" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Player1" parent="." index="3" instance=ExtResource( 7 )]
 
-position = Vector2( 0, -0.400681 )
+position = Vector2( 9.95418, 159.763 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="P1Win" type="Label" parent="Player1" index="6"]
@@ -54,12 +80,12 @@ text = "Player 1 Wins!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Player2" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Player2" parent="." index="4" instance=ExtResource( 9 )]
 
-position = Vector2( 110.229, 0.515625 )
+position = Vector2( 120.183, 160.679 )
 
 [node name="P2Win" type="Label" parent="Player2" index="6"]
 
@@ -82,19 +108,19 @@ text = "Player 2 Wins!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="Enemy" parent="." index="4" instance=ExtResource( 7 )]
+[node name="Enemy" parent="." index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 58.0603, 31.3088 )
+position = Vector2( 68.0145, 191.472 )
 velocity = Vector2( 0, 50 )
 
-[node name="SpaceCeil" type="Area2D" parent="." index="5"]
+[node name="SpaceCeil" type="Area2D" parent="." index="6"]
 
 modulate = Color( 0.886719, 0.109648, 0.109648, 1 )
 self_modulate = Color( 0.773438, 0.118511, 0.118511, 1 )
-position = Vector2( 61.2074, -545.272 )
+position = Vector2( 71.1615, -385.109 )
 scale = Vector2( 5.62257, -0.678145 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -103,12 +129,15 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 12 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCeil" index="0"]
 
-position = Vector2( 0.203316, 2.07385 )
-scale = Vector2( 3.66307, 2.37338 )
+position = Vector2( 1.36922, 2484.62 )
+scale = Vector2( 7.0184, 2.37338 )
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="SpaceCeil" to="SpaceCeil" method="_on_SpaceCeil_body_entered"]
 
 

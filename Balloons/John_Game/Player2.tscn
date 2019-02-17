@@ -1,20 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://John_Game/Scripts/Player2.gd" type="Script" id=1]
 [ext_resource path="res://John_Game/Scripts/Area2.gd" type="Script" id=2]
 [ext_resource path="res://John_Game/Scripts/OnScreen2.gd" type="Script" id=3]
-[ext_resource path="res://John_Game/Scripts/Balloon1.gd" type="Script" id=4]
-[ext_resource path="res://John_Game/assets/balloon1.png" type="Texture" id=5]
-[ext_resource path="res://John_Game/assets/balloon2.png" type="Texture" id=6]
-[ext_resource path="res://John_Game/assets/balloon3.png" type="Texture" id=7]
-[ext_resource path="res://John_Game/assets/balloon4.png" type="Texture" id=8]
-[ext_resource path="res://John_Game/assets/balloon5.png" type="Texture" id=9]
-[ext_resource path="res://John_Game/assets/balloon6.png" type="Texture" id=10]
-[ext_resource path="res://John_Game/assets/balloon7.png" type="Texture" id=11]
-[ext_resource path="res://John_Game/assets/balloon8.png" type="Texture" id=12]
-[ext_resource path="res://John_Game/Scripts/Balloon2.gd" type="Script" id=13]
-[ext_resource path="res://John_Game/assets/guy_idle_blue1.png" type="Texture" id=14]
-[ext_resource path="res://John_Game/assets/guy_idle_blue2.png" type="Texture" id=15]
+[ext_resource path="res://John_Game/assets/guy_idle_blue1.png" type="Texture" id=4]
+[ext_resource path="res://John_Game/assets/guy_idle_blue2.png" type="Texture" id=5]
+[ext_resource path="res://John_Game/Balloon.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=6]
 
@@ -22,41 +13,10 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
-
-[sub_resource type="SpriteFrames" id=4]
-
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 15.0
-} ]
-_sections_unfolded = [ "Resource" ]
-
-[sub_resource type="CapsuleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
-
-[sub_resource type="SpriteFrames" id=5]
-
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 15.0
-} ]
-
 [sub_resource type="SpriteFrames" id=7]
 
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -106,77 +66,26 @@ process_parent = false
 physics_process_parent = false
 script = ExtResource( 3 )
 
-[node name="Balloon1" type="Area2D" parent="." index="3"]
-
-position = Vector2( -4.02103, -26.0581 )
-scale = Vector2( 0.187234, 0.218779 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="col1" type="CollisionShape2D" parent="Balloon1" index="0"]
-
-position = Vector2( -5.44056, 4.12159 )
-scale = Vector2( 2.98419, 1.70014 )
-shape = SubResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Balloon1" index="1"]
-
-position = Vector2( -5.25507, 7.374 )
-scale = Vector2( 0.682006, 0.55371 )
-frames = SubResource( 4 )
-animation = "default"
-frame = 6
-playing = true
-
-[node name="Balloon2" type="Area2D" parent="." index="4"]
-
-position = Vector2( 11.178, -25.1469 )
-scale = Vector2( 0.201157, 0.227781 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 13 )
-
-[node name="col2" type="CollisionShape2D" parent="Balloon2" index="0"]
-
-position = Vector2( 0.0353546, -0.943756 )
-scale = Vector2( 2.72095, 1.62608 )
-shape = SubResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Balloon2" index="1"]
-
-position = Vector2( -2.25209, 1.24907 )
-scale = Vector2( 0.61352, 0.515137 )
-frames = SubResource( 5 )
-animation = "default"
-frame = 4
-playing = true
-flip_h = true
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="5"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 2.69788, 3.05169 )
 scale = Vector2( 0.271674, 0.300555 )
 frames = SubResource( 7 )
 animation = "default"
 
+[node name="Balloon" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 13.089, -18.1177 )
+
+[node name="Balloon2" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 3.04039, -23.0472 )
+
+[node name="Balloon3" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( -6.72378, -18.5917 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="viewport_exited" from="OnScreen2" to="OnScreen2" method="_on_OnScreen2_viewport_exited"]
-
-[connection signal="body_shape_entered" from="Balloon1" to="Balloon1" method="_on_Balloon1_body_shape_entered"]
-
-[connection signal="body_shape_entered" from="Balloon2" to="Balloon2" method="_on_Balloon2_body_shape_entered"]
 
 
