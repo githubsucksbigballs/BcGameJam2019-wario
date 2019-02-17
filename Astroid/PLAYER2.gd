@@ -29,20 +29,20 @@ func game_overP2():
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
-	if Input.is_action_pressed("p1_d"):
+	if Input.is_action_pressed("p1_right"):
 		velocity.x = SPEED; 
-	elif Input.is_action_pressed("p1_a"):
+	elif Input.is_action_pressed("p1_left"):
 		velocity.x = -SPEED
 	else:
 		velocity.x = 0
 		
-	if Input.is_action_pressed("p1_w"):
+	if Input.is_action_pressed("p1_up"):
 		if onGround == true:
 			velocity.y = JUMP_POWER;
 			onGround = false;
-		if onGround == false && Input.is_action_pressed("p1_d"):
+		if onGround == false && Input.is_action_pressed("p1_right"):
 			velocity.x = SuperSPEED;
-		if onGround == false && Input.is_action_pressed("p1_a"):
+		if onGround == false && Input.is_action_pressed("p1_left"):
 			velocity.x = -SuperSPEED;
 			
 		

@@ -29,6 +29,7 @@ animations = [ {
 
 [node name="PLAYER2" type="KinematicBody2D"]
 
+visible = false
 scale = Vector2( 0.5, 0.5 )
 input_pickable = false
 collision_layer = 1
@@ -45,6 +46,7 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 

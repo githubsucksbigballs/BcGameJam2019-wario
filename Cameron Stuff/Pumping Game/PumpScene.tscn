@@ -37,13 +37,13 @@ animations = [ {
 
 script = ExtResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+[node name="BG" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 300, 120 )
+position = Vector2( 305.552, 120 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

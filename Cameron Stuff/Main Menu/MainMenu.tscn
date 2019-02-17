@@ -3,7 +3,7 @@
 [ext_resource path="res://Cameron Stuff/Main Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -43,7 +43,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-text = "God Ought"
+text = "Charging Up!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -68,7 +68,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-text = "Remastered"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -125,6 +124,7 @@ _sections_unfolded = [ "Anchor", "Hint", "Rect", "Visibility", "custom_fonts" ]
 
 [node name="1 Player" type="Button" parent="Menu" index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -155,9 +155,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 346.0
+margin_top = 272.0
 margin_right = 600.0
-margin_bottom = 416.0
+margin_bottom = 342.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -170,7 +170,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "2 Player"
+text = "Start Game"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
@@ -181,9 +181,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 420.0
+margin_top = 346.0
 margin_right = 600.0
-margin_bottom = 490.0
+margin_bottom = 416.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
