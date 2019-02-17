@@ -13,15 +13,15 @@
 [ext_resource path="res://global_assets/Explosions/explosion7.png" type="Texture" id=11]
 [ext_resource path="res://global_assets/Explosions/explosion8.png" type="Texture" id=12]
 [ext_resource path="res://global_assets/Explosions/explosion9.png" type="Texture" id=13]
-[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=14]
-[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=15]
-[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=16]
+[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=14]
+[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=15]
+[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=16]
 [ext_resource path="res://Sumo/assets/blue_oof1.png" type="Texture" id=17]
 [ext_resource path="res://Sumo/assets/blue_oof2.png" type="Texture" id=18]
 [ext_resource path="res://Sumo/assets/blue_oof3.png" type="Texture" id=19]
-[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=20]
-[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=21]
-[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=22]
+[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=20]
+[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=21]
+[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=22]
 [ext_resource path="res://global_assets/smoke.png" type="Texture" id=23]
 [ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=24]
 
@@ -45,7 +45,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "redDefault",
+"name": "redOof",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
@@ -55,7 +55,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "redOof",
+"name": "redDefault",
 "speed": 5.0
 } ]
 
@@ -152,7 +152,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
