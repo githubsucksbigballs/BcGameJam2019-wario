@@ -44,6 +44,7 @@ func _physics_process(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
+		$Bump.play()
 		hitstun = true
 		get_parent().get_node("HitStun2").start()
 		if(collision.collider.has_method("hit")):
@@ -80,6 +81,5 @@ func _on_MessageTimer_timeout():
 
 func _on_WinTimer_timeout():
 	queue_free()
-	
 	if(win):
 		transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")

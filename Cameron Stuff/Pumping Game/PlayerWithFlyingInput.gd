@@ -25,6 +25,7 @@ func create_balloon():
 	new_balloon.position = Vector2(-80 + 80*balloon_count, -175)
 	balloon_count += 1
 	new_balloon.get_child(0).play("BlowUp")
+	$BlowUp.play()
 	
 	
 func increase_air(value):

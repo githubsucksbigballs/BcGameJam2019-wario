@@ -51,6 +51,7 @@ func _physics_process(delta):
 
 	var collision = move_and_collide(velocity * delta)
 	if collision:
+		$Bump.play()
 		hitstun = true
 		get_parent().get_node("HitStun").start()
 		if(collision.collider.has_method("hit")):
