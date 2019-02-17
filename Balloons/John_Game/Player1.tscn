@@ -5,7 +5,7 @@
 [ext_resource path="res://global_assets/guy_idle_blue2.png" type="Texture" id=3]
 [ext_resource path="res://global_assets/guy_idle_blue3.png" type="Texture" id=4]
 [ext_resource path="res://Balloons/John_Game/Balloon1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=6]
+[ext_resource path="res://Balloons/John_Game/assets/Swooshing-SoundBible.com-1214884243-1214884243.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -56,22 +56,22 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Balloon" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 28.0038, -27.6817 )
+position = Vector2( 34.4738, -30.4948 )
 
 [node name="Balloon2" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 7.7261, -36.7079 )
+position = Vector2( 7.16345, -42.334 )
 
 [node name="Balloon3" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -15.7584, -29.5718 )
+position = Vector2( -21.6658, -30.9783 )
 scale = Vector2( -0.486179, 0.542 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 6 )
-volume_db = -1.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
