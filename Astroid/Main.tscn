@@ -28,7 +28,6 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="PLAYER2" parent="." index="1" instance=ExtResource( 4 )]
 
-visible = true
 position = Vector2( 440, 370 )
 scale = Vector2( 0.75, 0.75 )
 collision_mask = 3
@@ -36,7 +35,7 @@ collision_mask = 3
 [node name="MobTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.25
 one_shot = false
 autostart = false
 

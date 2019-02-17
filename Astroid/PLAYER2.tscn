@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 47.1467, 43.9455 )
+extents = Vector2( 47.1467, 59.1579 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -29,17 +29,18 @@ animations = [ {
 
 [node name="PLAYER2" type="KinematicBody2D"]
 
-visible = false
 scale = Vector2( 0.5, 0.5 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 0
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( 0, 8.01208 )
+scale = Vector2( 1, 0.905807 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
@@ -48,5 +49,14 @@ frames = SubResource( 2 )
 animation = "idle"
 frame = 1
 playing = true
+
+[node name="HitstunTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="HitstunTimer" to="." method="_on_HitstunTimer_timeout"]
 
 

@@ -1,27 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Astroid/Mob.gd" type="Script" id=1]
-[ext_resource path="res://Astroid/Astroid sheet1.png" type="Texture" id=2]
-[ext_resource path="res://Astroid/Astroid sheet2.png" type="Texture" id=3]
-[ext_resource path="res://Astroid/Astroid sheet3.png" type="Texture" id=4]
-[ext_resource path="res://Astroid/Astroid sheet4.png" type="Texture" id=5]
-[ext_resource path="res://Astroid/Astroid sheet5.png" type="Texture" id=6]
-[ext_resource path="res://Astroid/Astroid sheet6.png" type="Texture" id=7]
-
+[ext_resource path="res://Astroid/comet1.png" type="Texture" id=2]
+[ext_resource path="res://Astroid/comet2.png" type="Texture" id=3]
+[ext_resource path="res://Astroid/comet3.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 78.2933
+radius = 59.9081
 height = 20.0
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 7.0
+"speed": 5.0
 } ]
 
 [node name="Mob" type="RigidBody2D"]
@@ -61,11 +57,11 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
+position = Vector2( 9.01483, -24.4688 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
 playing = true
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 
