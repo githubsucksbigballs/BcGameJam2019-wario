@@ -23,7 +23,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Player2" type="KinematicBody2D" index="0" groups=[
+[node name="Player2" type="KinematicBody2D" groups=[
 "Player2",
 ]]
 
@@ -45,7 +45,7 @@ position = Vector2( 2.69788, 3.05169 )
 scale = Vector2( 0.271674, 0.300555 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Balloon" parent="." index="2" instance=ExtResource( 6 )]

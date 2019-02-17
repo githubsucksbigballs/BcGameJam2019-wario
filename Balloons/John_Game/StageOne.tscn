@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=1]
 [ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Balloons/John_Game/Player2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=10]
+[ext_resource path="res://Balloons/John_Game/Battery.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -26,13 +27,13 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 11.7334, 10 )
 
-[node name="StageOne" type="Node2D"]
+[node name="StageOne" type="Node2D" index="0"]
 
 position = Vector2( 317.902, 156.834 )
 
 [node name="SpaceBackground" type="Sprite" parent="." index="0"]
 
-position = Vector2( 56.4411, -2649.25 )
+position = Vector2( 56.4411, -2649.48 )
 scale = Vector2( 1.19925, 1.74987 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -87,6 +88,314 @@ _sections_unfolded = [ "Visibility" ]
 position = Vector2( 0.146362, -2.96289 )
 scale = Vector2( 2.41301, 2.37338 )
 shape = SubResource( 2 )
+
+[node name="Battery" parent="." index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 436.738, -1034.49 )
+
+[node name="Battery2" parent="." index="8" instance=ExtResource( 11 )]
+
+position = Vector2( 81.8971, -919.472 )
+
+[node name="Battery3" parent="." index="9" instance=ExtResource( 11 )]
+
+position = Vector2( -260.708, -1298.78 )
+
+[node name="Battery4" parent="." index="10" instance=ExtResource( 11 )]
+
+position = Vector2( 360.631, -1707.22 )
+
+[node name="Battery5" parent="." index="11" instance=ExtResource( 11 )]
+
+position = Vector2( -89.6501, -2087.76 )
+
+[node name="Battery6" parent="." index="12" instance=ExtResource( 11 )]
+
+position = Vector2( 326.37, -2468.29 )
+
+[node name="Battery7" parent="." index="13" instance=ExtResource( 11 )]
+
+position = Vector2( 186.636, -1352.13 )
+
+[node name="Battery8" parent="." index="14" instance=ExtResource( 11 )]
+
+position = Vector2( -254.59, -740.828 )
+
+[node name="Battery9" parent="." index="15" instance=ExtResource( 11 )]
+
+position = Vector2( 315.603, -580.537 )
+
+[node name="Battery10" parent="." index="16" instance=ExtResource( 11 )]
+
+position = Vector2( -0.0834045, -655.176 )
+
+[node name="Battery11" parent="." index="17" instance=ExtResource( 11 )]
+
+position = Vector2( -196.592, -419.024 )
+
+[node name="Battery12" parent="." index="18" instance=ExtResource( 11 )]
+
+position = Vector2( -78.1485, -1166.64 )
+
+[node name="Battery13" parent="." index="19" instance=ExtResource( 11 )]
+
+position = Vector2( -109.228, -1716.03 )
+
+[node name="Battery14" parent="." index="20" instance=ExtResource( 11 )]
+
+position = Vector2( 314.134, -2196.9 )
+
+[node name="Battery15" parent="." index="21" instance=ExtResource( 11 )]
+
+position = Vector2( -145.935, -2459.48 )
+
+[node name="Battery16" parent="." index="22" instance=ExtResource( 11 )]
+
+position = Vector2( -253.366, -3607.94 )
+
+[node name="Battery17" parent="." index="23" instance=ExtResource( 11 )]
+
+position = Vector2( -233.789, -3550.43 )
+
+[node name="Battery18" parent="." index="24" instance=ExtResource( 11 )]
+
+position = Vector2( -181.175, -3605.5 )
+
+[node name="Battery19" parent="." index="25" instance=ExtResource( 11 )]
+
+position = Vector2( 206.703, -3291.03 )
+
+[node name="Battery20" parent="." index="26" instance=ExtResource( 11 )]
+
+position = Vector2( 239.74, -3229.85 )
+
+[node name="Battery21" parent="." index="27" instance=ExtResource( 11 )]
+
+position = Vector2( 283.789, -3293.48 )
+
+[node name="Battery22" parent="." index="28" instance=ExtResource( 11 )]
+
+position = Vector2( 442.856, -3649.55 )
+
+[node name="Battery23" parent="." index="29" instance=ExtResource( 11 )]
+
+position = Vector2( 402.478, -3603.05 )
+
+[node name="Battery24" parent="." index="30" instance=ExtResource( 11 )]
+
+position = Vector2( 370.664, -3654.44 )
+
+[node name="Battery25" parent="." index="31" instance=ExtResource( 11 )]
+
+position = Vector2( -182.398, -3041.42 )
+
+[node name="Battery26" parent="." index="32" instance=ExtResource( 11 )]
+
+position = Vector2( -139.573, -3001.04 )
+
+[node name="Battery27" parent="." index="33" instance=ExtResource( 11 )]
+
+position = Vector2( -200.752, -2990.03 )
+
+[node name="Battery28" parent="." index="34" instance=ExtResource( 11 )]
+
+position = Vector2( -33.9422, -4866.12 )
+
+[node name="Battery60" parent="." index="35" instance=ExtResource( 11 )]
+
+position = Vector2( 211.099, -4867.04 )
+
+[node name="Battery52" parent="." index="36" instance=ExtResource( 11 )]
+
+position = Vector2( -51.1591, -4870.57 )
+
+[node name="Battery56" parent="." index="37" instance=ExtResource( 11 )]
+
+position = Vector2( 193.882, -4871.48 )
+
+[node name="Battery51" parent="." index="38" instance=ExtResource( 11 )]
+
+position = Vector2( -71.4952, -4872.36 )
+
+[node name="Battery57" parent="." index="39" instance=ExtResource( 11 )]
+
+position = Vector2( 173.546, -4873.27 )
+
+[node name="Battery29" parent="." index="40" instance=ExtResource( 11 )]
+
+position = Vector2( -90.0994, -4866.12 )
+
+[node name="Battery68" parent="." index="41" instance=ExtResource( 11 )]
+
+position = Vector2( 154.942, -4867.03 )
+
+[node name="Battery30" parent="." index="42" instance=ExtResource( 11 )]
+
+position = Vector2( -107.823, -4854.42 )
+
+[node name="Battery63" parent="." index="43" instance=ExtResource( 11 )]
+
+position = Vector2( 137.219, -4855.33 )
+
+[node name="Battery31" parent="." index="44" instance=ExtResource( 11 )]
+
+position = Vector2( -120.796, -4842.71 )
+
+[node name="Battery69" parent="." index="45" instance=ExtResource( 11 )]
+
+position = Vector2( 124.245, -4843.63 )
+
+[node name="Battery32" parent="." index="46" instance=ExtResource( 11 )]
+
+position = Vector2( -124.272, -4818.38 )
+
+[node name="Battery59" parent="." index="47" instance=ExtResource( 11 )]
+
+position = Vector2( 120.77, -4819.3 )
+
+[node name="Battery33" parent="." index="48" instance=ExtResource( 11 )]
+
+position = Vector2( -126.754, -4793.06 )
+
+[node name="Battery71" parent="." index="49" instance=ExtResource( 11 )]
+
+position = Vector2( 118.287, -4793.98 )
+
+[node name="Battery34" parent="." index="50" instance=ExtResource( 11 )]
+
+position = Vector2( -128.74, -4772.71 )
+
+[node name="Battery72" parent="." index="51" instance=ExtResource( 11 )]
+
+position = Vector2( 116.301, -4773.62 )
+
+[node name="Battery35" parent="." index="52" instance=ExtResource( 11 )]
+
+position = Vector2( -130.23, -4751.36 )
+
+[node name="Battery75" parent="." index="53" instance=ExtResource( 11 )]
+
+position = Vector2( 114.812, -4752.27 )
+
+[node name="Battery36" parent="." index="54" instance=ExtResource( 11 )]
+
+position = Vector2( -130.726, -4725.54 )
+
+[node name="Battery74" parent="." index="55" instance=ExtResource( 11 )]
+
+position = Vector2( 114.315, -4726.45 )
+
+[node name="Battery37" parent="." index="56" instance=ExtResource( 11 )]
+
+position = Vector2( -125.761, -4704.68 )
+
+[node name="Battery58" parent="." index="57" instance=ExtResource( 11 )]
+
+position = Vector2( 119.28, -4705.6 )
+
+[node name="Battery38" parent="." index="58" instance=ExtResource( 11 )]
+
+position = Vector2( -112.852, -4693.26 )
+
+[node name="Battery64" parent="." index="59" instance=ExtResource( 11 )]
+
+position = Vector2( 132.189, -4694.18 )
+
+[node name="Battery39" parent="." index="60" instance=ExtResource( 11 )]
+
+position = Vector2( -95.9705, -4687.31 )
+
+[node name="Battery54" parent="." index="61" instance=ExtResource( 11 )]
+
+position = Vector2( 149.071, -4688.22 )
+
+[node name="Battery40" parent="." index="62" instance=ExtResource( 11 )]
+
+position = Vector2( -74.6205, -4684.82 )
+
+[node name="Battery73" parent="." index="63" instance=ExtResource( 11 )]
+
+position = Vector2( 170.421, -4685.74 )
+
+[node name="Battery41" parent="." index="64" instance=ExtResource( 11 )]
+
+position = Vector2( -58.2356, -4688.8 )
+
+[node name="Battery55" parent="." index="65" instance=ExtResource( 11 )]
+
+position = Vector2( 186.806, -4689.71 )
+
+[node name="Battery42" parent="." index="66" instance=ExtResource( 11 )]
+
+position = Vector2( -39.8647, -4693.26 )
+
+[node name="Battery53" parent="." index="67" instance=ExtResource( 11 )]
+
+position = Vector2( 205.177, -4694.18 )
+
+[node name="Battery43" parent="." index="68" instance=ExtResource( 11 )]
+
+position = Vector2( -23.9763, -4704.68 )
+
+[node name="Battery76" parent="." index="69" instance=ExtResource( 11 )]
+
+position = Vector2( 221.065, -4705.6 )
+
+[node name="Battery44" parent="." index="70" instance=ExtResource( 11 )]
+
+position = Vector2( -12.0601, -4719.58 )
+
+[node name="Battery70" parent="." index="71" instance=ExtResource( 11 )]
+
+position = Vector2( 232.981, -4720.49 )
+
+[node name="Battery45" parent="." index="72" instance=ExtResource( 11 )]
+
+position = Vector2( -13.0531, -4737.45 )
+
+[node name="Battery66" parent="." index="73" instance=ExtResource( 11 )]
+
+position = Vector2( 231.988, -4738.37 )
+
+[node name="Battery46" parent="." index="74" instance=ExtResource( 11 )]
+
+position = Vector2( -17.0251, -4756.32 )
+
+[node name="Battery65" parent="." index="75" instance=ExtResource( 11 )]
+
+position = Vector2( 228.016, -4757.23 )
+
+[node name="Battery47" parent="." index="76" instance=ExtResource( 11 )]
+
+position = Vector2( -26.4589, -4764.76 )
+
+[node name="Battery67" parent="." index="77" instance=ExtResource( 11 )]
+
+position = Vector2( 218.582, -4765.68 )
+
+[node name="Battery48" parent="." index="78" instance=ExtResource( 11 )]
+
+position = Vector2( -42.8437, -4767.74 )
+
+[node name="Battery77" parent="." index="79" instance=ExtResource( 11 )]
+
+position = Vector2( 202.198, -4768.65 )
+
+[node name="Battery49" parent="." index="80" instance=ExtResource( 11 )]
+
+position = Vector2( -58.7321, -4767.74 )
+
+[node name="Battery62" parent="." index="81" instance=ExtResource( 11 )]
+
+position = Vector2( 186.309, -4768.65 )
+
+[node name="Battery50" parent="." index="82" instance=ExtResource( 11 )]
+
+position = Vector2( -67.6693, -4767.24 )
+
+[node name="Battery61" parent="." index="83" instance=ExtResource( 11 )]
+
+position = Vector2( 177.372, -4768.16 )
 
 [connection signal="body_entered" from="SpaceCeil" to="SpaceCeil" method="_on_SpaceCeil_body_entered"]
 
