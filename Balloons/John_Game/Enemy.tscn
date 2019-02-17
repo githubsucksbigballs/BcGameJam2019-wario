@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Balloons/John_Game/Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Camera" type="Area2D"]
+[node name="Camera" type="Area2D" index="0"]
 
+position = Vector2( 399.584, 298.332 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -47,7 +47,7 @@ editor_draw_drag_margin = false
 
 [node name="Right" type="Area2D" parent="Camera2D" index="0"]
 
-position = Vector2( 549.46, 10.8959 )
+position = Vector2( 466.289, 16.3201 )
 scale = Vector2( 0.379344, 11.5312 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -60,7 +60,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Right" index="0"]
+[node name="w" type="CollisionShape2D" parent="Camera2D/Right" index="0"]
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
@@ -68,7 +68,7 @@ shape = SubResource( 1 )
 
 [node name="Left" type="Area2D" parent="Camera2D" index="1"]
 
-position = Vector2( -526.674, 9.81227 )
+position = Vector2( -463.392, 11.6203 )
 scale = Vector2( 0.380593, 11.3324 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -81,7 +81,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Left" index="0" groups=[
+[node name="a" type="CollisionShape2D" parent="Camera2D/Left" index="0" groups=[
 "Enemy",
 ]]
 
@@ -91,7 +91,7 @@ shape = SubResource( 1 )
 
 [node name="Bottom" type="Area2D" parent="Camera2D" index="2"]
 
-position = Vector2( -0.223389, 338.796 )
+position = Vector2( 14.5876, 467.169 )
 scale = Vector2( 17.557, 0.285445 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -104,11 +104,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Bottom" index="0" groups=[
+[node name="s" type="CollisionShape2D" parent="Camera2D/Bottom" index="0" groups=[
 "Enemy",
 ]]
 
-position = Vector2( 0.300049, -1.45828 )
+position = Vector2( 0.300049, -1.45825 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
@@ -127,60 +127,18 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Top" index="0"]
+[node name="d" type="CollisionShape2D" parent="Camera2D/Top" index="0"]
 
-position = Vector2( 0.300049, -1.45828 )
+position = Vector2( 0.300049, -1.45837 )
 scale = Vector2( 3.17692, 2.89247 )
 shape = SubResource( 1 )
 
-[node name="P1Wins" type="Label" parent="." index="1"]
+[connection signal="body_entered" from="Camera2D/Right" to="." method="_on_Right_body_entered"]
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -139.0
-margin_top = -78.0
-margin_right = 159.0
-margin_bottom = -25.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-text = "Player 1 Wins!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+[connection signal="body_entered" from="Camera2D/Left" to="." method="_on_Left_body_entered"]
 
-[node name="P2Wins" type="Label" parent="." index="2"]
+[connection signal="body_entered" from="Camera2D/Bottom" to="." method="_on_Bottom_body_entered"]
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -140.0
-margin_top = -77.0
-margin_right = 158.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
-text = "Player 2 Wins!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+[connection signal="body_entered" from="Camera2D/Top" to="." method="_on_Top_body_entered"]
 
 

@@ -25,11 +25,15 @@ animations = [ {
 "Player1",
 ]]
 
+position = Vector2( -731.608, 167.367 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Body" type="CollisionShape2D" parent="." index="0" groups=[
 "Player1",
@@ -48,7 +52,6 @@ position = Vector2( 6.74884, -4.19208 )
 scale = Vector2( 0.278901, 0.31792 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
