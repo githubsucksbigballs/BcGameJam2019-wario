@@ -16,3 +16,4 @@ func game_over():
 
 func _on_MessageTimer_timeout():
 	$MessageLabel.hide()
+	transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")

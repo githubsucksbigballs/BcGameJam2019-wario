@@ -11,24 +11,6 @@ func _ready():
 func new_game():
 	pass#$StartTimer.start()
 
-
-
-func game_overP1W():
-	if win == false:
-		$ScoreTimer.stop()
-		$MobTimer.stop()
-		$HUD.game_over()
-		$HUD.show_message("WASD PLAYER WINS!")
-		win == true
-	
-func game_overP2W():
-	if win == false:
-		$ScoreTimer.stop()
-		$MobTimer.stop()
-		$HUD.game_over()
-		$HUD.show_message("ARROW KEY PLAYER WINS!")
-		win = true
-
 #
 func _on_StartTimer_timeout():
 	print("WOW")

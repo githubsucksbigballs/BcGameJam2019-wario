@@ -8,11 +8,10 @@
 [ext_resource path="res://Astroid/red_oof2.png" type="Texture" id=6]
 [ext_resource path="res://Astroid/red_oof3.png" type="Texture" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 47.1496, 43.69 )
+extents = Vector2( 47.1496, 60.5951 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -40,13 +39,24 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.188934, 0 )
+position = Vector2( -0.188934, 0.319643 )
+scale = Vector2( 1, 0.897229 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
+position = Vector2( -0.514038, -9.25288 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
+
+[node name="HitstunTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="HitstunTimer" to="." method="_on_HitstunTimer_timeout"]
 
 
