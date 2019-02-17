@@ -48,18 +48,22 @@ position = Vector2( 6.74884, -4.19208 )
 scale = Vector2( 0.278901, 0.31792 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Balloon" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 17.8089, -23.6706 )
+position = Vector2( 28.0038, -27.6817 )
 
 [node name="Balloon2" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 7.39186, -27.0144 )
+position = Vector2( 7.7261, -36.7079 )
 
 [node name="Balloon3" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -4.05404, -24.0565 )
+position = Vector2( -15.7584, -29.5718 )
+scale = Vector2( -0.486179, 0.542 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 
 

@@ -6,8 +6,7 @@ const JUMP_POWER = -250
 const FLOOR = Vector2(0,-1)
 const CEIL = Vector2(0,1)
 var velocity = Vector2()
-var health = 3
-
+var player = 2
 
 func _physics_process(delta):
 	
@@ -26,5 +25,8 @@ func _physics_process(delta):
 #		velocity.y = 0	
 		velocity.y = velocity.y + GRAVITY
 	velocity = move_and_slide(velocity, FLOOR) 
-
+	
+	if(GlobalValues.health2 <= 0):
+		velocity.y = 1000
+		JUMP_POWER = 0
 	

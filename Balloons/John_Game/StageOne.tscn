@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=1]
 [ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=10]
 [ext_resource path="res://Balloons/John_Game/Battery.tscn" type="PackedScene" id=11]
+[ext_resource path="res://global_assets/generator_0.png" type="Texture" id=12]
+[ext_resource path="res://global_assets/generator_1.png" type="Texture" id=13]
+[ext_resource path="res://global_assets/generator_2.png" type="Texture" id=14]
+[ext_resource path="res://global_assets/generator_3.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -27,14 +31,28 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 11.7334, 10 )
 
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
 [node name="StageOne" type="Node2D" index="0"]
 
 position = Vector2( 317.902, 156.834 )
 
 [node name="SpaceBackground" type="Sprite" parent="." index="0"]
 
-position = Vector2( 56.4411, -2649.48 )
-scale = Vector2( 1.19925, 1.74987 )
+position = Vector2( 66.7148, -2539.5 )
+scale = Vector2( 1.19854, 1.74982 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -50,21 +68,21 @@ playing = true
 
 [node name="Ground" parent="." index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 25.0057, 227.449 )
-scale = Vector2( 1.39033, 0.915729 )
+position = Vector2( 26.8282, 279.128 )
+scale = Vector2( 2.58316, 0.915729 )
 
 [node name="Player1" parent="." index="3" instance=ExtResource( 7 )]
 
-position = Vector2( 9.95418, 159.763 )
+position = Vector2( -85.9576, 241.384 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="Player2" parent="." index="4" instance=ExtResource( 8 )]
 
-position = Vector2( 120.183, 160.679 )
+position = Vector2( 165.286, 235.488 )
 
 [node name="Enemy" parent="." index="5" instance=ExtResource( 9 )]
 
-position = Vector2( 68.0145, 191.472 )
+position = Vector2( 52.034, 74.6753 )
 velocity = Vector2( 0, 50 )
 
 [node name="SpaceCeil" type="Area2D" parent="." index="6"]
@@ -396,6 +414,46 @@ position = Vector2( -67.6693, -4767.24 )
 [node name="Battery61" parent="." index="83" instance=ExtResource( 11 )]
 
 position = Vector2( 177.372, -4768.16 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="84"]
+
+position = Vector2( 39.0627, 225.575 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RigidBody2D" index="0"]
+
+position = Vector2( 6.61539, -4.12143 )
+scale = Vector2( 0.636632, 0.603646 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
+
+position = Vector2( 3.89371, 7.03025 )
+scale = Vector2( 4.38458, 5.36146 )
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="SpaceCeil" to="SpaceCeil" method="_on_SpaceCeil_body_entered"]
 
