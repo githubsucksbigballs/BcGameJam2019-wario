@@ -11,9 +11,9 @@ var player = 2
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
+		velocity.x = SPEED + GRAVITY*2
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED
+		velocity.x = -SPEED + GRAVITY*2
 	else:
 		velocity.x = 0
 		
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR) 
 	
 	if Input.is_action_just_pressed("ui_up"):
-		$Jump.play(0.0)
+		$Jump.play(0.1)
 
 	if(GlobalValues.health2 <= 0):
 		velocity.y = 1000

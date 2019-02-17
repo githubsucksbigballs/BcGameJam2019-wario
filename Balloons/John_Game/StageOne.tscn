@@ -48,7 +48,7 @@ points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.7334, 10 )
 
-[node name="StageOne" type="Node2D"]
+[node name="StageOne" type="Node2D" index="0"]
 
 position = Vector2( 317.902, 156.834 )
 script = ExtResource( 1 )
@@ -65,7 +65,7 @@ position = Vector2( 71.2224, 246.564 )
 scale = Vector2( 1.19908, 1.36653 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Ground" parent="." index="2" instance=ExtResource( 7 )]
@@ -518,6 +518,7 @@ position = Vector2( 4.79297, -22.2796 )
 scale = Vector2( 1.13196, 0.892816 )
 frames = SubResource( 3 )
 animation = "default"
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -596,15 +597,6 @@ stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="111"]
-
-stream = null
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
 mix_target = 0
 bus = "Master"
 
