@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Balloons/John_Game/StageOne.gd" type="Script" id=1]
 [ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=16]
 [ext_resource path="res://ryan_font.tres" type="DynamicFont" id=17]
-[ext_resource path="res://Balloons/John_Game/assets/song2.ogg" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -29,7 +28,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
@@ -38,17 +37,17 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.7334, 10 )
 
-[node name="StageOne" type="Node2D"]
+[node name="StageOne" type="Node2D" index="0"]
 
 position = Vector2( 317.902, 156.834 )
 script = ExtResource( 1 )
@@ -65,7 +64,7 @@ position = Vector2( 71.2224, 246.564 )
 scale = Vector2( 1.19908, 1.36653 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Ground" parent="." index="2" instance=ExtResource( 7 )]
@@ -516,8 +515,9 @@ __meta__ = {
 
 position = Vector2( 4.79297, -22.2796 )
 scale = Vector2( 1.13196, 0.892816 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -527,7 +527,7 @@ __meta__ = {
 
 position = Vector2( 0.613037, -5.17279 )
 scale = Vector2( 7.42719, 7.80324 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -564,7 +564,7 @@ autostart = false
 
 position = Vector2( 0.146362, -2.96289 )
 scale = Vector2( 2.41301, 2.37338 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Lost" type="Label" parent="." index="109"]
 
@@ -592,7 +592,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="110"]
 
-stream = ExtResource( 18 )
+stream = null
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true

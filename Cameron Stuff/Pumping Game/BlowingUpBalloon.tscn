@@ -17,6 +17,7 @@ animations = [ {
 "name": "default",
 "speed": 15.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Animation" id=2]
 
@@ -43,7 +44,7 @@ frames = SubResource( 1 )
 animation = "default"
 frame = 2
 playing = true
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 

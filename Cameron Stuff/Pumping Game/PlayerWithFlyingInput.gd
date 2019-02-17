@@ -1,5 +1,7 @@
 extends Node2D
 
+signal has_three_balloons
+
 var player
 var count_direct = 360
 var current_flying
@@ -10,7 +12,6 @@ var timing_text
 var balloon = preload("res://Cameron Stuff/Pumping Game/BlowingUpBalloon.tscn")
 var balloon_x = -100
 var balloon_count = 0
-
 
 func _ready():
 	randomize()
@@ -25,7 +26,10 @@ func create_balloon():
 	new_balloon.position = Vector2(-80 + 80*balloon_count, -175)
 	balloon_count += 1
 	new_balloon.get_child(0).play("BlowUp")
+	move_child(new_balloon, 2)
 	$BlowUp.play()
+	if (balloon_count == 3):
+		emit_signal("has_three_balloons")
 	
 	
 func increase_air(value):

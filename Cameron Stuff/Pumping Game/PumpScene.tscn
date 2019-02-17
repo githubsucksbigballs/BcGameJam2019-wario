@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Cameron Stuff/Pumping Game/PumpScene.gd" type="Script" id=1]
 [ext_resource path="res://global_assets/backgroundearth1.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Sounds/perfect.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/trash.wav" type="AudioStream" id=13]
 [ext_resource path="res://Sounds/miss.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/song1.ogg" type="AudioStream" id=15]
+[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -43,7 +45,7 @@ position = Vector2( 305.552, 120 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -53,7 +55,6 @@ position = Vector2( 410, 190 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -108,6 +109,72 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="BGM" type="AudioStreamPlayer2D" parent="." index="9"]
+
+position = Vector2( 411.545, 378.233 )
+stream = ExtResource( 15 )
+volume_db = 10.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="WinPanel" type="Panel" parent="." index="10"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -613.0
+margin_top = 137.0
+margin_right = -138.0
+margin_bottom = 215.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+
+[node name="Label" type="Label" parent="WinPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 477.0
+margin_bottom = 78.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 16 )
+text = "Player 1 Wins!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+
+[node name="WinTimer" type="Timer" parent="." index="11"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
+autostart = false
+
+[connection signal="has_three_balloons" from="PlayerWithFlyingInput" to="." method="_on_PlayerWithFlyingInput_has_three_balloons"]
+
+[connection signal="has_three_balloons" from="PlayerWithFlyingInput2" to="." method="_on_PlayerWithFlyingInput2_has_three_balloons"]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
 
 

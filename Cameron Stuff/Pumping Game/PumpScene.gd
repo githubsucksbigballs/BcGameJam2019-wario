@@ -1,5 +1,6 @@
 extends Node
 
+var is_game_over = false
 var p1
 var p2
 var current_input_key = 0
@@ -35,8 +36,17 @@ func _ready():
 	
 func _process(delta):
 	#print(timer.time_left)
-	check_input(current_input_key)
+	if !is_game_over:
+		check_input(current_input_key)
 	#print(p1_pressed)
+	
+func game_over(text):
+	$WinPanel.visible = true
+	$WinPanel/Label.text = text
+	$WinTimer.start()
+	$Timer.stop()
+	is_game_over = true;
+	
 		
 func get_random_input_key():
 	current_input_key = randi()%4
@@ -147,3 +157,15 @@ func get_score_value(player):
 			player.get_child(0).player_child.play("redDown")
 
 
+
+
+func _on_PlayerWithFlyingInput_has_three_balloons():
+	game_over("Player 1 Wins!")
+
+
+func _on_PlayerWithFlyingInput2_has_three_balloons():
+	game_over("Player 2 Wins!")
+
+
+func _on_WinTimer_timeout():
+	get_tree().change_scene("res://Balloons/John_Game/StageOne.tscn")
