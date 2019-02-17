@@ -15,6 +15,9 @@ var onGround = false
 var hitstun = false
 var dontgethit = false
 
+#var Explosion = preload("res://Astroid/Explosion.tscn")
+var Explosion = preload("res://Cameron Stuff/Explosion/Explosion.tscn")
+
 #export (PackedScene) var Explosion
 
 func game_overP1():
@@ -34,12 +37,12 @@ func game_overP1():
 
 #const Explosion = preload("res://Astroid/Explosion.tscn")
 
-#func megumin():	
-#	var megumin = Explosion.instance()
-#	var pos = velocity
-#	megumin.position = pos
-#	megumin.scale = Vector2(3,3)
-#	return megumin
+func megumin():	
+	var megumin = Explosion.instance()
+	#var pos = velocity
+	#megumin.position = pos
+	megumin.scale = Vector2(4.5,4.5)
+	return megumin
 
 func _physics_process(delta):
 	
@@ -64,7 +67,11 @@ func _physics_process(delta):
 			
 	if collision && dontgethit == false:
 		if collision.collider.has_method("returning"):
-			#get_parent().add_child(megumin())
+			var explo = megumin()
+			explo.global_position = global_position;
+			explo.global_position.x += 7
+			explo.global_position.y += -50
+			get_parent().add_child(explo)
 			game_overP1()
 			print("COOOOOOOOL")
 		if collision.collider.has_method("game_overP2"):

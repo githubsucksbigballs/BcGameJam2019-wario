@@ -17,6 +17,15 @@ var hitstun = false
 var dontgethit = false
 #var explosion = preload("res://Explo.tscn")
 
+var Explosion = preload("res://Cameron Stuff/Explosion/Explosion.tscn")
+
+func megumin():	
+	var megumin = Explosion.instance()
+	#var pos = velocity
+	#megumin.position = pos
+	megumin.scale = Vector2(4.5,4.5)
+	return megumin
+
 func game_overP2():
 	get_parent().get_node("ScoreTimer").stop()
 	get_parent().get_node("MobTimer").stop()
@@ -59,6 +68,11 @@ func _physics_process(delta):
 			
 	if dontgethit == false && collision:
 		if collision.collider.has_method("returning") && !hitstun:
+			var explo = megumin()
+			explo.global_position = global_position;
+			explo.global_position.x += 7
+			explo.global_position.y += -50
+			get_parent().add_child(explo)
 			game_overP2()
 			#add_child(megumin())
 		if collision.collider.has_method("game_overP1") && !hitstun:

@@ -27,7 +27,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="PLAYER2" type="KinematicBody2D"]
+[node name="PLAYER2" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = false
@@ -47,7 +47,6 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="HitstunTimer" type="Timer" parent="." index="2"]
