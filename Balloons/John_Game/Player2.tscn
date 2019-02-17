@@ -1,29 +1,29 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://John_Game/Scripts/Player2.gd" type="Script" id=1]
-[ext_resource path="res://John_Game/Scripts/Area2.gd" type="Script" id=2]
-[ext_resource path="res://John_Game/Scripts/OnScreen2.gd" type="Script" id=3]
-[ext_resource path="res://John_Game/assets/guy_idle_blue1.png" type="Texture" id=4]
-[ext_resource path="res://John_Game/assets/guy_idle_blue2.png" type="Texture" id=5]
-[ext_resource path="res://John_Game/Balloon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Balloons/John_Game/Scripts/Player2.gd" type="Script" id=1]
+[ext_resource path="res://global_assets/guy_idle_red1.png" type="Texture" id=2]
+[ext_resource path="res://global_assets/guy_idle_red2.png" type="Texture" id=3]
+[ext_resource path="res://global_assets/guy_idle_red3.png" type="Texture" id=4]
+[ext_resource path="res://global_assets/guy_idle_red4.png" type="Texture" id=5]
+[ext_resource path="res://Balloons/John_Game/Balloon.tscn" type="PackedScene" id=6]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 17.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Player2" type="KinematicBody2D" groups=[
+[node name="Player2" type="KinematicBody2D" index="0" groups=[
 "Player2",
 ]]
 
@@ -37,55 +37,28 @@ script = ExtResource( 1 )
 
 position = Vector2( 2.73084, 3.72846 )
 scale = Vector2( 1.59746, 0.919332 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
-[node name="Area2" type="Area2D" parent="." index="1"]
-
-position = Vector2( 2.55954, -3.12834 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="OnScreen2" type="VisibilityEnabler2D" parent="." index="2"]
-
-position = Vector2( 2.27515, 2.84393 )
-rect = Rect2( -10, -10, 20, 20 )
-pause_animations = true
-freeze_bodies = true
-pause_particles = true
-pause_animated_sprites = true
-process_parent = false
-physics_process_parent = false
-script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 2.69788, 3.05169 )
 scale = Vector2( 0.271674, 0.300555 )
-frames = SubResource( 7 )
+frames = SubResource( 2 )
 animation = "default"
+frame = 2
+playing = true
 
-[node name="Balloon" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Balloon" parent="." index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 13.089, -18.1177 )
 
-[node name="Balloon2" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Balloon2" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 3.04039, -23.0472 )
 
-[node name="Balloon3" parent="." index="6" instance=ExtResource( 6 )]
+[node name="Balloon3" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -6.72378, -18.5917 )
 _sections_unfolded = [ "Transform" ]
-
-[connection signal="viewport_exited" from="OnScreen2" to="OnScreen2" method="_on_OnScreen2_viewport_exited"]
 
 

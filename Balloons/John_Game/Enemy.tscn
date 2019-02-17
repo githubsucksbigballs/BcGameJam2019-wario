@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://John_Game/Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Balloons/John_Game/Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -63,14 +64,13 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="RightCol" type="StaticBody2D" parent="Right" index="1" groups=[
 "Enemy",
 ]]
 
 position = Vector2( 0, -0.29409 )
-scale = Vector2( 1, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -86,7 +86,7 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Left" type="Area2D" parent="." index="2"]
 
@@ -105,7 +105,6 @@ __meta__ = {
 
 [node name="LeftCol" type="StaticBody2D" parent="Left" index="0"]
 
-scale = Vector2( 1, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -123,7 +122,7 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Left" index="1" groups=[
 "Enemy",
@@ -131,7 +130,7 @@ shape = SubResource( 2 )
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Bottom" type="Area2D" parent="." index="3"]
 
@@ -154,11 +153,7 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Bottom" index="1"]
-
-animation = "default"
+shape = SubResource( 1 )
 
 [node name="Top" type="Area2D" parent="." index="4"]
 
@@ -179,13 +174,12 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="TopCol" type="StaticBody2D" parent="Top" index="1" groups=[
 "Enemy",
 ]]
 
-scale = Vector2( 1, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -201,9 +195,59 @@ __meta__ = {
 
 position = Vector2( 0.300049, -1.45828 )
 scale = Vector2( 3.17692, 2.89247 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="P1Wins" type="Label" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -139.0
+margin_top = -78.0
+margin_right = 159.0
+margin_bottom = -25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Player 1 Wins!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="P2Wins" type="Label" parent="." index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -140.0
+margin_top = -77.0
+margin_right = 158.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Player 2 Wins!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 

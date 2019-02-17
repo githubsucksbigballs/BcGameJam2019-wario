@@ -1,19 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://John_Game/assets/SpaceBackground.png" type="Texture" id=1]
-[ext_resource path="res://John_Game/assets/backgroundearth1.png" type="Texture" id=2]
-[ext_resource path="res://John_Game/assets/backgroundearth2.png" type="Texture" id=3]
-[ext_resource path="res://John_Game/assets/backgroundearth3.png" type="Texture" id=4]
-[ext_resource path="res://John_Game/assets/backgroundearth4.png" type="Texture" id=5]
-[ext_resource path="res://John_Game/ground.tscn" type="PackedScene" id=6]
-[ext_resource path="res://John_Game/Player1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://John_Game/P1Win.gd" type="Script" id=8]
-[ext_resource path="res://John_Game/Player2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://John_Game/P2Win.gd" type="Script" id=10]
-[ext_resource path="res://John_Game/Enemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://John_Game/SpaceCeil.gd" type="Script" id=12]
+[ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=1]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=2]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth2.png" type="Texture" id=3]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth3.png" type="Texture" id=4]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth4.png" type="Texture" id=5]
+[ext_resource path="res://Balloons/John_Game/ground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Balloons/John_Game/Player1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Balloons/John_Game/Player2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Balloons/John_Game/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=10]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
@@ -23,10 +21,10 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 11.7334, 10 )
 
 [node name="StageOne" type="Node2D"]
 
@@ -34,8 +32,8 @@ position = Vector2( 317.902, 156.834 )
 
 [node name="SpaceBackground" type="Sprite" parent="." index="0"]
 
-position = Vector2( 57.9599, -786.393 )
-scale = Vector2( 2.30529, 2.71362 )
+position = Vector2( 56.4411, -2649.25 )
+scale = Vector2( 1.19925, 1.74987 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -45,7 +43,7 @@ __meta__ = {
 
 position = Vector2( 57.7241, 96.033 )
 scale = Vector2( 1.19908, 1.36653 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "default"
 playing = true
 
@@ -59,59 +57,11 @@ scale = Vector2( 1.39033, 0.915729 )
 position = Vector2( 9.95418, 159.763 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="P1Win" type="Label" parent="Player1" index="6"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -43.0
-margin_top = -49.0
-margin_right = 48.0
-margin_bottom = -28.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Player 1 Wins!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 8 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Player2" parent="." index="4" instance=ExtResource( 9 )]
+[node name="Player2" parent="." index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 120.183, 160.679 )
 
-[node name="P2Win" type="Label" parent="Player2" index="6"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -39.0
-margin_top = -49.0
-margin_right = 52.0
-margin_bottom = -35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Player 2 Wins!"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 10 )
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="Enemy" parent="." index="5" instance=ExtResource( 11 )]
+[node name="Enemy" parent="." index="5" instance=ExtResource( 9 )]
 
 position = Vector2( 68.0145, 191.472 )
 velocity = Vector2( 0, 50 )
@@ -120,8 +70,8 @@ velocity = Vector2( 0, 50 )
 
 modulate = Color( 0.886719, 0.109648, 0.109648, 1 )
 self_modulate = Color( 0.773438, 0.118511, 0.118511, 1 )
-position = Vector2( 71.1615, -385.109 )
-scale = Vector2( 5.62257, -0.678145 )
+position = Vector2( 61.2317, -5664.75 )
+scale = Vector2( 17.7281, -0.567099 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -129,14 +79,14 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 12 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCeil" index="0"]
 
-position = Vector2( 1.36922, 2484.62 )
-scale = Vector2( 7.0184, 2.37338 )
-shape = SubResource( 1 )
+position = Vector2( 0.146362, -2.96289 )
+scale = Vector2( 2.41301, 2.37338 )
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="SpaceCeil" to="SpaceCeil" method="_on_SpaceCeil_body_entered"]
 

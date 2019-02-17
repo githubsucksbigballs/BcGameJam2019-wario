@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://John_Game/Balloon1.gd" type="Script" id=1]
-[ext_resource path="res://John_Game/assets/balloon1.png" type="Texture" id=2]
-[ext_resource path="res://John_Game/assets/balloon2.png" type="Texture" id=3]
-[ext_resource path="res://John_Game/assets/balloon3.png" type="Texture" id=4]
-[ext_resource path="res://John_Game/assets/balloon4.png" type="Texture" id=5]
-[ext_resource path="res://John_Game/assets/balloon5.png" type="Texture" id=6]
-[ext_resource path="res://John_Game/assets/balloon6.png" type="Texture" id=7]
-[ext_resource path="res://John_Game/assets/balloon7.png" type="Texture" id=8]
-[ext_resource path="res://John_Game/assets/balloon8.png" type="Texture" id=9]
+[ext_resource path="res://Balloons/John_Game/Scripts/Balloon1.gd" type="Script" id=1]
+[ext_resource path="res://Balloons/John_Game/assets/balloon1.png" type="Texture" id=2]
+[ext_resource path="res://Balloons/John_Game/assets/balloon2.png" type="Texture" id=3]
+[ext_resource path="res://Balloons/John_Game/assets/balloon4.png" type="Texture" id=4]
+[ext_resource path="res://Balloons/John_Game/assets/balloon3.png" type="Texture" id=5]
+[ext_resource path="res://Balloons/John_Game/assets/balloon5.png" type="Texture" id=6]
+[ext_resource path="res://Balloons/John_Game/assets/balloon6.png" type="Texture" id=7]
+[ext_resource path="res://Balloons/John_Game/assets/balloon8.png" type="Texture" id=8]
+[ext_resource path="res://Balloons/John_Game/assets/balloon7.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -24,8 +24,9 @@ animations = [ {
 "name": "default",
 "speed": 15.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
-[node name="Balloon1" type="Area2D" index="0"]
+[node name="Balloon1" type="Area2D"]
 
 position = Vector2( 11.178, -25.1469 )
 scale = Vector2( 0.201157, 0.227781 )
@@ -50,7 +51,7 @@ position = Vector2( -2.25209, 1.24907 )
 scale = Vector2( 0.61352, 0.515137 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 5
+frame = 1
 playing = true
 flip_h = true
 
