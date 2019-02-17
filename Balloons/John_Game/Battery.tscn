@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Balloons/John_Game/assets/balloon1.png" type="Texture" id=1]
+[ext_resource path="res://Balloons/John_Game/assets/balloon2.png" type="Texture" id=2]
+[ext_resource path="res://Balloons/John_Game/assets/balloon3.png" type="Texture" id=3]
+[ext_resource path="res://Balloons/John_Game/assets/balloon4.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Battery" type="Area2D"]
+
+position = Vector2( 325.745, 289.932 )
+scale = Vector2( 0.488277, 0.371716 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 0.527252, -3.03645 )
+scale = Vector2( 1.11193, 1.03239 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -8.12064, -15.4262 )
+scale = Vector2( 4.65547, 4.90416 )
+shape = SubResource( 2 )
+
+
