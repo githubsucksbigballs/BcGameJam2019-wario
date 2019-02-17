@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const SPEED = 130
+const SPEED = 200
 const GRAVITY = 10
-const JUMP_POWER = -250
+var JUMP_POWER = -250
 const FLOOR = Vector2(0,-1)
 const CEIL = Vector2(0,1)
 var velocity = Vector2()
@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 	if(GlobalValues.health1 <= 0):
 		velocity.y = 1000
-		JUMP_POWER = 0
+		JUMP_POWER = 1000
 
 	
 

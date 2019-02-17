@@ -16,5 +16,12 @@ func _ready():
 
 
 func _on_SpaceCeil_body_entered(body):
-	get_tree().quit()
-	pass # replace with function body
+
+	$EndTimer.start()
+
+
+
+
+func _on_EndTimer_timeout():
+		get_tree().quit()
+

@@ -1,5 +1,5 @@
-extends Area2D
-#var pos = Vector2(-98.672401, 24.3311)
+extends Node2D
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -15,6 +15,3 @@ func _ready():
 #	pass
 
 
-func _on_Area2_area_entered(area):
-
-	pass # replace with function body

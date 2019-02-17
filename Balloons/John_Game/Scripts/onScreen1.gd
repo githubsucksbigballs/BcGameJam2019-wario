@@ -16,7 +16,7 @@ func _ready():
 
 
 func _on_onScreen1_screen_exited():
-	Player1.health = 0
+	GlobalValues.health1 = 0
 	
 	pass # replace with function body
 
