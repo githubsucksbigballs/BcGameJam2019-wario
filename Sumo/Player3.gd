@@ -11,7 +11,6 @@ var hitstun = false
 
 var win = false
 
-
 func _ready():
 	if player_id == 1:
 		#$Particles2D.texture = load("res://Sumo/assets/red1.png")
@@ -96,13 +95,11 @@ func _physics_process(delta):
 					get_parent().get_node("Player2").hit(velocity*multiplier)
 				else:
 					get_parent().get_node("Player2").hit(velocity)
-
 			else:
 				if random == 1:
 					get_parent().get_node("Player").hit(velocity*multiplier)
 				else:
 					get_parent().get_node("Player").hit(velocity)
-
 			#velocity = -velocity
 		if(collision.collider.has_method("isAsteroid")):
 			velocity = -velocity
@@ -120,7 +117,6 @@ func _on_LoopFix_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	$AnimatedSprite.animation = "explosion"
 	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
 	get_parent().get_node("MobTimer").stop()

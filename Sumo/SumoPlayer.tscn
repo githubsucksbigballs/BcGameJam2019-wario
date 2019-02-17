@@ -1,23 +1,29 @@
-
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Sumo/Player3.gd" type="Script" id=1]
 [ext_resource path="res://Sumo/assets/blue1.png" type="Texture" id=2]
 [ext_resource path="res://Sumo/assets/blue2.png" type="Texture" id=3]
 [ext_resource path="res://Sumo/assets/blue3.png" type="Texture" id=4]
-
-[ext_resource path="res://Sumo/assets/blue_oof1.png" type="Texture" id=5]
-[ext_resource path="res://Sumo/assets/blue_oof2.png" type="Texture" id=6]
-[ext_resource path="res://Sumo/assets/blue_oof3.png" type="Texture" id=7]
-[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=8]
-[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=9]
-[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=10]
-[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=11]
-[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=12]
-[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=13]
-[ext_resource path="res://global_assets/smoke.png" type="Texture" id=14]
-[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=15]
-
+[ext_resource path="res://global_assets/Explosions/explosion1.png" type="Texture" id=5]
+[ext_resource path="res://global_assets/Explosions/explosion2.png" type="Texture" id=6]
+[ext_resource path="res://global_assets/Explosions/explosion3.png" type="Texture" id=7]
+[ext_resource path="res://global_assets/Explosions/explosion4.png" type="Texture" id=8]
+[ext_resource path="res://global_assets/Explosions/explosion5.png" type="Texture" id=9]
+[ext_resource path="res://global_assets/Explosions/explosion6.png" type="Texture" id=10]
+[ext_resource path="res://global_assets/Explosions/explosion7.png" type="Texture" id=11]
+[ext_resource path="res://global_assets/Explosions/explosion8.png" type="Texture" id=12]
+[ext_resource path="res://global_assets/Explosions/explosion9.png" type="Texture" id=13]
+[ext_resource path="res://Sumo/assets/red1.png" type="Texture" id=14]
+[ext_resource path="res://Sumo/assets/red2.png" type="Texture" id=15]
+[ext_resource path="res://Sumo/assets/red3.png" type="Texture" id=16]
+[ext_resource path="res://Sumo/assets/blue_oof1.png" type="Texture" id=17]
+[ext_resource path="res://Sumo/assets/blue_oof2.png" type="Texture" id=18]
+[ext_resource path="res://Sumo/assets/blue_oof3.png" type="Texture" id=19]
+[ext_resource path="res://Sumo/assets/red_oof1.png" type="Texture" id=20]
+[ext_resource path="res://Sumo/assets/red_oof2.png" type="Texture" id=21]
+[ext_resource path="res://Sumo/assets/red_oof3.png" type="Texture" id=22]
+[ext_resource path="res://global_assets/smoke.png" type="Texture" id=23]
+[ext_resource path="res://Sounds/thunder.wav" type="AudioStream" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -39,17 +45,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "oof",
+"name": "redDefault",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "redOof",
+"name": "oof",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "redDefault",
+"name": "redOof",
 "speed": 5.0
 } ]
 
@@ -115,17 +121,20 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Scale", "Trail" ]
+_sections_unfolded = [ "Color", "Gravity", "Scale" ]
 
 [node name="SumoPlayer" type="KinematicBody2D"]
 
-position = Vector2( 626.315, 303.322 )
+position = Vector2( 658.188, 300 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 player_id = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -143,6 +152,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -164,8 +174,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
 process_material = SubResource( 7 )
-texture = ExtResource( 14 )
-
+texture = ExtResource( 23 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -174,8 +183,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Transform", "
 [node name="Bump" type="AudioStreamPlayer2D" parent="." index="4"]
 
 position = Vector2( -658.188, -300 )
-stream = ExtResource( 15 )
-
+stream = ExtResource( 24 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

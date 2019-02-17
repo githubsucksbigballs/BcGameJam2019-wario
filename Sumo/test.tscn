@@ -52,6 +52,7 @@ visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="MessageLabel" type="Label" parent="." index="3"]
