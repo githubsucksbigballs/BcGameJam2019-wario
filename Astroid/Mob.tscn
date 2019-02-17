@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Mob.gd" type="Script" id=1]
+[ext_resource path="res://Astroid sheet1.png" type="Texture" id=2]
+[ext_resource path="res://Astroid sheet2.png" type="Texture" id=3]
+[ext_resource path="res://Astroid sheet3.png" type="Texture" id=4]
+[ext_resource path="res://Astroid sheet4.png" type="Texture" id=5]
+[ext_resource path="res://Astroid sheet5.png" type="Texture" id=6]
+[ext_resource path="res://Astroid sheet6.png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 78.2933
+height = 20.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[node name="Mob" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
+MIN_SPEED = 300
+MAX_SPEED = 500
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="0"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 6.96905, 0 )
+scale = Vector2( 0.700315, 1 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+
