@@ -63,11 +63,12 @@ func _on_LoopFix2_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	get_parent().get_node("MessageLabel").text = "Arrow Key Player\n has won!"
+	get_parent().get_node("MessageLabel").text = "GG!"
 	get_parent().get_node("MessageLabel").show()
 	get_parent().get_node("MobTimer").stop()
+	
 	get_parent().get_node("WinTimer").start()
-	get_parent().get_node("Player3").win = true
+	
 	
 	
 
@@ -79,6 +80,7 @@ func _on_MessageTimer_timeout():
 
 
 func _on_WinTimer_timeout():
+	get_parent().get_node("Player3").win = true
 	queue_free()
 	
 	if(win):

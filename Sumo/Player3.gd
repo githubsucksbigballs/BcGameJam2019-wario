@@ -42,13 +42,7 @@ func _physics_process(delta):
 	
 	if (velocity.y < 0):
 		velocity.y += 10
-	
-#	if velocity.x != 0:
-#		$AnimatedSprite.flip_v = false
-#		$AnimatedSprite.flip_h = velocity.x < 0
-#	elif velocity.y != 0:
-#		$AnimatedSprite.flip_v = velocity.y > 0
-
+		
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		hitstun = true
@@ -71,14 +65,11 @@ func _on_LoopFix_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
+	get_parent().get_node("MessageLabel").text = "GG!"
 	get_parent().get_node("MessageLabel").show()
 	get_parent().get_node("MobTimer").stop()
 	get_parent().get_node("WinTimer").start()
-	get_parent().get_node("Player2").win = true
 	
-	
-
 
 func _on_MessageTimer_timeout():
 	get_parent().get_node("MessageLabel").hide()
@@ -87,6 +78,7 @@ func _on_MessageTimer_timeout():
 
 
 func _on_WinTimer_timeout():
+	get_parent().get_node("Player2").win = true
 	queue_free()
 	if(win):
 		transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")
