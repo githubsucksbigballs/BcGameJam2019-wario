@@ -1,13 +1,43 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Astroid/Main.gd" type="Script" id=1]
 [ext_resource path="res://Astroid/Mob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Astroid/PLAYER1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Astroid/PLAYER2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Astroid/TileSet.tres" type="TileSet" id=5]
-[ext_resource path="res://Astroid/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Astroid/backgroundm1.png" type="Texture" id=3]
+[ext_resource path="res://Astroid/backgroundm2.png" type="Texture" id=4]
+[ext_resource path="res://Astroid/backgroundm3.png" type="Texture" id=5]
+[ext_resource path="res://Astroid/backgroundm4.png" type="Texture" id=6]
+[ext_resource path="res://Astroid/backgroundm5.png" type="Texture" id=7]
+[ext_resource path="res://Astroid/backgroundm6.png" type="Texture" id=8]
+[ext_resource path="res://Astroid/backgroundm7.png" type="Texture" id=9]
+[ext_resource path="res://Sounds/song4.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Astroid/fire1.png" type="Texture" id=11]
+[ext_resource path="res://Astroid/fire2.png" type="Texture" id=12]
+[ext_resource path="res://Astroid/fire3.png" type="Texture" id=13]
+[ext_resource path="res://Astroid/fire4.png" type="Texture" id=14]
+[ext_resource path="res://Astroid/PLAYER1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Astroid/PLAYER2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Astroid/TileSet.tres" type="TileSet" id=17]
+[ext_resource path="res://Astroid/HUD.tscn" type="PackedScene" id=18]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
@@ -19,46 +49,85 @@ _data = {
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
 
-[node name="PLAYER1" parent="." index="0" instance=ExtResource( 3 )]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 240, 380 )
+position = Vector2( 400, 300 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 4
+playing = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite" index="0"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="1"]
+
+modulate = Color( 1, 1, 1, 0.585647 )
+position = Vector2( 320, 400 )
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.585647 )
+position = Vector2( 640, 430 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+flip_h = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="PLAYER1" parent="." index="3" instance=ExtResource( 15 )]
+
+position = Vector2( 200, 380 )
 scale = Vector2( 0.75, 0.75 )
 collision_mask = 3
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="PLAYER2" parent="." index="1" instance=ExtResource( 4 )]
+[node name="PLAYER2" parent="." index="4" instance=ExtResource( 16 )]
 
-position = Vector2( 440, 370 )
+position = Vector2( 600, 380 )
 scale = Vector2( 0.75, 0.75 )
 collision_mask = 3
 
-[node name="MobTimer" type="Timer" parent="." index="2"]
+[node name="MobTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 0.25
 one_shot = false
 autostart = false
 
-[node name="ScoreTimer" type="Timer" parent="." index="3"]
+[node name="ScoreTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 4.0
 one_shot = false
 autostart = false
 
-[node name="StartTimer" type="Timer" parent="." index="4"]
+[node name="StartTimer" type="Timer" parent="." index="7"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="StartPosition" type="Position2D" parent="." index="5"]
+[node name="StartPosition" type="Position2D" parent="." index="8"]
 
-[node name="TileMap" type="TileMap" parent="." index="6"]
+[node name="TileMap" type="TileMap" parent="." index="9"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 17 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -73,15 +142,18 @@ collision_layer = 1
 collision_mask = 2
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 786482, 0, 0, 852018, 0, 0, 917554, 0, 0, 1048575, 0, 0, 983090, 0, 0, 1114111, 0, 0, 1048626, 0, 0, 1179647, 0, 0, 1114162, 0, 0, 1245183, 0, 0, 1179698, 0, 0, 1310719, 0, 0, 1245234, 0, 0, 1376255, 0, 0, 1310770, 0, 0, 1441791, 0, 0, 1376306, 0, 0, 1507327, 0, 0, 1441842, 0, 0, 1572863, 0, 0, 1507378, 0, 0, 1638399, 0, 0, 1572914, 0, 0, 1703935, 0, 0, 1638450, 0, 0, 1769471, 0, 0, 1703986, 0, 0, 1835007, 0, 0, 1769522, 0, 0, 1900543, 0, 0, 1835058, 0, 0, 1966079, 0, 0, 1900594, 0, 0, 2031615, 0, 0, 1966130, 0, 0, 2097151, 0, 0, 2031666, 0, 0, 2162687, 0, 0, 2097202, 0, 0, 2228223, 0, 0, 2162688, 0, 0, 2162689, 0, 0, 2162690, 0, 0, 2162691, 0, 0, 2162692, 0, 0, 2162693, 0, 0, 2162694, 0, 0, 2162695, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0, 2162699, 0, 0, 2162700, 0, 0, 2162701, 0, 0, 2162702, 0, 0, 2162703, 0, 0, 2162704, 0, 0, 2162705, 0, 0, 2162706, 0, 0, 2162707, 0, 0, 2162708, 0, 0, 2162709, 0, 0, 2162710, 0, 0, 2162711, 0, 0, 2162712, 0, 0, 2162713, 0, 0, 2162714, 0, 0, 2162715, 0, 0, 2162716, 0, 0, 2162717, 0, 0, 2162718, 0, 0, 2162719, 0, 0, 2162720, 0, 0, 2162721, 0, 0, 2162722, 0, 0, 2162723, 0, 0, 2162724, 0, 0, 2162725, 0, 0, 2162726, 0, 0, 2162727, 0, 0, 2162728, 0, 0, 2162729, 0, 0, 2162730, 0, 0, 2162731, 0, 0, 2162732, 0, 0, 2162733, 0, 0, 2162734, 0, 0, 2162735, 0, 0, 2162736, 0, 0, 2162737, 0, 0, 2162738, 0, 0 )
+tile_data = PoolIntArray( -786440, 0, 0, -393218, 0, 0, 786482, 0, 0, 852018, 0, 0, 917554, 0, 0, 1048575, 0, 0, 983090, 0, 0, 1114111, 0, 0, 1048626, 0, 0, 1179647, 0, 0, 1114162, 0, 0, 1245183, 0, 0, 1179698, 0, 0, 1310719, 0, 0, 1245234, 0, 0, 1376255, 0, 0, 1310770, 0, 0, 1441791, 0, 0, 1376306, 0, 0, 1507327, 0, 0, 1441842, 0, 0, 1572863, 0, 0, 1507378, 0, 0, 1638399, 0, 0, 1572914, 0, 0, 1703935, 0, 0, 1638450, 0, 0, 1769471, 0, 0, 1703961, 0, 0, 1703986, 0, 0, 1835007, 0, 0, 1769522, 0, 0, 1900543, 0, 0, 1835058, 0, 0, 1966079, 0, 0, 1900594, 0, 0, 2031615, 0, 0, 1966130, 0, 0, 2097151, 0, 0, 2031666, 0, 0, 2162687, 0, 0, 2097202, 0, 0, 2228223, 0, 0, 2162688, 0, 0, 2162689, 0, 0, 2162690, 0, 0, 2162691, 0, 0, 2162692, 0, 0, 2162693, 0, 0, 2162694, 0, 0, 2162695, 0, 0, 2162696, 0, 0, 2162697, 0, 0, 2162698, 0, 0, 2162699, 0, 0, 2162700, 0, 0, 2162701, 0, 0, 2162702, 0, 0, 2162703, 0, 0, 2162704, 0, 0, 2162705, 0, 0, 2162706, 0, 0, 2162707, 0, 0, 2162708, 0, 0, 2162709, 0, 0, 2162710, 0, 0, 2162711, 0, 0, 2162712, 0, 0, 2162713, 0, 0, 2162714, 0, 0, 2162715, 0, 0, 2162716, 0, 0, 2162717, 0, 0, 2162718, 0, 0, 2162719, 0, 0, 2162720, 0, 0, 2162721, 0, 0, 2162722, 0, 0, 2162723, 0, 0, 2162724, 0, 0, 2162725, 0, 0, 2162726, 0, 0, 2162727, 0, 0, 2162728, 0, 0, 2162729, 0, 0, 2162730, 0, 0, 2162731, 0, 0, 2162732, 0, 0, 2162733, 0, 0, 2162734, 0, 0, 2162735, 0, 0, 2162736, 0, 0, 2162737, 0, 0, 2162738, 0, 0, 2818078, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="MobPath" type="Path2D" parent="." index="7"]
+[node name="MobPath" type="Path2D" parent="." index="10"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 0, -23.3387 )
 scale = Vector2( 1, 0.777689 )
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
 
@@ -95,7 +167,7 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="HUD" parent="." index="8" instance=ExtResource( 6 )]
+[node name="HUD" parent="." index="11" instance=ExtResource( 18 )]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 

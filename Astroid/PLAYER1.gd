@@ -41,8 +41,6 @@ func game_overP1():
 #	megumin.scale = Vector2(3,3)
 #	return megumin
 
-var onlyplayer = false
-
 func _physics_process(delta):
 	
 	var collision = move_and_collide(velocity * delta)
