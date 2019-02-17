@@ -10,16 +10,16 @@ var player = 1
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("p1_right"):
-		velocity.x = SPEED + GRAVITY
+		velocity.x = SPEED + GRAVITY + 75
 	elif Input.is_action_pressed("p1_left"):
-		velocity.x = -SPEED + GRAVITY
+		velocity.x = -SPEED + GRAVITY + 75
 	else:
 		velocity.x = 0
 		
 	if Input.is_action_pressed("p1_up"):
 		velocity.y = JUMP_POWER
 	elif Input.is_action_pressed("p1_down"):
-		velocity.y = SPEED + velocity.y + GRAVITY
+		velocity.y = (SPEED + velocity.y)/1.35
 	else:
 #		velocity.y = 0	
 		velocity.y = velocity.y + GRAVITY

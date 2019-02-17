@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Balloons/John_Game/Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ryan_john.tres" type="DynamicFont" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,7 +10,8 @@ extents = Vector2( 10, 10 )
 
 [node name="Camera" type="Area2D"]
 
-position = Vector2( 399.584, 298.332 )
+position = Vector2( 391.735, 303.666 )
+scale = Vector2( 0.929892, 1.22652 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -19,6 +20,9 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 velocity = Vector2( 0, 100 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
@@ -147,10 +151,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -120.0
-margin_top = -162.0
-margin_right = 139.0
-margin_bottom = -119.0
+margin_left = -336.0
+margin_top = -185.0
+margin_right = 330.0
+margin_bottom = -109.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

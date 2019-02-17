@@ -1,0 +1,874 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://Balloons/John_Game/StageOne.gd" type="Script" id=1]
+[ext_resource path="res://Balloons/John_Game/backgroundearth.png" type="Texture" id=2]
+[ext_resource path="res://global_assets/planets/neptune/neptune1.png" type="Texture" id=3]
+[ext_resource path="res://global_assets/planets/neptune/neptune3.png" type="Texture" id=4]
+[ext_resource path="res://global_assets/planets/neptune/neptune2.png" type="Texture" id=5]
+[ext_resource path="res://global_assets/planets/neptune/neptune4.png" type="Texture" id=6]
+[ext_resource path="res://global_assets/planets/saturn/saturn1.png" type="Texture" id=7]
+[ext_resource path="res://global_assets/planets/saturn/saturn2.png" type="Texture" id=8]
+[ext_resource path="res://global_assets/planets/saturn/saturn3.png" type="Texture" id=9]
+[ext_resource path="res://global_assets/planets/saturn/saturn4.png" type="Texture" id=10]
+[ext_resource path="res://global_assets/planets/saturn/saturn5.png" type="Texture" id=11]
+[ext_resource path="res://global_assets/planets/saturn/saturn6.png" type="Texture" id=12]
+[ext_resource path="res://global_assets/planets/saturn/saturn7.png" type="Texture" id=13]
+[ext_resource path="res://global_assets/planets/saturn/saturn.png" type="Texture" id=14]
+[ext_resource path="res://global_assets/planets/saturn/saturn8.png" type="Texture" id=15]
+[ext_resource path="res://global_assets/planets/moon/moon1.png" type="Texture" id=16]
+[ext_resource path="res://global_assets/planets/moon/moon2.png" type="Texture" id=17]
+[ext_resource path="res://global_assets/planets/moon/moon3.png" type="Texture" id=18]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth1.png" type="Texture" id=19]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth2.png" type="Texture" id=20]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth3.png" type="Texture" id=21]
+[ext_resource path="res://Balloons/John_Game/assets/backgroundearth4.png" type="Texture" id=22]
+[ext_resource path="res://Balloons/John_Game/ground.tscn" type="PackedScene" id=23]
+[ext_resource path="res://ryan_font.tres" type="DynamicFont" id=24]
+[ext_resource path="res://ryan_john.tres" type="DynamicFont" id=25]
+[ext_resource path="res://ryan_font_small.tres" type="DynamicFont" id=26]
+[ext_resource path="res://Balloons/John_Game/Player1.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Balloons/John_Game/Player2.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Balloons/John_Game/Battery.tscn" type="PackedScene" id=29]
+[ext_resource path="res://global_assets/generator_0.png" type="Texture" id=30]
+[ext_resource path="res://global_assets/generator_1.png" type="Texture" id=31]
+[ext_resource path="res://global_assets/generator_2.png" type="Texture" id=32]
+[ext_resource path="res://global_assets/generator_3.png" type="Texture" id=33]
+[ext_resource path="res://Balloons/John_Game/Scripts/SpaceCeil.gd" type="Script" id=34]
+[ext_resource path="res://Balloons/John_Game/song2.ogg" type="AudioStream" id=35]
+[ext_resource path="res://Balloons/John_Game/WallCamera.gd" type="Script" id=36]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.6835, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 392.598 )
+
+[node name="StageOne" type="Node2D"]
+
+position = Vector2( 317.902, 156.834 )
+script = ExtResource( 1 )
+
+[node name="SpaceBackground" type="Sprite" parent="." index="0"]
+
+position = Vector2( 66.8143, -2615.5 )
+scale = Vector2( 1.19854, 1.74982 )
+texture = ExtResource( 2 )
+
+[node name="neptune" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 336.181, -2796.21 )
+scale = Vector2( 1.92973, 1.66454 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+
+[node name="saturn" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -155.531, -5175.87 )
+scale = Vector2( 1.59756, 1.57658 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 7
+playing = true
+
+[node name="moon" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 302.398, -4230.33 )
+scale = Vector2( 0.808562, 0.760407 )
+frames = SubResource( 3 )
+animation = "default"
+playing = true
+
+[node name="Background" type="AnimatedSprite" parent="." index="4"]
+
+position = Vector2( 71.2224, 246.564 )
+scale = Vector2( 1.19908, 1.36653 )
+frames = SubResource( 4 )
+animation = "default"
+playing = true
+
+[node name="Ground" parent="." index="5" instance=ExtResource( 23 )]
+
+position = Vector2( 26.8282, 279.128 )
+scale = Vector2( 2.58316, 0.915729 )
+
+[node name="Lost2" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -359.0
+margin_top = -5617.0
+margin_right = 550.0
+margin_bottom = -5544.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 24 )
+text = "GAME OVER"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Lost" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -354.0
+margin_top = -5511.0
+margin_right = 555.0
+margin_bottom = -5438.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+text = "Not enough batteries!!
+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -246.0
+margin_top = -331.0
+margin_right = 420.0
+margin_bottom = -258.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 24 )
+text = "Collect 80 batteries!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -187.0
+margin_top = -266.0
+margin_right = 905.0
+margin_bottom = -41.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 26 )
+text = "Or pop your opponent's balloons!
+
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Player1" parent="." index="10" instance=ExtResource( 27 )]
+
+position = Vector2( -85.9576, 241.384 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+
+[node name="Player2" parent="." index="11" instance=ExtResource( 28 )]
+
+position = Vector2( 180.432, 235.908 )
+
+[node name="Batteries" type="Node" parent="." index="12"]
+
+editor/display_folded = true
+
+[node name="Battery" parent="Batteries" index="0" instance=ExtResource( 29 )]
+
+position = Vector2( 590.793, -853.966 )
+
+[node name="Battery101" parent="Batteries" index="1" instance=ExtResource( 29 )]
+
+position = Vector2( 559.243, -897.486 )
+
+[node name="Battery2" parent="Batteries" index="2" instance=ExtResource( 29 )]
+
+position = Vector2( 253.359, -814.02 )
+
+[node name="Battery88" parent="Batteries" index="3" instance=ExtResource( 29 )]
+
+position = Vector2( 224.308, -771.66 )
+
+[node name="Battery89" parent="Batteries" index="4" instance=ExtResource( 29 )]
+
+position = Vector2( 238.128, -715.017 )
+
+[node name="Battery90" parent="Batteries" index="5" instance=ExtResource( 29 )]
+
+position = Vector2( 281.646, -689.995 )
+
+[node name="Battery91" parent="Batteries" index="6" instance=ExtResource( 29 )]
+
+position = Vector2( 319.724, -662.796 )
+
+[node name="Battery92" parent="Batteries" index="7" instance=ExtResource( 29 )]
+
+position = Vector2( 362.153, -630.158 )
+
+[node name="Battery93" parent="Batteries" index="8" instance=ExtResource( 29 )]
+
+position = Vector2( 395.88, -601.871 )
+
+[node name="Battery94" parent="Batteries" index="9" instance=ExtResource( 29 )]
+
+position = Vector2( 431.782, -572.497 )
+
+[node name="Battery3" parent="Batteries" index="10" instance=ExtResource( 29 )]
+
+position = Vector2( 315.463, -1357.31 )
+
+[node name="Battery4" parent="Batteries" index="11" instance=ExtResource( 29 )]
+
+position = Vector2( 452.991, -839.222 )
+
+[node name="Battery78" parent="Batteries" index="12" instance=ExtResource( 29 )]
+
+position = Vector2( 481.755, -865.276 )
+
+[node name="Battery5" parent="Batteries" index="13" instance=ExtResource( 29 )]
+
+position = Vector2( 328.754, -826.462 )
+
+[node name="Battery82" parent="Batteries" index="14" instance=ExtResource( 29 )]
+
+position = Vector2( 290.265, -1912.43 )
+
+[node name="Battery83" parent="Batteries" index="15" instance=ExtResource( 29 )]
+
+position = Vector2( 360.981, -1910.25 )
+
+[node name="Battery84" parent="Batteries" index="16" instance=ExtResource( 29 )]
+
+position = Vector2( 420.818, -1924.4 )
+
+[node name="Battery85" parent="Batteries" index="17" instance=ExtResource( 29 )]
+
+position = Vector2( 475.215, -1947.24 )
+
+[node name="Battery86" parent="Batteries" index="18" instance=ExtResource( 29 )]
+
+position = Vector2( 526.349, -1971.18 )
+
+[node name="Battery87" parent="Batteries" index="19" instance=ExtResource( 29 )]
+
+position = Vector2( 581.834, -1999.47 )
+
+[node name="Battery6" parent="Batteries" index="20" instance=ExtResource( 29 )]
+
+position = Vector2( 565.94, -2299.49 )
+
+[node name="Battery7" parent="Batteries" index="21" instance=ExtResource( 29 )]
+
+position = Vector2( 316.155, -1316.1 )
+
+[node name="Battery79" parent="Batteries" index="22" instance=ExtResource( 29 )]
+
+position = Vector2( 513.379, -1573.67 )
+
+[node name="Battery80" parent="Batteries" index="23" instance=ExtResource( 29 )]
+
+position = Vector2( 512.667, -1528.26 )
+
+[node name="Battery81" parent="Batteries" index="24" instance=ExtResource( 29 )]
+
+position = Vector2( 512.667, -1480 )
+
+[node name="Battery8" parent="Batteries" index="25" instance=ExtResource( 29 )]
+
+position = Vector2( 407.306, -782.506 )
+
+[node name="Battery9" parent="Batteries" index="26" instance=ExtResource( 29 )]
+
+position = Vector2( 464.218, -531.659 )
+
+[node name="Battery95" parent="Batteries" index="27" instance=ExtResource( 29 )]
+
+position = Vector2( 481.625, -578.441 )
+
+[node name="Battery96" parent="Batteries" index="28" instance=ExtResource( 29 )]
+
+position = Vector2( 496.856, -627.398 )
+
+[node name="Battery97" parent="Batteries" index="29" instance=ExtResource( 29 )]
+
+position = Vector2( 514.263, -677.444 )
+
+[node name="Battery98" parent="Batteries" index="30" instance=ExtResource( 29 )]
+
+position = Vector2( 531.671, -723.137 )
+
+[node name="Battery99" parent="Batteries" index="31" instance=ExtResource( 29 )]
+
+position = Vector2( 557.781, -764.479 )
+
+[node name="Battery100" parent="Batteries" index="32" instance=ExtResource( 29 )]
+
+position = Vector2( 586.068, -806.909 )
+
+[node name="Battery10" parent="Batteries" index="33" instance=ExtResource( 29 )]
+
+position = Vector2( 514.783, -890.476 )
+
+[node name="Battery11" parent="Batteries" index="34" instance=ExtResource( 29 )]
+
+position = Vector2( 289.697, -830.901 )
+
+[node name="Battery12" parent="Batteries" index="35" instance=ExtResource( 29 )]
+
+position = Vector2( 315.971, -1272.71 )
+
+[node name="Battery13" parent="Batteries" index="36" instance=ExtResource( 29 )]
+
+position = Vector2( 429.269, -813.227 )
+
+[node name="Battery14" parent="Batteries" index="37" instance=ExtResource( 29 )]
+
+position = Vector2( 369.475, -806.511 )
+
+[node name="Battery15" parent="Batteries" index="38" instance=ExtResource( 29 )]
+
+position = Vector2( 220.924, -2283.07 )
+
+[node name="Battery16" parent="Batteries" index="39" instance=ExtResource( 29 )]
+
+position = Vector2( 64.536, -3451.11 )
+
+[node name="Battery17" parent="Batteries" index="40" instance=ExtResource( 29 )]
+
+position = Vector2( 84.113, -3393.6 )
+
+[node name="Battery18" parent="Batteries" index="41" instance=ExtResource( 29 )]
+
+position = Vector2( 136.727, -3448.67 )
+
+[node name="Battery19" parent="Batteries" index="42" instance=ExtResource( 29 )]
+
+position = Vector2( 524.605, -3134.2 )
+
+[node name="Battery20" parent="Batteries" index="43" instance=ExtResource( 29 )]
+
+position = Vector2( 557.642, -3073.02 )
+
+[node name="Battery21" parent="Batteries" index="44" instance=ExtResource( 29 )]
+
+position = Vector2( 601.691, -3136.65 )
+
+[node name="Battery22" parent="Batteries" index="45" instance=ExtResource( 29 )]
+
+position = Vector2( 638.519, -3594.58 )
+
+[node name="Battery23" parent="Batteries" index="46" instance=ExtResource( 29 )]
+
+position = Vector2( 645.678, -3539.94 )
+
+[node name="Battery24" parent="Batteries" index="47" instance=ExtResource( 29 )]
+
+position = Vector2( 593.491, -3558.73 )
+
+[node name="Battery25" parent="Batteries" index="48" instance=ExtResource( 29 )]
+
+position = Vector2( 135.504, -2884.59 )
+
+[node name="Battery26" parent="Batteries" index="49" instance=ExtResource( 29 )]
+
+position = Vector2( 178.329, -2844.21 )
+
+[node name="Battery27" parent="Batteries" index="50" instance=ExtResource( 29 )]
+
+position = Vector2( 117.15, -2833.2 )
+
+[node name="Battery28" parent="Batteries" index="51" instance=ExtResource( 29 )]
+
+position = Vector2( 283.96, -4709.29 )
+
+[node name="Battery60" parent="Batteries" index="52" instance=ExtResource( 29 )]
+
+position = Vector2( 529.001, -4710.21 )
+
+[node name="Battery52" parent="Batteries" index="53" instance=ExtResource( 29 )]
+
+position = Vector2( 266.743, -4713.74 )
+
+[node name="Battery56" parent="Batteries" index="54" instance=ExtResource( 29 )]
+
+position = Vector2( 511.784, -4714.65 )
+
+[node name="Battery51" parent="Batteries" index="55" instance=ExtResource( 29 )]
+
+position = Vector2( 246.407, -4715.53 )
+
+[node name="Battery57" parent="Batteries" index="56" instance=ExtResource( 29 )]
+
+position = Vector2( 491.448, -4716.44 )
+
+[node name="Battery29" parent="Batteries" index="57" instance=ExtResource( 29 )]
+
+position = Vector2( 227.803, -4709.29 )
+
+[node name="Battery68" parent="Batteries" index="58" instance=ExtResource( 29 )]
+
+position = Vector2( 472.844, -4710.2 )
+
+[node name="Battery30" parent="Batteries" index="59" instance=ExtResource( 29 )]
+
+position = Vector2( 210.079, -4697.59 )
+
+[node name="Battery63" parent="Batteries" index="60" instance=ExtResource( 29 )]
+
+position = Vector2( 455.121, -4698.5 )
+
+[node name="Battery31" parent="Batteries" index="61" instance=ExtResource( 29 )]
+
+position = Vector2( 197.106, -4685.88 )
+
+[node name="Battery69" parent="Batteries" index="62" instance=ExtResource( 29 )]
+
+position = Vector2( 442.147, -4686.8 )
+
+[node name="Battery32" parent="Batteries" index="63" instance=ExtResource( 29 )]
+
+position = Vector2( 193.63, -4661.55 )
+
+[node name="Battery59" parent="Batteries" index="64" instance=ExtResource( 29 )]
+
+position = Vector2( 438.672, -4662.47 )
+
+[node name="Battery33" parent="Batteries" index="65" instance=ExtResource( 29 )]
+
+position = Vector2( 191.148, -4636.23 )
+
+[node name="Battery71" parent="Batteries" index="66" instance=ExtResource( 29 )]
+
+position = Vector2( 436.189, -4637.15 )
+
+[node name="Battery34" parent="Batteries" index="67" instance=ExtResource( 29 )]
+
+position = Vector2( 189.162, -4615.88 )
+
+[node name="Battery72" parent="Batteries" index="68" instance=ExtResource( 29 )]
+
+position = Vector2( 434.203, -4616.79 )
+
+[node name="Battery35" parent="Batteries" index="69" instance=ExtResource( 29 )]
+
+position = Vector2( 187.672, -4594.53 )
+
+[node name="Battery75" parent="Batteries" index="70" instance=ExtResource( 29 )]
+
+position = Vector2( 432.714, -4595.44 )
+
+[node name="Battery36" parent="Batteries" index="71" instance=ExtResource( 29 )]
+
+position = Vector2( 187.176, -4568.71 )
+
+[node name="Battery74" parent="Batteries" index="72" instance=ExtResource( 29 )]
+
+position = Vector2( 432.217, -4569.62 )
+
+[node name="Battery37" parent="Batteries" index="73" instance=ExtResource( 29 )]
+
+position = Vector2( 192.141, -4547.85 )
+
+[node name="Battery58" parent="Batteries" index="74" instance=ExtResource( 29 )]
+
+position = Vector2( 437.182, -4548.77 )
+
+[node name="Battery38" parent="Batteries" index="75" instance=ExtResource( 29 )]
+
+position = Vector2( 205.05, -4536.43 )
+
+[node name="Battery64" parent="Batteries" index="76" instance=ExtResource( 29 )]
+
+position = Vector2( 450.091, -4537.35 )
+
+[node name="Battery39" parent="Batteries" index="77" instance=ExtResource( 29 )]
+
+position = Vector2( 221.932, -4530.48 )
+
+[node name="Battery54" parent="Batteries" index="78" instance=ExtResource( 29 )]
+
+position = Vector2( 466.973, -4531.39 )
+
+[node name="Battery40" parent="Batteries" index="79" instance=ExtResource( 29 )]
+
+position = Vector2( 243.282, -4527.99 )
+
+[node name="Battery73" parent="Batteries" index="80" instance=ExtResource( 29 )]
+
+position = Vector2( 488.323, -4528.91 )
+
+[node name="Battery41" parent="Batteries" index="81" instance=ExtResource( 29 )]
+
+position = Vector2( 259.666, -4531.97 )
+
+[node name="Battery55" parent="Batteries" index="82" instance=ExtResource( 29 )]
+
+position = Vector2( 504.708, -4532.88 )
+
+[node name="Battery42" parent="Batteries" index="83" instance=ExtResource( 29 )]
+
+position = Vector2( 278.037, -4536.43 )
+
+[node name="Battery53" parent="Batteries" index="84" instance=ExtResource( 29 )]
+
+position = Vector2( 523.079, -4537.35 )
+
+[node name="Battery43" parent="Batteries" index="85" instance=ExtResource( 29 )]
+
+position = Vector2( 293.926, -4547.85 )
+
+[node name="Battery76" parent="Batteries" index="86" instance=ExtResource( 29 )]
+
+position = Vector2( 538.967, -4548.77 )
+
+[node name="Battery44" parent="Batteries" index="87" instance=ExtResource( 29 )]
+
+position = Vector2( 305.842, -4562.75 )
+
+[node name="Battery70" parent="Batteries" index="88" instance=ExtResource( 29 )]
+
+position = Vector2( 550.883, -4563.66 )
+
+[node name="Battery45" parent="Batteries" index="89" instance=ExtResource( 29 )]
+
+position = Vector2( 304.849, -4580.62 )
+
+[node name="Battery66" parent="Batteries" index="90" instance=ExtResource( 29 )]
+
+position = Vector2( 549.89, -4581.54 )
+
+[node name="Battery46" parent="Batteries" index="91" instance=ExtResource( 29 )]
+
+position = Vector2( 300.877, -4599.49 )
+
+[node name="Battery65" parent="Batteries" index="92" instance=ExtResource( 29 )]
+
+position = Vector2( 545.918, -4600.4 )
+
+[node name="Battery47" parent="Batteries" index="93" instance=ExtResource( 29 )]
+
+position = Vector2( 291.443, -4607.93 )
+
+[node name="Battery67" parent="Batteries" index="94" instance=ExtResource( 29 )]
+
+position = Vector2( 536.484, -4608.85 )
+
+[node name="Battery48" parent="Batteries" index="95" instance=ExtResource( 29 )]
+
+position = Vector2( 275.058, -4610.91 )
+
+[node name="Battery77" parent="Batteries" index="96" instance=ExtResource( 29 )]
+
+position = Vector2( 520.1, -4611.82 )
+
+[node name="Battery49" parent="Batteries" index="97" instance=ExtResource( 29 )]
+
+position = Vector2( 259.17, -4610.91 )
+
+[node name="Battery62" parent="Batteries" index="98" instance=ExtResource( 29 )]
+
+position = Vector2( 504.211, -4611.82 )
+
+[node name="Battery50" parent="Batteries" index="99" instance=ExtResource( 29 )]
+
+position = Vector2( 250.233, -4610.41 )
+
+[node name="Battery61" parent="Batteries" index="100" instance=ExtResource( 29 )]
+
+position = Vector2( 495.274, -4611.33 )
+
+[node name="Generator" type="RigidBody2D" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 60.2046, 220.347 )
+scale = Vector2( 2.30589, 2.94207 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Generator" index="0"]
+
+position = Vector2( 4.79297, -22.2796 )
+scale = Vector2( 1.13196, 0.892816 )
+frames = SubResource( 5 )
+animation = "default"
+frame = 1
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Generator" index="1"]
+
+position = Vector2( 0.613037, -5.17279 )
+scale = Vector2( 7.42719, 7.80324 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpaceCeil" type="Area2D" parent="." index="14" groups=[
+"END",
+]]
+
+modulate = Color( 0.886719, 0.109648, 0.109648, 1 )
+self_modulate = Color( 0.773438, 0.118511, 0.118511, 1 )
+position = Vector2( 55.7902, -5747 )
+scale = Vector2( 17.7281, -0.567099 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 34 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCeil" index="0"]
+
+position = Vector2( -0.0613995, 44.666 )
+scale = Vector2( 2.41301, 2.37338 )
+shape = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="15"]
+
+stream = ExtResource( 35 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="WallCamera" type="KinematicBody2D" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 84.0724, 141.488 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="left" type="Area2D" parent="WallCamera" index="0"]
+
+editor/display_folded = true
+position = Vector2( -449.108, 6.00049 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCamera/left" index="0"]
+
+shape = SubResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="right" type="Area2D" parent="WallCamera" index="1"]
+
+editor/display_folded = true
+position = Vector2( 451.359, 8.79404 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCamera/right" index="0"]
+
+shape = SubResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="up" type="Area2D" parent="WallCamera" index="2"]
+
+position = Vector2( 10.0058, -337.693 )
+rotation = 1.5708
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCamera/up" index="0"]
+
+shape = SubResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="down" type="Area2D" parent="WallCamera" index="3"]
+
+editor/display_folded = true
+position = Vector2( 0.250183, 449.248 )
+rotation = 1.5708
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCamera/down" index="0"]
+
+shape = SubResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="WallCamera" index="4"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[connection signal="body_entered" from="WallCamera/left" to="WallCamera" method="_on_wall_body_entered"]
+
+[connection signal="body_entered" from="WallCamera/right" to="WallCamera" method="_on_wall_body_entered"]
+
+[connection signal="area_entered" from="WallCamera/up" to="SpaceCeil" method="_on_up_body_entered"]
+
+[connection signal="body_entered" from="WallCamera/up" to="WallCamera" method="_on_wall_body_entered"]
+
+[connection signal="body_entered" from="WallCamera/down" to="WallCamera" method="_on_wall_body_entered"]
+
+
