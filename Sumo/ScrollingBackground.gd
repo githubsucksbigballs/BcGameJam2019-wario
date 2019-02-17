@@ -9,5 +9,5 @@ func _ready():
 
 func _process(delta):
 	var curPos = position
-	curPos.x = curPos.x - 10 *delta
+	curPos.x = curPos.x - 100 *delta
 	position = curPos
