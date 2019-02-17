@@ -19,14 +19,19 @@ var p2_pressed = false
  
 
 func _ready():
-	p1 = get_child(0)
-	p2 = get_child(1)
-	timer = get_child(2)
-	sound_good = get_child(3)
-	sound_perfect = get_child(4)
-	sound_bad = get_child(5)
-	sound_miss = get_child(6)
-	_on_Timer_timeout()
+	p1 = $PlayerWithFlyingInput
+	p2 = $PlayerWithFlyingInput2
+	p2.get_child(0).player_child.play("redIdle")
+	timer = $Timer
+	sound_good = $Good
+	sound_perfect = $Perfect
+	sound_bad = $Bad
+	sound_miss = $Miss
+	get_random_input_key()
+	var direction = get_direction(current_input_key)
+	p1.generate_random_flying_input(direction[0])
+	p2.generate_random_flying_input(direction[1])
+	timer.start()
 	
 func _process(delta):
 	#print(timer.time_left)
@@ -104,12 +109,15 @@ func _on_Timer_timeout():
 	p2.generate_random_flying_input(direction[1])
 	if (p1_pressed	== false):
 		p1.timing_text.show("MISS")
+		p1.increase_air(-2)
 		sound_miss.play()
 	if (p2_pressed	== false):
 		p2.timing_text.show("MISS")
 		sound_miss.play()
+		p2.increase_air(-2)
 	p1_pressed = false
 	p2_pressed = false
+	
 	#print(current_input_key)
 	
 func get_score_value(player):
@@ -118,16 +126,20 @@ func get_score_value(player):
 	if displacement.x >= miss_threshold and displacement.y >= miss_threshold:
 		player.timing_text.show("MISS")
 		sound_miss.play()
+		player.increase_air(-2)
 	else:
 		if displacement.x >= bad_threshold and displacement.y >= bad_threshold:
 			player.timing_text.show("BAD")
 			sound_bad.play()
+			player.increase_air(1)
 		elif displacement.x >= good_threshold and displacement.y >= good_threshold:
 			player.timing_text.show("GOOD")
 			sound_good.play()
+			player.increase_air(3)
 		else:
 			player.timing_text.show("PERFECT")
 			sound_perfect.play()
+			player.increase_air(5)
 		player.get_child(0).pump_down()
 		if (player == p1):
 			player.get_child(0).player_child.play("blueDown")

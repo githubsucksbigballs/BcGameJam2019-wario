@@ -7,6 +7,9 @@ var center
 var spawn_pos
 var input_box
 var timing_text
+var balloon = preload("res://Cameron Stuff/Pumping Game/BlowingUpBalloon.tscn")
+var balloon_x = -100
+var balloon_count = 0
 
 
 func _ready():
@@ -14,14 +17,29 @@ func _ready():
 	player = get_child(0)
 	input_box = get_child(1)
 	timing_text = get_child(2)
+	$AirCount.value	= 0
 	
+func create_balloon():
+	var new_balloon = balloon.instance()
+	add_child(new_balloon)
+	new_balloon.position = Vector2(-80 + 80*balloon_count, -175)
+	balloon_count += 1
+	new_balloon.get_child(0).play("BlowUp")
+	
+	
+func increase_air(value):
+		$AirCount.value += value
+		if $AirCount.value >= $AirCount.max_value:
+			create_balloon()
+			$AirCount.value = 0
+
 func get_random_speed():
 	return rand_range(1.15,2.2)
 	
 func generate_random_flying_input(input):
 	var random_pos = randi()%count_direct
 	var speed = get_random_speed()
-	print(speed)
+	#print(speed)
 	var radius = Vector2(100*speed, 0)
 	center = Vector2(input_box.position.x,input_box.position.y)
 	var step = 2 * PI / count_direct

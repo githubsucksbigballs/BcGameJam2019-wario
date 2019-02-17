@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cameron Stuff/Pumping Game/pump_game_player.gd" type="Script" id=1]
 [ext_resource path="res://global_assets/guy_idle_blue1.png" type="Texture" id=2]
 [ext_resource path="res://global_assets/guy_idle_blue3.png" type="Texture" id=3]
-[ext_resource path="res://global_assets/guy_idle_blue4.png" type="Texture" id=4]
+[ext_resource path="res://global_assets/guy_idle_red1.png" type="Texture" id=4]
 [ext_resource path="res://global_assets/guy_idle_red4.png" type="Texture" id=5]
-[ext_resource path="res://global_assets/guy_idle_red1.png" type="Texture" id=6]
+[ext_resource path="res://Cameron Stuff/Pumping Game/pump2.png" type="Texture" id=6]
 [ext_resource path="res://Cameron Stuff/Pumping Game/pump1.png" type="Texture" id=7]
-[ext_resource path="res://Cameron Stuff/Pumping Game/pump2.png" type="Texture" id=8]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -17,33 +16,33 @@ animations = [ {
 "name": "blueDown",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "blueIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "redDown",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "redIdle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "redDown",
-"speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "PumpDown",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": false,
 "name": "PumpUp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "PumpDown",
 "speed": 5.0
 } ]
 
@@ -57,18 +56,15 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0.327553, -14.8587 )
 scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "blueIdle"
 _sections_unfolded = [ "Transform" ]
 
 [node name="PumpSprite" type="AnimatedSprite" parent="." index="1"]
 
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "PumpUp"
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="animation_finished" from="PlayerSprite" to="." method="_on_PlayerSprite_animation_finished"]
 
