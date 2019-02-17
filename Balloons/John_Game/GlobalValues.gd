@@ -31,7 +31,7 @@ func _process(delta):
 				show_score2("")
 				total_score("")
 				print("gg")
-				get_tree().change_scene("res://Sumo/test.tscn")
+				transition.fade_to("res://Sumo/test.tscn")
 		
 
 func show_message(text):
@@ -49,7 +49,4 @@ func show_score2(text):
 func total_score(text):
 	$TotalScore.text = text
 	$TotalScore.show()
-
-func _on_MessageTimer_timeout():
-	$MessageLabel.hide()
 
