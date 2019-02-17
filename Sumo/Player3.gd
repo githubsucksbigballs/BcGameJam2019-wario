@@ -13,7 +13,7 @@ var win = false
 
 func _ready():
 	if player_id == 1:
-		$Particles2D.texture = load("res://Sumo/assets/red1.png")
+		#$Particles2D.texture = load("res://Sumo/assets/red1.png")
 		$AnimatedSprite.animation = "redDefault"
 	else:
 		$AnimatedSprite.flip_h = true
@@ -31,8 +31,15 @@ func hit(vel):
 
 func megumin():
 	var megumin = explosion.instance()
-	megumin.position = Vector2(0,-160)
-	megumin.scale = Vector2(3,3)
+	var randinteger = rand_range(0, PI/4)
+	var random = randi()%2
+	if (random == 0):
+		megumin.flip_h = true
+	else:
+		megumin.flip_h = false
+	megumin.rotation = randinteger
+	megumin.position = Vector2(0, 0)
+	megumin.scale = Vector2(2,2)
 	return megumin
 
 func _physics_process(delta):
