@@ -5,6 +5,7 @@ export var player_id = 0
 var speed = 400
 var velocity = Vector2()
 
+var explosion = preload("res://Cameron Stuff/Explosion/Explosion.tscn")
 
 var hitstun = false
 
@@ -27,6 +28,12 @@ func hit(vel):
 		$AnimatedSprite.animation = "redOof"
 	$HitStun.start()
 	velocity = vel
+
+func megumin():
+	var megumin = explosion.instance()
+	megumin.position = Vector2(0,-160)
+	megumin.scale = Vector2(3,3)
+	return megumin
 
 func _physics_process(delta):
 	if (player_id == 1):
@@ -74,16 +81,18 @@ func _physics_process(delta):
 			$LoopFix.start()
 			var random = randi()%2
 			var multiplier = 1.5
+			get_parent().get_node("Player2").add_child(megumin())
+			get_parent().get_node("Player").add_child(megumin())
 			if player_id == 0:
 				if random == 0:
-					get_parent().get_node("Player").hit(velocity*multiplier)
-				else:
-					get_parent().get_node("Player").hit(velocity)
-			else:
-				if random == 1:
 					get_parent().get_node("Player2").hit(velocity*multiplier)
 				else:
 					get_parent().get_node("Player2").hit(velocity)
+			else:
+				if random == 1:
+					get_parent().get_node("Player").hit(velocity*multiplier)
+				else:
+					get_parent().get_node("Player").hit(velocity)
 			#velocity = -velocity
 		if(collision.collider.has_method("isAsteroid")):
 			velocity = -velocity

@@ -52,7 +52,6 @@ visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="MessageLabel" type="Label" parent="." index="3"]
@@ -108,7 +107,6 @@ lookahead = 4.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
