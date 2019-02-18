@@ -44,7 +44,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 602.766, -33.8524, 0, -60, -547.171, -27.5916, 0, 0, 800, -60 )
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
@@ -54,6 +54,7 @@ Mob = ExtResource( 2 )
 position = Vector2( 400, 300 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite" index="0"]
@@ -72,7 +73,7 @@ position = Vector2( 320, 400 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -83,6 +84,7 @@ position = Vector2( 640, 430 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform", "Visibility" ]
