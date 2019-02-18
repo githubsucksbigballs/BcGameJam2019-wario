@@ -54,6 +54,7 @@ Mob = ExtResource( 2 )
 position = Vector2( 400, 300 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite" index="0"]

@@ -7,7 +7,7 @@
 [ext_resource path="res://Sounds/song6.ogg" type="AudioStream" id=5]
 [ext_resource path="res://ryan_font_small.tres" type="DynamicFont" id=6]
 
-[node name="game_over" type="Node" index="0"]
+[node name="game_over" type="Node"]
 
 script = ExtResource( 1 )
 
