@@ -16,7 +16,8 @@ var timing_text
 var timing_text2
 var p1_pressed = false
 var p2_pressed = false
-
+var score1
+var score2
  
 
 func _ready():
@@ -46,7 +47,11 @@ func game_over(text):
 	$WinTimer.start()
 	$Timer.stop()
 	is_game_over = true;
-	
+	Scores.player1pump += 10 + 10 * p1.balloon_count
+	Scores.player1total +=  10 + 10 * p1.balloon_count
+	Scores.player2pump += 10 + 10 * p2.balloon_count
+	Scores.player2total +=  10 + 10 * p2.balloon_count
+
 		
 func get_random_input_key():
 	current_input_key = randi()%4
@@ -162,10 +167,10 @@ func get_score_value(player):
 func _on_PlayerWithFlyingInput_has_three_balloons():
 	game_over("Player 1 Wins!")
 
-
 func _on_PlayerWithFlyingInput2_has_three_balloons():
 	game_over("Player 2 Wins!")
 
 
+
 func _on_WinTimer_timeout():
-	get_tree().change_scene("res://Balloons/John_Game/StageOne.tscn")
+	transition.fade_to("res://Balloons/John_Game/StageOne.tscn")

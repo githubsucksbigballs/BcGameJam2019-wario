@@ -5,9 +5,15 @@ func _on_Quit_pressed():
 
 
 func _on_2_Player_pressed():
-	get_tree().change_scene("res://Cameron Stuff/Pumping Game/PumpScene.tscn")
-
-
-func _on_1_Player_pressed():
-	pass
- 
+	transition.fade_to("res://Astroid/Main.tscn")
+	player1meteor = 0
+	player1pump = 0
+	player1balloon= 0
+	player1sumo= 0
+	player1total= 0
+	
+	player2meteor= 0
+	player2pump= 0
+	player2balloon= 0
+	player2sumo= 0
+	player2total= 0

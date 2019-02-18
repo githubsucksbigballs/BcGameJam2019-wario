@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+signal won
 export var player_id = 0
 
 var speed = 400
@@ -117,18 +119,36 @@ func _on_LoopFix_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	get_parent().get_node("MessageLabel").text = "WASD Key Player\n has won!"
 	get_parent().get_node("MessageLabel").show()
 	get_parent().get_node("MobTimer").stop()
-	get_parent().get_node("WinTimer").start()
 	queue_free()
-	transition.fade_to("res://Cameron Stuff/Main Menu/MainMenu.tscn")
+	var awarded = 0
+	
+	if(Scores.player1sumo == 10 || Scores.player2sumo == 10):
+		awarded = 1
+	
+	if (player_id == 0 && awarded == 0):
+		Scores.player2sumo += 10
+		Scores.player2total += 10
+		print("RYAN2")
+		emit_signal("won")
+		get_parent().get_node("MessageLabel").text = "Player 2\n has won!"
+		#$WinTimer.start()
+	elif (player_id == 1 && awarded ==0):
+		Scores.player1sumo += 10
+		Scores.player1total += 10
+		get_parent().get_node("MessageLabel").text = "Player 1\n has won!"
+		print("RYAN")
+		emit_signal("won")
+		#$WinTimer.start()
 	
 
 func _on_MessageTimer_timeout():
 	get_parent().get_node("MessageLabel").hide()
 	hitstun = false
-	
 
-func _on_WinTimer_timeout():
-	pass
+
+
+func _on_Timer_timeout():
+	print("GG")
+	transition.fade_to("res://game_over.tscn")

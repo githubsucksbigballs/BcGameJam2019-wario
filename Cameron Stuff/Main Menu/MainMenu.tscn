@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ Vector2( 690, 100 ), Vector2( 670, 100 ), Vector2( 700, 60 ), Vector2( 710, 100 ) ]
 }
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -98,7 +98,7 @@ position = Vector2( 449.032, 279.999 )
 scale = Vector2( 1.32258, 1.33333 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 4
 playing = true
 
 [node name="Saturn" type="AnimatedSprite" parent="." index="1"]
@@ -117,7 +117,7 @@ position = Vector2( 418.666, 91.471 )
 rotation = 0.0841022
 frames = SubResource( 3 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Mars" type="Sprite" parent="." index="3"]
@@ -157,7 +157,6 @@ blend_times = [  ]
 
 [node name="Menu" type="VBoxContainer" parent="." index="5"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

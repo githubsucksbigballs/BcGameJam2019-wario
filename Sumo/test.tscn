@@ -52,7 +52,6 @@ visible = false
 position = Vector2( 399.379, 303.846 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 
 [node name="MessageLabel" type="Label" parent="." index="3"]
@@ -146,13 +145,19 @@ size_flags_vertical = 1
 texture = ExtResource( 8 )
 stretch_mode = 0
 
-[node name="WinTimer" type="Timer" parent="." index="7"]
+[node name="Timer" type="Timer" parent="." index="7"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 3.0
 one_shot = false
 autostart = false
 
+[connection signal="won" from="Player" to="." method="_on_Player_won"]
+
+[connection signal="won" from="Player2" to="." method="_on_Player2_won"]
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

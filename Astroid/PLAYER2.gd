@@ -31,6 +31,8 @@ func game_overP2():
 	get_parent().get_node("MobTimer").stop()
 	get_parent().get_node("HUD").game_over()
 	get_parent().get_node("HUD").show_message("ARROW KEY PLAYER WINS!")
+	Scores.player2meteor += 10
+	Scores.player2total += 10
 	if get_parent().get_node("PLAYER1") != null:
 		get_parent().get_node("PLAYER1").dontgethit = true
 	queue_free()

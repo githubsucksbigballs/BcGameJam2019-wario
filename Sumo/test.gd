@@ -21,3 +21,16 @@ func _on_MobTimer_timeout():
     mob.rotation = direction
     # Choose the velocity.
     mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
+
+
+
+func _on_Player_won():
+	$Timer.start()
+
+
+func _on_Player2_won():
+	$Timer.start()
+
+
+func _on_Timer_timeout():
+	transition.fade_to("res://game_over.tscn")

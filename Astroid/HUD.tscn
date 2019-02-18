@@ -3,7 +3,6 @@
 [ext_resource path="res://Astroid/HUD.gd" type="Script" id=1]
 [ext_resource path="res://cure.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 64

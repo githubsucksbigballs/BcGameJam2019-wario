@@ -44,7 +44,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 602.766, -33.8524, 0, -60, -547.171, -27.5916, 0, 0, 800, -60 )
 }
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
@@ -54,7 +54,6 @@ Mob = ExtResource( 2 )
 position = Vector2( 400, 300 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite" index="0"]

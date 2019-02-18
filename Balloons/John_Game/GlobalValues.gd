@@ -17,8 +17,12 @@ func _process(delta):
 			if(GlobalValues.health1 == 0):
 				GlobalValues.show_message("PLAYER 2 WINS!")
 				game_over = true
+				Scores.player2balloon += 10
+				Scores.player2total += 10
 			elif(GlobalValues.health2 == 0):
 				GlobalValues.show_message("PLAYER 1 WINS!")
+				Scores.player1balloon += 10
+				Scores.player1total += 10
 				game_over = true
 			elif(GlobalValues.score1 + GlobalValues.score2 >= 80):
 				GlobalValues.show_message("ENERGY FULL! GOOD WORK.")
@@ -27,9 +31,14 @@ func _process(delta):
 			timer -= delta
 			if timer <= 0:
 				playing_john_game = false;
+				show_message("")
 				show_score1("")
 				show_score2("")
 				total_score("")
+				Scores.player1balloon += GlobalValues.score1
+				Scores.player1total += GlobalValues.score1
+				Scores.player2total += GlobalValues.score2
+				Scores.player2balloon += GlobalValues.score2
 				print("gg")
 				transition.fade_to("res://Sumo/test.tscn")
 		
