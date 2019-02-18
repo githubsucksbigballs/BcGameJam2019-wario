@@ -88,7 +88,7 @@ tracks/0/keys = {
 "values": [ Vector2( 690, 100 ), Vector2( 670, 100 ), Vector2( 700, 60 ), Vector2( 710, 100 ) ]
 }
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -98,7 +98,7 @@ position = Vector2( 449.032, 279.999 )
 scale = Vector2( 1.32258, 1.33333 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Saturn" type="AnimatedSprite" parent="." index="1"]
@@ -107,7 +107,7 @@ position = Vector2( 416.816, 315.595 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
