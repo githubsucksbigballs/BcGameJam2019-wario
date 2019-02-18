@@ -33,7 +33,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.294495, -5.29266, 0, 0, 0, 0, 798.595, -5.29266, 0, 0, 0, 0, 795.581, 594.628, 0, 0, 0, 0, 2.72021, 593.121, 0, 0, 0, 0, -0.294495, -5.29266 )
 }
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 Asteroid = ExtResource( 2 )

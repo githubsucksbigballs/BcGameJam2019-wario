@@ -55,6 +55,7 @@ position = Vector2( 410, 190 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
