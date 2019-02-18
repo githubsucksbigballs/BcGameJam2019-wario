@@ -152,7 +152,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 

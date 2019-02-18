@@ -7,6 +7,10 @@ const FLOOR = Vector2(0,-1)
 const CEIL = Vector2(0,1)
 var velocity = Vector2()
 var player = 1
+
+func _ready():
+	velocity = Vector2()
+
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_right"):
