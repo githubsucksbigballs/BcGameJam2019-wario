@@ -1,6 +1,6 @@
 # Charging Up!
 
-A two-player minigame collection about two robots surviving in a post-apocalyptic world! Compete or cooperate with a friend to dodge comets, pump up balloons, collect batteries and fly around in asteroid fields!
+A four two-player minigame collection about two robots surviving in a post-apocalyptic world! Compete or cooperate with a friend to dodge comets, pump up balloons, collect batteries, and bump around in asteroid fields!
 
 ![Image of Yaktocat](https://i.imgur.com/8HzDKtI.png)
 
@@ -20,22 +20,22 @@ A two-player minigame collection about two robots surviving in a post-apocalypti
 [![Watch the video](https://i.imgur.com/TwIcPqE.jpg)](https://www.youtube.com/watch?v=wghuUpWEi4A)
 
 ### Build from sources
-To get the latest version of the game, you'll need to use the source code and Godot Engine.
+To play the latest version of the game, you'll need to use the source code and Godot Engine.
 
-- download & install [Godot Engine](https://godotengine.org/download) version [3.1](https://downloads.tuxfamily.org/godotengine/) 
-- download sources
+- download & install the latest version of [Godot Engine](https://godotengine.org/download) version [3.1](https://downloads.tuxfamily.org/godotengine/) 
+- download the source code
   - download [master.zip](https://github.com/githubsucksbigballs/BcGameJam2019-wario/archive/master.zip) and unzip
   - or clone the repository using git
-- open Godot and import the project
-- run
+- open Godot and import the project from the source code
+- run the game by pressing the F5 key or the run button near the top right
 
-Follow [this tutorial](http://docs.godotengine.org/en/latest/learning/workflow/export/exporting_projects.html) to learn how to export the game for each platform.
+Follow [this tutorial](http://docs.godotengine.org/en/latest/learning/workflow/export/exporting_projects.html) for more information to learn how to export the game to different platforms.
 ## Credits
-### Code
+### Programmers
 Cameron Hu, Marvin Aganos, Yo Shium Wong, John Zheng, Ryan Zacharias
-### Graphics
+### Graphics Artists
 Ryan Zacharias, Yo Shium Wong, Cameron Hu
-### Music & Sound Effects
+### Game Music & Sound Effects
 Ryan Zacharias
 ## The MIT License (MIT)
 Copyright (c) 2015 Charging Up! contributors.
@@ -59,4 +59,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Music & SFX License
-All sfx and music assets in this repository are licensed under Creative Commons Attribution-ShareAlike 4.0 license (CC BY-SA 4.0).
+All SFX and music assets in this repository are licensed under Creative Commons Attribution-ShareAlike 4.0 license (CC BY-SA 4.0).
